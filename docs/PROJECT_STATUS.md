@@ -7,3 +7,5 @@
 后续：钓鱼有精力再重做；跳绳保留标注并评估模型和GPU调度；厨房补数据、训练和打磨逻辑；日常优先完善状态、恢复和完成证据。既有未通过项没有因整理目录而消除。
 
 完整历史文档在 Game_agent_dev/docs，当前运行入口见 ../README.md。
+
+开发交接入口：模型能力、计划和受限自纠正见[CAPABILITY_PLANS.md](CAPABILITY_PLANS.md)；奖励识别的现有回调、未实现部分、同帧证据/多页去重/读取后关闭及到账验证约束见[REWARD_RECOGNITION.md](REWARD_RECOGNITION.md)。奖励内容识别尚未实现，不能把接口预留当成已支持功能。离线验证范围见[WORKSPACE_VALIDATION.md](WORKSPACE_VALIDATION.md)，根因及修复记录见[bug-ledger.md](bug-ledger.md)。

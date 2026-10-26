@@ -43,6 +43,8 @@ docs/                                 当前使用和架构说明
 
 文字任务的模型接口与多步骤执行，见 [能力接口与计划](docs/CAPABILITY_PLANS.md)。支持接口读取、参数校验、条件步骤、结果引用、预算、状态查询和取消。日常前置界面不符时，可有界恢复到自由界面，验证后只重试当前步骤一次；业务输入后结果未知不自动重放。小游戏仍沿用各自的运行前置条件和验证边界。
 
+后续开发从[当前交接](docs/PROJECT_STATUS.md)进入；[奖励识别扩展说明](docs/REWARD_RECOGNITION.md)区分已有接口和待实现设计。
+
 ## 环境和资产
 
 通用依赖由 pyproject.toml 管理，例如 `python -m pip install -e ".[vision,recording,mcp]"`。本机通用环境为 .conda，跳绳/厨房视觉环境为 .vision。权重、TensorRT引擎、解释器和个人配置未上传 GitHub；新机器需要补齐所用模块的模型及依赖，换 GPU 应重新导出引擎。
