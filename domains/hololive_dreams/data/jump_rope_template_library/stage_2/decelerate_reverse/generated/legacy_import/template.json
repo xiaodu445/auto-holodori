@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "stage": 2,
+  "role": "decelerate",
+  "direction": "reverse",
+  "verified": false,
+  "shape_ref": "domains/hololive_dreams/data/jump_rope_template_library/shapes/rotation/wide_camera_v1/candidates.json",
+  "source": "domains/hololive_dreams/data/jump_rope_phase/audio_forward_decelerate_trial.json",
+  "source_branch": "stages[1].branches.decelerate",
+  "data": {
+    "clock_rate": 0.73,
+    "verified": false,
+    "calibration": "legacy_prior_role_unverified",
+    "status": "pending_calibration",
+    "directions": {},
+    "role_verified": false,
+    "period_seconds": 1.36986301369863,
+    "direction_status": {
+      "rotation_forward": "pending_calibration",
+      "rotation_reverse": "pending_calibration"
+    },
+    "template_id": "stage_2/decelerate",
+    "timing_source": "legacy_prior_not_measured"
+  }
+}

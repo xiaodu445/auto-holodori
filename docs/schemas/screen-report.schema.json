@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local screen perception report",
+  "type": "object",
+  "required": ["frame", "windows", "buttons", "texts", "knowledge_matches", "capabilities", "warnings", "timings_ms", "observed_at"],
+  "$defs": {
+    "bounds": {
+      "type": "object",
+      "required": ["x", "y", "width", "height", "bbox"],
+      "properties": {
+        "x": {"type": "integer"}, "y": {"type": "integer"},
+        "width": {"type": "integer", "minimum": 0}, "height": {"type": "integer", "minimum": 0},
+        "bbox": {"type": "array", "items": {"type": "integer"}, "minItems": 4, "maxItems": 4}
+      }
+    }
+  },
+  "properties": {
+    "frame": {"type": "object", "required": ["bounds", "origin", "coordinate_space"], "properties": {"bounds": {"$ref": "#/$defs/bounds"}, "coordinate_space": {"const": "desktop_physical_pixels"}}},
+    "windows": {"type": "array", "items": {"type": "object", "required": ["handle", "bounds"], "properties": {"bounds": {"$ref": "#/$defs/bounds"}}}},
+    "buttons": {"type": "array", "items": {"type": "object", "required": ["id", "bounds", "source", "confidence", "semantic_confirmed", "text_ids"], "properties": {"bounds": {"$ref": "#/$defs/bounds"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "semantic_confirmed": {"type": "boolean"}}}},
+    "texts": {"type": "array", "items": {"type": "object", "required": ["id", "text", "bounds", "confidence", "source", "geometry_kind", "button_ids"], "properties": {"bounds": {"$ref": "#/$defs/bounds"}}}},
+    "knowledge_matches": {"type": "array", "items": {"type": "object", "required": ["id", "template_id", "bounds", "similarity", "library", "role"], "properties": {"bounds": {"$ref": "#/$defs/bounds"}, "similarity": {"type": "number", "minimum": 0, "maximum": 1}}}},
+    "capabilities": {"type": "object"}, "warnings": {"type": "array", "items": {"type": "string"}}, "timings_ms": {"type": "object"}, "observed_at": {"type": "string"}
+  }
+}

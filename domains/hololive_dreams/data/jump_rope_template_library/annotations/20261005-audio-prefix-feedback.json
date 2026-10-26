@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "frames": 7529,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/audio-decelerate-repair/index.html",
+  "annotations": [
+    {
+      "frame": 1405,
+      "time": 24.356682399986312,
+      "note": "这里没有可见绳子支持肯定是左右摇，并且还有声音，怎么会坚持正摇"
+    },
+    {
+      "frame": 2752,
+      "time": 47.56180749996565,
+      "note": "这里肯定是左右摇啊，是不是切换出问题了"
+    }
+  ]
+}

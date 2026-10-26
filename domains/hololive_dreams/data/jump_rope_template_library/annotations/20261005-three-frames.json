@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/human-calibration-clean-bank/index.html",
+  "frames": 4010,
+  "annotations": [
+    {
+      "frame": 1115,
+      "time": 24.045016400050372,
+      "truth": "反摇",
+      "stage": "",
+      "verdict": "速度错误",
+      "note": "这里的反摇模板是不是又出问题了，第一帧对上了但是后面严重偏离"
+    },
+    {
+      "frame": 1869,
+      "time": 40.879149900050834,
+      "truth": "反摇",
+      "stage": "",
+      "verdict": "速度错误",
+      "note": "这里加速反摇模板有问题，下落部分未能良好拟合"
+    },
+    {
+      "frame": 2484,
+      "time": 54.53385070012882,
+      "truth": "正摇",
+      "stage": "",
+      "verdict": "绳子位置错误",
+      "note": "这里明显需要切换正摇但是没有切换，是不是分支结束太早了"
+    }
+  ]
+}

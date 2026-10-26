@@ -1,0 +1,6 @@
+{
+  "name": "entry_interact",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：猜高低。来源：归档截图71d0a821-6f9d-4a0b-ba32-cb7fda90d0d8，尚待实机验证。"
+}

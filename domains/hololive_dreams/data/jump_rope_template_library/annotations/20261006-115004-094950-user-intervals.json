@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "recording": "runtime\\jump-rope\\recordings\\20261006-115004-094950",
+  "frame_range_convention": "[start_frame,end_frame_exclusive)",
+  "time_reference": "timestamps.json",
+  "annotations": [
+    {
+      "start": 11.603853699984029,
+      "end": 22.59073010017164,
+      "start_frame": 667,
+      "end_frame_exclusive": 1304,
+      "stage": 1,
+      "label": "normal",
+      "direction": "forward",
+      "kind": "stable",
+      "note": "8到9圈无遮挡",
+      "human_reviewed": true
+    },
+    {
+      "start": 22.95373720000498,
+      "end": 25.31056120013818,
+      "start_frame": 1325,
+      "end_frame_exclusive": 1462,
+      "stage": 2,
+      "label": "normal",
+      "direction": "forward",
+      "kind": "transition",
+      "note": "从1阶段切换到2阶段",
+      "human_reviewed": true
+    },
+    {
+      "start": 30.64324300014414,
+      "end": 35.91602040012367,
+      "start_frame": 1770,
+      "end_frame_exclusive": 2076,
+      "stage": 2,
+      "label": "normal",
+      "direction": "forward",
+      "kind": "stable",
+      "note": "无遮挡4圈",
+      "human_reviewed": true
+    },
+    {
+      "start": 35.95270300004631,
+      "end": 38.12042209994979,
+      "start_frame": 2078,
+      "end_frame_exclusive": 2202,
+      "stage": 2,
+      "label": "accelerate",
+      "direction": "forward",
+      "kind": "stable",
+      "note": "无遮挡2圈",
+      "human_reviewed": true
+    },
+    {
+      "start": 44.375005200039595,
+      "end": 48.33754470013082,
+      "start_frame": 2564,
+      "end_frame_exclusive": 2793,
+      "stage": 2,
+      "label": "normal",
+      "direction": "reverse",
+      "kind": "stable",
+      "note": "无遮挡；用户修正：反摇正常，原加速标签错误",
+      "human_reviewed": true
+    },
+    {
+      "start": 48.33754470013082,
+      "end": 50.767707500141114,
+      "start_frame": 2793,
+      "end_frame_exclusive": 2934,
+      "stage": 2,
+      "label": "normal",
+      "direction": "reverse",
+      "kind": "transition",
+      "note": "有遮挡29开始到30圈结束期间从2切换到3",
+      "human_reviewed": true
+    },
+    {
+      "start": 40.76909910002723,
+      "end": 44.375005200039595,
+      "start_frame": 2355,
+      "end_frame_exclusive": 2564,
+      "stage": 2,
+      "label": "low_swing",
+      "direction": "both",
+      "kind": "stable",
+      "note": "无遮挡3圈",
+      "human_reviewed": true
+    },
+    {
+      "start": 52.9558308001142,
+      "end": 57.96687400015071,
+      "start_frame": 3061,
+      "end_frame_exclusive": 3351,
+      "stage": 3,
+      "label": "low_swing",
+      "direction": "both",
+      "kind": "stable",
+      "note": "无遮挡",
+      "human_reviewed": true
+    },
+    {
+      "start": 57.96687400015071,
+      "end": 61.26433650008403,
+      "start_frame": 3351,
+      "end_frame_exclusive": 3542,
+      "stage": 3,
+      "label": "normal",
+      "direction": "forward",
+      "kind": "stable",
+      "note": "无遮挡",
+      "human_reviewed": true
+    },
+    {
+      "start": 61.26433650008403,
+      "end": 64.94277129997499,
+      "start_frame": 3542,
+      "end_frame_exclusive": 3755,
+      "stage": 3,
+      "label": "accelerate",
+      "direction": "forward",
+      "kind": "occlusion",
+      "note": "有遮挡4圈",
+      "human_reviewed": true
+    },
+    {
+      "start": 67.13485030014999,
+      "end": 70.13419550005347,
+      "start_frame": 3881,
+      "end_frame_exclusive": 4055,
+      "stage": 3,
+      "label": "low_swing",
+      "direction": "both",
+      "kind": "occlusion",
+      "note": "有遮挡3圈",
+      "human_reviewed": true
+    },
+    {
+      "start": 73.42603210010566,
+      "end": 75.11131520010531,
+      "start_frame": 4246,
+      "end_frame_exclusive": 4344,
+      "stage": 3,
+      "label": "accelerate",
+      "direction": "reverse",
+      "kind": "occlusion",
+      "note": "有遮挡从三阶段切换4阶段，49开始到50结束",
+      "human_reviewed": true
+    },
+    {
+      "start": 81.96509300009347,
+      "end": 82.91481039999053,
+      "start_frame": 4740,
+      "end_frame_exclusive": 4795,
+      "stage": 4,
+      "label": "normal",
+      "direction": "reverse",
+      "kind": "stable",
+      "note": "无遮挡一圈",
+      "human_reviewed": true
+    },
+    {
+      "start": 82.91481039999053,
+      "end": 84.46733739995398,
+      "start_frame": 4795,
+      "end_frame_exclusive": 4885,
+      "stage": 4,
+      "label": "accelerate",
+      "direction": "reverse",
+      "kind": "stable",
+      "note": "无遮挡一圈",
+      "human_reviewed": true
+    },
+    {
+      "start": 91.72600709996186,
+      "end": 94.10880120005459,
+      "start_frame": 5305,
+      "end_frame_exclusive": 5443,
+      "stage": 4,
+      "label": "low_swing",
+      "direction": "both",
+      "kind": "transition",
+      "note": "无遮挡阶段4切换阶段5",
+      "human_reviewed": true
+    }
+  ],
+  "frame_points": [
+    {
+      "frame": 1338,
+      "time": 23.176469800062478,
+      "coordinate_space": "normalized_game_client",
+      "points": []
+    }
+  ]
+}

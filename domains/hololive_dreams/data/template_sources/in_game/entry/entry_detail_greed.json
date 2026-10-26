@@ -1,0 +1,6 @@
+{
+  "name": "entry_detail_greed",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：强欲之牌 猜高低。来源：归档截图320db1de-9bc8-479a-a218-d2ce4b7c9115，尚待实机验证。"
+}

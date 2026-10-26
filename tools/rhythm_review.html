@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>音游 · 逐帧分析</title>
+<style>
+:root{color-scheme:dark;--bg:#10141c;--panel:#19202b;--line:#303b4c;--text:#e7edf5;--dim:#a3b0c3;--cyan:#60d6ef;--orange:#ffbf69;--green:#73e4a2}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,"Microsoft YaHei",sans-serif}header{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0}small,.muted{color:var(--dim)}button,select,input,textarea{font:inherit;color:inherit;background:#242e3d;border:1px solid var(--line);border-radius:6px;padding:6px 10px}button{cursor:pointer}button:hover{border-color:var(--cyan)}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan)}button.primary{background:#234a57}main{padding:18px 24px;display:grid;grid-template-columns:minmax(0,1fr) 345px;gap:18px}section,aside{min-width:0}.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0}canvas#screen{width:100%;display:block;background:#080b10;border:1px solid var(--line);cursor:crosshair}#seek{width:100%;padding:0;accent-color:var(--cyan)}#timeline{width:100%;height:140px;background:var(--panel);display:block;cursor:pointer}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:12px}h2{font-size:15px;margin:0 0 10px}dl{display:grid;grid-template-columns:90px 1fr;gap:5px;margin:0}dt{color:var(--dim)}dd{margin:0;overflow-wrap:anywhere}#tracks{max-height:290px;overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;padding:6px 4px;border-bottom:1px solid var(--line)}th{color:var(--dim);font-weight:500}tr.selected{background:#304351}tbody tr{cursor:pointer}#detail,#events{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.6 ui-monospace,monospace;max-height:220px;overflow:auto}textarea{width:100%;min-height:65px;resize:vertical}.keys{display:flex;gap:5px}.key{padding:3px 9px;border:1px solid var(--line);border-radius:4px}.key.on{background:#2c7656;border-color:var(--green)}#status{color:var(--cyan)}#source{overflow-wrap:anywhere;max-width:95vw}.tag{color:var(--orange)}label{white-space:nowrap}.number{font-variant-numeric:tabular-nums}#notice{padding:10px 24px;color:var(--dim);border-bottom:1px solid var(--line)}@media(max-width:1050px){main{grid-template-columns:1fr}aside{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.panel{margin:0}}@media(max-width:600px){main,header{padding:12px}.bar{gap:6px}}
+</style></head><body>
+<header><h1>音游 / 逐帧分析</h1><span id="status">加载分析…</span><button id="export">导出反馈 JSON</button></header>
+<div id="notice">离线模拟：未发送按键。疑点不是已确认错误；AUTO录像也不是完整谱面真值。点击画面可以标记漏检位置。</div>
+<div id="noticeZones" class="muted" style="padding:6px 24px">绿线：远端识别起点 · 橙线：中段拟合起点 · 红线：停止观测、仅预测 · 灰线：真实判定位置（未移动）。红线以下默认不更新音符轨迹；长按路径维持另算。粉色按一次为试验规则。</div>
+<main><section>
+<canvas id="screen" width="960" height="540" aria-label="录像原帧及识别覆盖层"></canvas>
+<div class="bar"><button id="prev">← 上帧</button><button id="play" class="primary">播放</button><button id="next">下帧 →</button><select id="rate" aria-label="播放速度"><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option></select><span id="position" class="number"></span><label>帧 <input id="frame" type="number" min="0" style="width:90px"></label></div>
+<input id="seek" aria-label="逐帧时间轴" type="range" min="0" step="1" value="0">
+<div class="bar"><label><input id="boxes" type="checkbox" checked> 识别框</label><label><input id="tracksOn" type="checkbox" checked> 轨迹/预测</label><label><input id="tails" type="checkbox" checked> 拖尾</label><label><input id="geometry" type="checkbox" checked> 固定轨道</label><button id="issuePrev">上一疑点</button><button id="issueNext">下一疑点</button></div>
+<h2>输入谱面 <small>每行一键；亮线为保持，竖标为按下；横向滚动，点击跳帧</small></h2>
+<div class="bar"><label>数据 <select id="inputSource"><option value="sim">离线模拟</option><option value="recorded">录制时的OS按键（AUTO通常为空）</option></select></label>
+<label>拉长 <select id="scoreZoom"><option>1</option><option>2</option><option selected>4</option><option>8</option><option>16</option></select>×</label>
+<label><input type="checkbox" id="scoreLines" checked>拍线</label><label><input type="checkbox" id="scoreFollow">跟随播放</label>
+<label>小节解释 <select id="scoreCandidate"><option value="auto">自动候选</option></select></label>
+<label>BPM <input id="scoreBpm" type="number" min="20" max="600" step=".1" placeholder="候选" style="width:80px"></label>
+<label>小节起点秒 <input id="scorePhase" type="number" step=".001" placeholder="候选" style="width:105px"></label></div>
+<small id="scoreInfo" class="tag">小节线为候选；橙色小节、灰白拍点、青色八分、暗线十六分。</small>
+<div id="scoreScroll" style="overflow-x:auto;border:1px solid var(--line);margin-top:8px"><canvas id="timeline" width="1200" height="240" style="width:1200px;height:240px" aria-label="可横向放大的六键输入谱面及候选节拍线"></canvas></div>
+<div id="trackPlotBox" class="panel" style="margin-top:12px"><h2>选中轨迹：位置与预测</h2><canvas id="trackPlot" width="1000" height="170" style="width:100%;height:170px" aria-label="音符纵坐标随时间变化"></canvas><small>点击右侧轨迹选择。实线为测量位置，虚线为该次预测到判定线；并非游戏判定结果。</small></div>
+<div class="panel" style="margin-top:12px"><h2>当前帧反馈</h2><div class="bar"><select id="tag"><option>漏检</option><option>误检</option><option>轨道错误</option><option>跟踪断裂</option><option>长按错误</option><option>时机偏早</option><option>时机偏晚</option><option>特效遮挡</option><option>其他</option></select><button id="save">保存本帧反馈</button><button id="clearPoints">清除此帧点位</button></div><textarea id="note" aria-label="当前帧备注" placeholder="描述原画面和程序结果有什么不一致…"></textarea><small id="saved">反馈保存在本浏览器；请导出JSON交回分析。</small></div>
+<p id="source" class="muted"></p>
+</section><aside>
+<div class="panel"><h2>当前状态 · 模拟</h2><div class="keys" id="keys"></div><p id="flags" class="tag"></p><dl id="metrics"></dl></div>
+<div class="panel"><h2>轨迹列表 <small>点击查看</small></h2><div id="tracks"><table><thead><tr><th>ID / 键</th><th>类型</th><th>ETA</th><th>状态</th></tr></thead><tbody id="trackRows"></tbody></table></div></div>
+<div class="panel"><h2>选中轨迹详情</h2><div id="detail">尚未选择</div></div>
+<div class="panel"><h2>本帧决策事件</h2><div id="events"></div><small>输入时间轴包含帧间定时模拟；下面事件是否完整取决于记录格式。</small></div>
+<div class="panel"><h2>疑点统计</h2><div id="issueSummary"></div><small>用于导航，不等于漏按率或准确率。</small></div>
+</aside></main>
+<script>
+'use strict';const DATA=/*REVIEW_DATA*/;
+const $=id=>document.getElementById(id), frames=DATA.frames, keys=DATA.config.keys;
+const geom=DATA.config.geometry||{top_y:13/711,top_left:592/1264,top_right:672/1264,hit_left:122/1264,hit_right:1142/1264};
+let current=0,selected=null,playing=false,wall=0,clip=0,loadToken=0,displayImage=null;
+const storeKey='rhythm-review:'+DATA.sha256+':'+JSON.stringify(DATA.config);let feedback={};
+try{feedback=JSON.parse(localStorage.getItem(storeKey)||'{}')}catch(e){}
+const issueFrames=frames.map((f,i)=>f.flags.length?i:-1).filter(i=>i>=0);
+const begin=frames[0].time,end=frames[frames.length-1].time;
+if(DATA.mode==='live'){
+ $('notice').textContent=DATA.limits;
+ $('inputSource').options[0].disabled=true;
+ $('inputSource').options[1].textContent='当次成功的按键API调用（非游戏判定）';
+ $('inputSource').value='recorded';
+}
+function persist(){try{localStorage.setItem(storeKey,JSON.stringify(feedback));$('saved').textContent='已保存本浏览器，导出JSON后可用于修正。'}catch(e){$('saved').textContent='浏览器保存失败，请立即导出JSON。'}}
+function frameIndex(t){let lo=0,hi=frames.length-1;while(lo<hi){const mid=Math.ceil((lo+hi)/2);if(frames[mid].time<=t)lo=mid;else hi=mid-1}return lo}
+function setFrame(i){current=Math.max(0,Math.min(frames.length-1,Math.round(i)));const f=frames[current];$('seek').value=current;$('frame').value=current;$('position').textContent=`${f.time.toFixed(3)} s · ${current+1}/${frames.length} · 源帧 ${f.source_frame}`;
+ const token=++loadToken,img=new Image();img.onload=()=>{if(token!==loadToken)return;displayImage=img;draw()};img.onerror=()=>{$('status').textContent='帧图像加载失败：'+f.image};img.src=f.image;
+ $('note').value=(feedback[f.source_frame]||{}).note||'';
+ $('keys').replaceChildren(...keys.map(k=>{const el=document.createElement('span');el.className='key'+(f.keys.includes(k)?' on':'');el.textContent=k.toUpperCase();return el}));
+ $('flags').textContent=f.flags.join(' / ')||'无启发式疑点';
+ const g=f.grid||{},states={collecting:'收集',candidate:'候选验证',locked:'已锁定',fixed:'指定BPM',relearning:'重新学习'};
+ const bpmInterpretations=g.period_ms?`八分 ${(30000/g.period_ms).toFixed(1)} / 十六分 ${(15000/g.period_ms).toFixed(1)}（均未确认；密集音符可使网格减半，并非歌曲变速）`:'未收集到间隔';
+ $('noticeZones').textContent='绿线：远端起点 · 橙线：拟合起点 · 红线：停止更新轨迹、仅预测 · 灰线：真实判定位置不动。BPM解释：'+bpmInterpretations;
+ if(DATA.config.input_mode==='all-held')$('noticeZones').textContent+=' · 输入策略：六键常按 / '+(DATA.config.release_scope==='all'?'整组全松（约提前30ms）':'仅松目标键');
+ const snapLimit=g.snap_limit_ms??DATA.config.grid_snap_ms??3;
+ const snapLabel=snapLimit===0?'已关闭':`仅已识别音符，最多±${Number(snapLimit.toFixed(3))}ms`;
+ $('metrics').replaceChildren();for(const [label,value] of [['识别数',f.notes.length],['轨迹数',f.tracks.length],['长按数',f.holds.length],['BPM',f.bpm?f.bpm.toFixed(1)+'（指定）':'未确认'],['网格状态',states[g.state]||'旧记录无数据'],['基础间隔',g.period_ms?g.period_ms.toFixed(3)+' ms':'—'],['相位',g.phase==null?'—':g.phase.toFixed(4)+' s'],['置信度',g.confidence==null?'—':(100*g.confidence).toFixed(0)+'%（启发式）'],['拟合误差',g.error_ms==null?'—':g.error_ms.toFixed(2)+' ms'],['候选BPM',g.candidate_bpm_16th?g.candidate_bpm_16th.toFixed(1)+'（按16分解释，非确认）':'—'],['替代间隔',(g.candidates||[]).map(c=>c.period_ms.toFixed(2)+'ms').join(' / ')||'—'],['修正限制',snapLabel],['离线分析',f.analysis_ms.toFixed(2)+' ms']]){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;$('metrics').append(dt,dd)}
+ $('trackRows').replaceChildren(...f.tracks.map(t=>{const tr=document.createElement('tr');tr.className=t.id===selected?'selected':'';for(const text of [`#${t.id} ${keys[t.lane].toUpperCase()}`,t.color+'/'+t.kind,t.eta_ms===null?'—':t.eta_ms.toFixed(0)+'ms',t.ignored_reason||t.kind==='slide_end'?'滑块尾（忽略）':t.fired?'已消耗':t.age_ms>30?'预测续跟':'测量']){const td=document.createElement('td');td.textContent=text;tr.append(td)}tr.onclick=()=>{selected=t.id;setFrame(current)};return tr}));
+ const mc=f.music_clock;if(mc){for(const [label,value] of [
+ ['小节时钟（旁路）',({collecting:'收集中',suspended:'变速中，暂停学习',tracking:'跟踪节拍',holdover:'变速后沿用旧时钟'})[mc.state]||mc.state],
+ ['音乐脉冲',mc.step_ms==null?'—':mc.step_ms.toFixed(3)+' ms（非确认BPM）'],
+ ['原节奏间隔',mc.pulse_ms==null?'—':mc.pulse_ms.toFixed(2)+' ms'],
+ ['小节定位',mc.bar_ambiguous?'未确认，保留多个起点':'启发式候选，尚未验证强拍'],
+ ['下一小节候选',(mc.candidates||[]).map(c=>c.next_bar.toFixed(3)+'s / '+c.bpm_candidate.toFixed(1)+' BPM候选').join('；')||'—'],
+ ['持续计拍',mc.holdover_age==null?'—':mc.holdover_age.toFixed(1)+'s 距上次可靠证据；不补键']]){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;$('metrics').append(dt,dd)}}
+ if(f.mechanism){const p=f.mechanism;for(const [label,value] of [
+ ['机关策略',p.mode+' / '+(p.state==='continuing'?'连续减速，延续节奏':'等待连续减速证据')],
+ ['机关间隔',p.interval_ms==null?'—':p.interval_ms.toFixed(3)+' ms（最近两条估算；'+p.stride+' 个网格步长'+(p.grid_step_ms==null?'': ' × '+p.grid_step_ms.toFixed(3)+' ms')+'）'],
+ ['机关队列',(p.slots||[]).map(s=>'#'+s.id+' @ '+s.arrival.toFixed(3)+'s').join('；')||'—']]){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;$('metrics').append(dt,dd)}}
+ $('events').textContent=f.events.length?JSON.stringify(f.events,null,2):'无事件';detail();timeline();}
+function draw(){if(!displayImage)return;const canvas=$('screen');canvas.width=displayImage.width;canvas.height=displayImage.height;const ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height,f=frames[current];ctx.drawImage(displayImage,0,0);ctx.font='13px system-ui';ctx.lineWidth=2;
+ if($('geometry').checked){ctx.strokeStyle='#9aaabd';ctx.lineWidth=1;for(let i=0;i<=6;i++){ctx.beginPath();ctx.moveTo((geom.top_left+(geom.top_right-geom.top_left)*i/6)*w,geom.top_y*h);ctx.lineTo((geom.hit_left+(geom.hit_right-geom.hit_left)*i/6)*w,DATA.config.hit_line_y*h);ctx.stroke()}ctx.strokeStyle='#9aaabd';ctx.beginPath();ctx.moveTo(geom.hit_left*w,DATA.config.hit_line_y*h);ctx.lineTo(geom.hit_right*w,DATA.config.hit_line_y*h);ctx.stroke();ctx.fillStyle='#c3cad4';ctx.fillText('真实判定位置',geom.hit_left*w,DATA.config.hit_line_y*h-5)}
+ if($('geometry').checked){const zone=DATA.config.prediction_zone||[.26,.62];for(const [v,label,color] of [[DATA.config.detection_start_y||.06,'远端','#73e4a2'],[zone[0],'中段拟合','#ffbf69'],[zone[1],'保护预测','#ff687e']]){ctx.strokeStyle=color;ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(0,v*h);ctx.lineTo(w,v*h);ctx.stroke();ctx.fillText(label,6,v*h+14)}}
+ for(const n of f.notes){const [x,y]=n.center;if($('boxes').checked){ctx.strokeStyle=n.color==='blue'?'#60d6ef':n.color==='green'?'#73e4a2':n.color==='pink'?'#ef8fe8':'#ffd36d';ctx.lineWidth=2;ctx.strokeRect((x-n.width/2)*w,(y-n.height/2)*h,n.width*w,n.height*h);ctx.fillStyle=ctx.strokeStyle;ctx.fillText(keys[n.lane].toUpperCase()+' '+n.kind,x*w,Math.max(14,(y-n.height/2)*h-4))}if($('tails').checked&&n.tail.length){ctx.strokeStyle='#ec96ef';ctx.beginPath();n.tail.forEach((p,i)=>i?ctx.lineTo(p[0]*w,p[1]*h):ctx.moveTo(p[0]*w,p[1]*h));ctx.stroke()}}
+ if($('tracksOn').checked)for(const t of f.tracks){ctx.fillStyle=t.id===selected?'#fff':t.fired?'#73e4a2':'#ffbf69';ctx.fillText('#'+t.id+' '+(t.eta_ms===null?'收集轨迹':(t.locked?'锁定 ':'初步 ')+t.eta_ms.toFixed(0)+'ms'),Math.max(0,t.x*w-35),t.y*h+16);if(t.age_ms>30&&t.velocity){const projected=t.projected_y??motionY(t,t.age_ms/1000);ctx.setLineDash([4,3]);ctx.strokeStyle='#ffbf69';ctx.beginPath();ctx.moveTo(t.x*w,t.y*h);ctx.lineTo(t.x*w,Math.min(1.1,projected)*h);ctx.stroke();ctx.setLineDash([])}}
+ for(const p of (feedback[f.source_frame]||{}).points||[]){ctx.strokeStyle='#ff87b6';ctx.beginPath();ctx.arc(p.x*w,p.y*h,7,0,Math.PI*2);ctx.stroke()}}
+function detail(){const t=frames[current].tracks.find(t=>t.id===selected);$('detail').textContent=t?JSON.stringify(t,null,2):selected===null?'尚未选择':'该轨迹在本帧不存在';plotTrack()}
+function timeline(){const c=$('timeline'),box=$('scoreScroll'),ctx=c.getContext('2d');
+ const w=Math.min(24000,Math.max(900,box.clientWidth)*Number($('scoreZoom').value)),h=240;
+ if(c.width!==w)c.width=w;c.style.width=w+'px';c.height=h;ctx.clearRect(0,0,w,h);ctx.font='12px system-ui';
+ const span=Math.max(.001,end-begin),map=t=>50+(t-begin)/span*(w-60),f=frames[current],mc=f.music_clock,g=f.grid||{};
+ const cs=mc?.candidates||[],picker=$('scoreCandidate'),old=picker.value;
+ const options=['auto',...cs.map(x=>x.bar_ticks+':'+x.offset_ticks)];
+ if([...picker.options].map(o=>o.value).join('|')!==options.join('|')){picker.replaceChildren(...options.map((value,i)=>{const o=document.createElement('option');o.value=value;o.textContent=i?`${cs[i-1].bpm_candidate.toFixed(1)} BPM / 起点${cs[i-1].offset_ticks}格`:'自动候选';return o}));picker.value=options.includes(old)?old:'auto'}
+ const choice=cs.find(x=>x.bar_ticks+':'+x.offset_ticks===picker.value)||cs[0];
+ let quarter=choice&&mc.step_ms?choice.bar_ticks*mc.step_ms/4000:g.period_ms?g.period_ms*4/1000:null;
+ let origin=choice&&mc.epoch!=null?mc.epoch+choice.offset_ticks*mc.step_ms/1000:g.phase;
+ const manualBpm=Number($('scoreBpm').value);if($('scoreBpm').value&&manualBpm>=20&&manualBpm<=600)quarter=60/manualBpm;
+ if($('scorePhase').value&&Number.isFinite(Number($('scorePhase').value)))origin=Number($('scorePhase').value);
+ if($('scoreLines').checked&&quarter&&origin!=null){const unit=quarter/4,space=unit/span*(w-60),stride=space>=4?1:space>=2?2:4;
+  const lo=Math.ceil((begin-origin)/unit),hi=Math.floor((end-origin)/unit);
+  for(let i=Math.ceil(lo/stride)*stride;i<=hi;i+=stride){const mod=((i%16)+16)%16,x=map(origin+i*unit),bar=mod===0,beat=mod%4===0,eighth=mod%2===0;
+   ctx.strokeStyle=bar?'#ffbf69':beat?'#a3b0c3':eighth?'#357c91':'#263847';ctx.lineWidth=bar?2:1;ctx.beginPath();ctx.moveTo(x,25);ctx.lineTo(x,h-20);ctx.stroke();
+   if(bar){ctx.fillStyle='#ffbf69';ctx.fillText('候选小节 '+(Math.floor(i/16)+1),x+4,14)} }
+  $('scoreInfo').textContent=`拍线 ${ (60/quarter).toFixed(2)} BPM；四拍小节假设，起点${origin.toFixed(3)}s。橙=小节，灰白=拍，青=八分，暗=十六分；${mc?.bar_ambiguous===false?'启发式候选，未验证强拍':'小节起点未确认'}。${space<4?'当前缩放隐藏部分细分线，请继续拉长。':''}`;
+ }else $('scoreInfo').textContent='暂无可用节拍，或拍线已关闭；可手填BPM和小节起点。旧录像仅使用原网格的候选解释。';
+ const edges=($('inputSource').value==='sim'?DATA.input_edges:DATA.recorded_input_edges)||[];
+ for(let k=0;k<6;k++){const y=44+k*30;ctx.fillStyle='#a3b0c3';ctx.fillText(keys[k].toUpperCase(),10,y+4);ctx.strokeStyle='#303b4c';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(50,y);ctx.lineTo(w,y);ctx.stroke();let down=null;
+  const hold=(a,b)=>{if(b<begin||a>end)return;ctx.strokeStyle='#73e4a2';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(map(Math.max(begin,a)),y);ctx.lineTo(map(Math.min(end,b)),y);ctx.stroke()};
+  for(const e of edges.filter(e=>e.key===keys[k])){if(e.down){down=e.time;if(e.time>=begin&&e.time<=end){ctx.strokeStyle='#60d6ef';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(map(e.time),y-8);ctx.lineTo(map(e.time),y+8);ctx.stroke()}}else if(down!==null){hold(down,e.time);down=null}}if(down!==null)hold(down,end)}
+ if(f.mechanism?.state==='continuing'){for(const slot of f.mechanism.slots||[]){const t=f.tracks.find(t=>t.id===slot.id);if(!t)continue;const time=slot.arrival-(DATA.config?.input_offset_ms||0)/1000;if(time<begin||time>end)continue;const x=map(time),y=44+t.lane*30;ctx.strokeStyle='#cf8dff';ctx.lineWidth=2;ctx.strokeRect(x-4,y-10,8,20)}$('scoreInfo').textContent+=' 紫框=机关计划按下点（非游戏判定）。'}
+ const playX=map(f.time);ctx.strokeStyle='#ff687e';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(playX,22);ctx.lineTo(playX,h-17);ctx.stroke();
+ ctx.fillStyle='#a3b0c3';for(let i=Math.ceil(begin);i<=end;i++){const x=map(i);ctx.fillText(i.toFixed(0)+'s',x+2,h-3)}
+ if($('scoreFollow').checked&&(playX<box.scrollLeft+50||playX>box.scrollLeft+box.clientWidth-40))box.scrollLeft=Math.max(0,playX-box.clientWidth*.25);
+}
+function motionY(t,dt){const c=DATA.config.motion_curve||{},p=c.power??1,o=c.offset??0,z=Math.max(1e-6,t.y+o);const phase=Math.abs(p)<1e-8?Math.log(z):(z**p-1)/p;const rate=t.phase_rate??((t.velocity||0)*z**(p-1));const q=phase+rate*dt;return (Math.abs(p)<1e-8?Math.exp(Math.min(20,q)):Math.max(1e-6,1+p*q)**(1/p))-o}
+function plotTrack(){const c=$('trackPlot'),ctx=c.getContext('2d'),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);ctx.font='12px system-ui';ctx.fillStyle='#a3b0c3';ctx.fillText('纵坐标 y',4,14);ctx.fillText('时间 s →',w-90,h-4);if(selected===null)return;const points=frames.flatMap(f=>{const t=f.tracks.find(t=>t.id===selected);return t?[{time:f.time,...t}]:[]});if(!points.length)return;const a=points[0].time,b=Math.max(a+.01,points[points.length-1].time,...points.map(p=>p.arrival||0));const x=t=>45+(t-a)/(b-a)*(w-65),y=v=>h-20-v*(h-40);ctx.strokeStyle='#303b4c';ctx.strokeRect(45,20,w-65,h-40);ctx.strokeStyle='#ff687e';ctx.beginPath();ctx.moveTo(45,y(DATA.config.hit_line_y));ctx.lineTo(w-20,y(DATA.config.hit_line_y));ctx.stroke();ctx.strokeStyle='#60d6ef';ctx.beginPath();points.filter(p=>p.age_ms<1).forEach((p,i)=>i?ctx.lineTo(x(p.time),y(p.y)):ctx.moveTo(x(p.time),y(p.y)));ctx.stroke();const t=frames[current].tracks.find(t=>t.id===selected);if(t&&t.arrival){ctx.strokeStyle='#ffbf69';ctx.setLineDash([5,4]);ctx.beginPath();const start=frames[current].time-t.age_ms/1000;for(let i=0;i<=40;i++){const dt=Math.max(0,t.arrival-start)*i/40;const py=y(motionY(t,dt));i?ctx.lineTo(x(start+dt),py):ctx.moveTo(x(start),py)}ctx.stroke();ctx.setLineDash([])}ctx.fillStyle='#a3b0c3';ctx.fillText(a.toFixed(3),45,h-4);ctx.fillText(b.toFixed(3),w-65,h-4)}
+function pause(){playing=false;$('play').textContent='播放'}function play(){if(playing){pause();return}if(current===frames.length-1)setFrame(0);playing=true;wall=performance.now();clip=frames[current].time;$('play').textContent='暂停';requestAnimationFrame(tick)}function tick(now){if(!playing)return;const t=clip+(now-wall)/1000*Number($('rate').value),i=frameIndex(t);if(i!==current)setFrame(i);if(t>=end){pause();return}requestAnimationFrame(tick)}
+function jumpIssue(direction){pause();const i=direction>0?issueFrames.find(i=>i>current):[...issueFrames].reverse().find(i=>i<current);if(i!==undefined)setFrame(i)}
+$('prev').onclick=()=>{pause();setFrame(current-1)};$('next').onclick=()=>{pause();setFrame(current+1)};$('play').onclick=play;$('seek').oninput=e=>{pause();setFrame(Number(e.target.value))};$('frame').onchange=e=>{pause();setFrame(Number(e.target.value)||0)};$('issueNext').onclick=()=>jumpIssue(1);$('issuePrev').onclick=()=>jumpIssue(-1);$('rate').onchange=()=>{if(playing){wall=performance.now();clip=frames[current].time}};
+for(const id of ['boxes','tracksOn','tails','geometry'])$(id).onchange=draw;
+$('inputSource').onchange=timeline;
+$('timeline').onclick=e=>{pause();const r=e.currentTarget.getBoundingClientRect(),c=e.currentTarget,fraction=((e.clientX-r.left)/r.width*c.width-50)/(c.width-60);setFrame(frameIndex(begin+Math.max(0,Math.min(1,fraction))*(end-begin)))};
+for(const id of ['scoreZoom','scoreLines','scoreCandidate','scoreBpm','scorePhase','scoreFollow'])$(id).onchange=timeline;
+function save(){const f=frames[current],entry=feedback[f.source_frame]||{};feedback[f.source_frame]={...entry,frame:current,source_frame:f.source_frame,time:f.time,tag:$('tag').value,note:$('note').value,points:entry.points||[]};persist()}
+$('save').onclick=save;$('screen').onclick=e=>{pause();save();const r=e.currentTarget.getBoundingClientRect();feedback[frames[current].source_frame].points.push({x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height});persist();draw()};$('clearPoints').onclick=()=>{save();feedback[frames[current].source_frame].points=[];persist();draw()};
+$('export').onclick=()=>{const payload={schema:1,source:DATA.source,sha256:DATA.sha256,config:DATA.config,feedback:Object.values(feedback)};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='rhythm-feedback.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName))return;if(e.code==='Space'){e.preventDefault();play()}else if(e.key==='ArrowLeft'){e.preventDefault();pause();setFrame(current-1)}else if(e.key==='ArrowRight'){e.preventDefault();pause();setFrame(current+1)}});
+$('seek').max=frames.length-1;$('frame').max=frames.length-1;$('status').textContent=`${frames.length} 帧 · ${Math.max(0,end-begin).toFixed(2)} 秒 · 离线模拟`;$('source').textContent=DATA.source+' | '+DATA.clock;$('issueSummary').replaceChildren(...Object.entries(DATA.issues).map(([key,count])=>{const p=document.createElement('p');p.textContent=key+'：'+count;return p}));setFrame(0);
+</script></body></html>

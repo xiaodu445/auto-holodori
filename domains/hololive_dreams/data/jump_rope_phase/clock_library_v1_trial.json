@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "verified": false,
+  "boundary": 0.4140625,
+  "fits": [
+    {
+      "rate": 0.7850000000000004,
+      "origin": 0.9470833333333334,
+      "a": 0.0,
+      "b": -0.36250000000000004,
+      "train_score": 0.6453682082596365,
+      "heldout_score": 0.6404021490892288,
+      "samples": 27,
+      "cycles": 1.3422959135158459,
+      "runner_rate": 0.55,
+      "runner_margin": 0.04868019749614705,
+      "name": "reverse_s2_early",
+      "window": [
+        36.4,
+        38.2
+      ],
+      "direction": -1,
+      "stage": 2,
+      "verified": false
+    },
+    {
+      "rate": 0.7775000000000002,
+      "origin": 0.4925833333333333,
+      "a": 0.17500000000000004,
+      "b": -0.6249999999999999,
+      "train_score": 0.7721020507887761,
+      "heldout_score": 0.708745886391895,
+      "samples": 26,
+      "cycles": 1.2640018094523116,
+      "runner_rate": 0.9250000000000004,
+      "runner_margin": 0.0012809144774735826,
+      "name": "reverse_s2_late",
+      "window": [
+        38.2,
+        39.9
+      ],
+      "direction": -1,
+      "stage": 2,
+      "verified": false
+    },
+    {
+      "rate": 0.9500000000000004,
+      "origin": 0.20933333333333334,
+      "a": 0.07500000000000001,
+      "b": -0.4875,
+      "train_score": 0.743891184445502,
+      "heldout_score": 0.6802010202609068,
+      "samples": 23,
+      "cycles": 1.440277329983656,
+      "runner_rate": 0.8400000000000002,
+      "runner_margin": 0.037180656649962396,
+      "name": "reverse_s3_entry",
+      "window": [
+        40.2,
+        41.8
+      ],
+      "direction": -1,
+      "stage": 3,
+      "verified": false
+    },
+    {
+      "rate": 0.9675000000000004,
+      "origin": 0.63,
+      "a": 0.025,
+      "b": -0.6,
+      "train_score": 0.7127093289912403,
+      "heldout_score": 0.569323824151807,
+      "samples": 25,
+      "cycles": 1.4802185946854303,
+      "runner_rate": 0.6500000000000001,
+      "runner_margin": 0.03653143101356848,
+      "name": "reverse_s3_middle",
+      "window": [
+        41.8,
+        43.4
+      ],
+      "direction": -1,
+      "stage": 3,
+      "verified": false
+    },
+    {
+      "rate": 1.0925000000000007,
+      "origin": 0.1915,
+      "a": -0.08750000000000001,
+      "b": -0.4,
+      "train_score": 0.7615658777063651,
+      "heldout_score": 0.6843444106059591,
+      "samples": 24,
+      "cycles": 1.6580050938477517,
+      "runner_rate": 1.0125000000000004,
+      "runner_margin": 0.038857521538487316,
+      "name": "reverse_s3_clear",
+      "window": [
+        43.4,
+        45.0
+      ],
+      "direction": -1,
+      "stage": 3,
+      "verified": false
+    },
+    {
+      "rate": 1.0250000000000004,
+      "origin": 0.10716666666666667,
+      "a": 0.11250000000000002,
+      "b": -0.41250000000000003,
+      "train_score": 0.5648448128810225,
+      "heldout_score": 0.48762065067243565,
+      "samples": 46,
+      "cycles": 3.0352649526670588,
+      "runner_rate": 1.8500000000000012,
+      "runner_margin": 0.0449496166183625,
+      "name": "reverse_s4_control",
+      "window": [
+        65.0,
+        68.0
+      ],
+      "direction": -1,
+      "stage": 4,
+      "verified": false
+    },
+    {
+      "rate": 1.3000000000000007,
+      "origin": 0.5034166666666666,
+      "a": -0.2375,
+      "b": -0.3875,
+      "train_score": 0.5530836007054571,
+      "heldout_score": 0.5606653674468688,
+      "samples": 29,
+      "cycles": 2.510063010291198,
+      "runner_rate": 1.4300000000000006,
+      "runner_margin": 0.09918195525704804,
+      "name": "reverse_s4_fast_start",
+      "window": [
+        71.0,
+        73.0
+      ],
+      "direction": -1,
+      "stage": 4,
+      "verified": false
+    },
+    {
+      "rate": 1.0150000000000003,
+      "origin": 0.125,
+      "a": -0.21250000000000002,
+      "b": -0.35000000000000003,
+      "train_score": 0.5612441718252885,
+      "heldout_score": 0.5503400850003015,
+      "samples": 25,
+      "cycles": 1.5931645029666839,
+      "runner_rate": 1.1100000000000005,
+      "runner_margin": 0.057906073800014335,
+      "name": "reverse_s4_fast_end",
+      "window": [
+        73.0,
+        74.6
+      ],
+      "direction": -1,
+      "stage": 4,
+      "verified": false
+    },
+    {
+      "rate": 1.395000000000001,
+      "origin": 0.37,
+      "a": 0.2,
+      "b": 0.12500000000000003,
+      "train_score": 0.6250655722263411,
+      "heldout_score": 0.5904313020661897,
+      "samples": 31,
+      "cycles": 2.6861387623718493,
+      "runner_rate": 1.2875000000000008,
+      "runner_margin": 0.05032807361984515,
+      "name": "forward_s5_start",
+      "window": [
+        80.0,
+        82.0
+      ],
+      "direction": 1,
+      "stage": 5,
+      "verified": false
+    },
+    {
+      "rate": 1.4500000000000008,
+      "origin": 0.9280833333333334,
+      "a": 0.27499999999999997,
+      "b": 0.0125,
+      "train_score": 0.5588846094515302,
+      "heldout_score": 0.5192983410534081,
+      "samples": 45,
+      "cycles": 4.250363250251397,
+      "runner_rate": 1.3500000000000008,
+      "runner_margin": 0.06413004972077652,
+      "name": "forward_s5_end",
+      "window": [
+        84.9,
+        87.9
+      ],
+      "direction": 1,
+      "stage": 5,
+      "verified": false
+    }
+  ],
+  "method": "Independent full-grid local grayscale likelihood; harmonic monotone clock, rate .5..2.5; interleaved fit/check frames. No tracker predictions used.",
+  "limits": "One development recording, CV evidence can follow background/aliases; interleaved frames are not independent holdout. Skill roles require human labels and complete-cycle validation."
+}

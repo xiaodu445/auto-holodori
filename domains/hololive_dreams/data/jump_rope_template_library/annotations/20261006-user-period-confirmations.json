@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "source": "user_chat_2026-10-06",
+  "recording_id": "20261006-115004-094950",
+  "status": "human_approximate_reference_not_fitted",
+  "confirmations": [
+    {
+      "stage": 1,
+      "state": "normal",
+      "seconds_per_cycle": 1.38,
+      "direction": "forward"
+    },
+    {
+      "stage": 2,
+      "state": "normal",
+      "seconds_per_cycle": 1.32,
+      "direction": "unspecified"
+    },
+    {
+      "stage": 2,
+      "state": "accelerate",
+      "seconds_per_cycle": 1.1,
+      "direction": "unspecified"
+    },
+    {
+      "stage": 3,
+      "state": "normal",
+      "seconds_per_cycle": 1.1,
+      "direction": "unspecified"
+    },
+    {
+      "stage": 3,
+      "state": "accelerate",
+      "seconds_per_cycle": 0.91,
+      "direction": "unspecified"
+    },
+    {
+      "stage": 4,
+      "state": "normal",
+      "seconds_per_cycle": 0.96,
+      "direction": "unspecified"
+    },
+    {
+      "stage": 4,
+      "state": "decelerate",
+      "seconds_per_cycle": 1.29,
+      "direction": "unspecified"
+    },
+    {
+      "stage": 4,
+      "state": "accelerate",
+      "seconds_per_cycle": 0.78,
+      "direction": "unspecified"
+    }
+  ],
+  "limits": "Interpreted user stage2 normal 132 as 1.32 seconds; approximate manual reference, not precise calibration or independent validation."
+}

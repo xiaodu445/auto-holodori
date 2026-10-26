@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "annotations": [
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-accelerate-profile-audio.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-accelerate-profile-audio.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-audio-cue-meanings.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-audio-cue-meanings.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-audio-frame3244.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-audio-frame3244.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-audio-prefix-feedback.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-audio-prefix-feedback.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-effective-stage.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-effective-stage.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-exit-directions.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-exit-directions.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-five-frames-clarifications.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-five-frames-clarifications.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-five-frames.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-five-frames.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-half-cycle.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-half-cycle.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-reviewed-audio.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-reviewed-audio.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-speed-library.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-speed-library.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-stage2-normal-accelerate-partial.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-stage2-normal-accelerate-partial.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-stage2-normal-accelerate.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-stage2-normal-accelerate.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-temporal-recovery.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-temporal-recovery.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261005-three-frames.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261005-three-frames.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-seven-phase-stage-feedback.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261006-seven-phase-stage-feedback.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-three-speed-switches.json",
+      "source": "domains/hololive_dreams/data/jump_rope_samples/human/20261006-three-speed-switches.json"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-115004-094950-user-intervals.json",
+      "source": "user_attachment",
+      "source_sha256": "025f896457821a541542364b15a470293e22fd96ff0058b694f7697720887926",
+      "recording_id": "20261006-115004-094950",
+      "status": "human_intervals_not_yet_fitted"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-user-period-confirmations.json",
+      "source": "user_chat",
+      "status": "human_approximate_reference_not_fitted"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-115004-094950-rope-points-v1.json",
+      "source": "C:\\Users\\22546\\.codex\\attachments\\9921d216-b499-46b6-bfff-a2dac8c138c2\\已粘贴的文本.txt",
+      "source_sha256": "9799f568f406177985905c62ad909e8261ab003346128e80008475a0ced8ae65"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-115004-094950-rope-points-v2.json",
+      "source": "F:\\Download\\jump-rope-recording-annotations (2).json",
+      "source_sha256": "543e4044b65b9eac7595cfaed017fa4a79f06276fef3d5657a15446985154935"
+    }
+  ],
+  "limits": "Historical annotations may reference different recordings or review frame indexes; do not automatically relabel them as new samples."
+}

@@ -1,0 +1,436 @@
+{
+  "schema": 1,
+  "scope": "stages_1_5_except_stage2_decelerate_with_stage5_trial",
+  "templates": [
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage1-normal-forward-legacy-timed.json",
+      "sha256": "9aa708555fce0d1de5248e606cf97118325e80f5c3a8021cd9266fada022da03",
+      "template_id": "stage1-normal-forward-legacy-timed",
+      "stage": 1,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.38
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-normal-forward-legacy-timed.json",
+      "sha256": "27179f668a07ec508fed754bec7f40dcc95b8db85b13e9f6b406ef5fe5857247",
+      "template_id": "stage2-normal-forward-legacy-timed",
+      "stage": 2,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.32
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-normal-reverse-legacy-timed.json",
+      "sha256": "e1c181afa3eadcb01fdf5fc24a4d4adf289a9e0c4585a416bbb28ea57b19eba2",
+      "template_id": "stage2-normal-reverse-legacy-timed",
+      "stage": 2,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.32
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-accelerate-forward-legacy-timed.json",
+      "sha256": "084c69c86512ef54ad2a303e818e69d6b13cc2ab6ee1e0607b359400037da3d8",
+      "template_id": "stage2-accelerate-forward-legacy-timed",
+      "stage": 2,
+      "state": "accelerate",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-accelerate-reverse-legacy-timed.json",
+      "sha256": "36005c14ec2ff48e61a855e1b732f37532b3e3f68ffc3cf66dd0bde021f85901",
+      "template_id": "stage2-accelerate-reverse-legacy-timed",
+      "stage": 2,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-low_swing-bidirectional-legacy-timed.json",
+      "sha256": "9ff586c583ca32a4d1fb926226cc6fa9f5f115122f61a58dc72e5a24acfba406",
+      "template_id": "stage2-low_swing-bidirectional-legacy-timed",
+      "stage": 2,
+      "state": "low_swing",
+      "direction": "bidirectional",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 2.3990226302757485
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-normal-forward-legacy-timed.json",
+      "sha256": "68e435b43998f72e4e128aee947badf8839163e7c6ae76e3a4a0c7ff0c67d8da",
+      "template_id": "stage3-normal-forward-legacy-timed",
+      "stage": 3,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-normal-reverse-legacy-timed.json",
+      "sha256": "dc617108003aa8833057629cb57ec913b1582428fe2ae9db2329d6221def002b",
+      "template_id": "stage3-normal-reverse-legacy-timed",
+      "stage": 3,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-accelerate-forward-legacy-timed.json",
+      "sha256": "baa303ccb3d7d6df736b24447e76802fbaae9cbbd0d23527b1c9d6dd65110dd7",
+      "template_id": "stage3-accelerate-forward-legacy-timed",
+      "stage": 3,
+      "state": "accelerate",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.91
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-accelerate-reverse-legacy-timed.json",
+      "sha256": "19cf532c7c979dfbfa9761f866e61d780b23fd107d27273d890435c263a69d13",
+      "template_id": "stage3-accelerate-reverse-legacy-timed",
+      "stage": 3,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.91
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-decelerate-forward-legacy-timed.json",
+      "sha256": "acbb9fc5d24c7969dfccede453093414a79b0e2b81536e4de462a25b1709fbfe",
+      "template_id": "stage3-decelerate-forward-legacy-timed",
+      "stage": 3,
+      "state": "decelerate",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.8264840182648399
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-decelerate-reverse-legacy-timed.json",
+      "sha256": "d020fc276029f0b48138170befe7b8783504cbc582d7758e92379913406697c2",
+      "template_id": "stage3-decelerate-reverse-legacy-timed",
+      "stage": 3,
+      "state": "decelerate",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.8264840182648399
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-low_swing-bidirectional-legacy-timed.json",
+      "sha256": "268c6b3a9cf6e59023ca7701b99eb865d3e33d7092a624f80eeb616711d83a1d",
+      "template_id": "stage3-low_swing-bidirectional-legacy-timed",
+      "stage": 3,
+      "state": "low_swing",
+      "direction": "bidirectional",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 2.0047884430287084
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-normal-forward-legacy-timed.json",
+      "sha256": "f7e3b36979edf7ca0aeae381f3c5df5f1c99f595454d0801fdab9b456d36a099",
+      "template_id": "stage4-normal-forward-legacy-timed",
+      "stage": 4,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.96
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-normal-reverse-legacy-timed.json",
+      "sha256": "17d3cd1c01b26550d0db3556d21f1ca0f8a03651774100a5f485c7aca32e7590",
+      "template_id": "stage4-normal-reverse-legacy-timed",
+      "stage": 4,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.96
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-accelerate-forward-legacy-timed.json",
+      "sha256": "6ee1d5c3c1e968d4b4a04ba2aec05aa5aa277062a2e544e75421b5dd732c0291",
+      "template_id": "stage4-accelerate-forward-legacy-timed",
+      "stage": 4,
+      "state": "accelerate",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.78
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-accelerate-reverse-legacy-timed.json",
+      "sha256": "a129a476bd2449ced7136eeee09ca004a034789ee5d648338421876f8e848d4b",
+      "template_id": "stage4-accelerate-reverse-legacy-timed",
+      "stage": 4,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.78
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-decelerate-forward-legacy-timed.json",
+      "sha256": "471bd84cbc13a98ed1346e7513664abeab044632d9e600e1567dec6083a42060",
+      "template_id": "stage4-decelerate-forward-legacy-timed",
+      "stage": 4,
+      "state": "decelerate",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.29
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-decelerate-reverse-legacy-timed.json",
+      "sha256": "f9c7bd0cff80734d4ccc8af8cd2b29c1ad8271b2d869e1bfd04a1e79a4e4d7c5",
+      "template_id": "stage4-decelerate-reverse-legacy-timed",
+      "stage": 4,
+      "state": "decelerate",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.29
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-low_swing-bidirectional-legacy-timed.json",
+      "sha256": "14893ea4b25f392027b060662730a60ee04d19179de753af6c87c12b2d2e2d74",
+      "template_id": "stage4-low_swing-bidirectional-legacy-timed",
+      "stage": 4,
+      "state": "low_swing",
+      "direction": "bidirectional",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.7099204727026773
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-normal-reverse-human-2564-2641.json",
+      "sha256": "9e06eaeef42a205bbcce523e67ab1d53140a5492b2ac1d84d925b956b3ca6b67",
+      "template_id": "stage2-normal-reverse-human-2564-2641",
+      "stage": 2,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "human_observed_cycle",
+      "period_seconds": 1.321591200074181
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-accelerate-reverse-borrowed-human-cycle.json",
+      "sha256": "c17ac55a77fabed226871ea1a6a4f2b410ec70b92ef3eb081113bb214cfe54e2",
+      "template_id": "stage2-accelerate-reverse-borrowed-human-cycle",
+      "stage": 2,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "borrowed_reverse_cycle_time_scaled",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-normal-reverse-borrowed-human-cycle.json",
+      "sha256": "6f8b7f3dcaf83b740c90e5b2b312257c59fe6e0d916f7e6f01d810f9e3938f86",
+      "template_id": "stage3-normal-reverse-borrowed-human-cycle",
+      "stage": 3,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "borrowed_reverse_cycle_time_scaled",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-accelerate-reverse-borrowed-human-cycle.json",
+      "sha256": "f145cb6f8fa89958e442f2dd8e1b37b90ecbd2ec877f83dcbc93aab74388c09c",
+      "template_id": "stage3-accelerate-reverse-borrowed-human-cycle",
+      "stage": 3,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "borrowed_reverse_cycle_time_scaled",
+      "period_seconds": 0.91
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-normal-reverse-borrowed-human-cycle.json",
+      "sha256": "c7c98004174a5430f4e81a05cc03d259cebff948859a52db8e276171038e971b",
+      "template_id": "stage4-normal-reverse-borrowed-human-cycle",
+      "stage": 4,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "borrowed_reverse_cycle_time_scaled",
+      "period_seconds": 0.96
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-accelerate-reverse-borrowed-human-cycle.json",
+      "sha256": "ba9b495b445fb946614c469f0cf5a088e3ee1b444b05bfd658e65dfc1d480939",
+      "template_id": "stage4-accelerate-reverse-borrowed-human-cycle",
+      "stage": 4,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "borrowed_reverse_cycle_time_scaled",
+      "period_seconds": 0.78
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage1-normal-forward-auto-visible-cycle.json",
+      "sha256": "9dba1e375ac292c345fc0e1e9d0ce834ad443240cb9de39e9730bd0398833d4f",
+      "template_id": "stage1-normal-forward-auto-visible-cycle",
+      "stage": 1,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 1.38
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-normal-forward-auto-visible-cycle.json",
+      "sha256": "575c4d5bbfc671fc16408bfd329ab0f7a9d82c2d6e089b30b8a635f2733760c2",
+      "template_id": "stage2-normal-forward-auto-visible-cycle",
+      "stage": 2,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 1.32
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-accelerate-forward-auto-visible-cycle.json",
+      "sha256": "c6a0f52fedb84f14db24a3a22ea1539f3d65d10e147d30b100555b76bb1528d3",
+      "template_id": "stage2-accelerate-forward-auto-visible-cycle",
+      "stage": 2,
+      "state": "accelerate",
+      "direction": "forward",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-low_swing-bidirectional-auto-visible-cycle.json",
+      "sha256": "d8e2c0109a00ac4114969cf36ff6703d07cb49d878941ae706c8d86781ac10ad",
+      "template_id": "stage2-low_swing-bidirectional-auto-visible-cycle",
+      "stage": 2,
+      "state": "low_swing",
+      "direction": "bidirectional",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 2.3990226302757485
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-low_swing-bidirectional-auto-visible-cycle.json",
+      "sha256": "45f6e1bb8f2b4d6dcf610169b92dc8e4f05455f6b333d8cbb5d6a798b6f5b90f",
+      "template_id": "stage3-low_swing-bidirectional-auto-visible-cycle",
+      "stage": 3,
+      "state": "low_swing",
+      "direction": "bidirectional",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 2.0047884430287084
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-normal-forward-auto-visible-cycle.json",
+      "sha256": "61ff4b2725844e4e6ded3b10b15919a548f3389a5f854f3012c4c1cf45d60b6b",
+      "template_id": "stage3-normal-forward-auto-visible-cycle",
+      "stage": 3,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 1.1
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage3-accelerate-forward-auto-visible-cycle.json",
+      "sha256": "8479624ebf58b7d4e03daa23a57105ac8f92c0f9496b9e63d651fd90dc86150f",
+      "template_id": "stage3-accelerate-forward-auto-visible-cycle",
+      "stage": 3,
+      "state": "accelerate",
+      "direction": "forward",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 0.91
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-normal-reverse-auto-visible-cycle.json",
+      "sha256": "ad28c501fdd004fba93a625083537a9c6dd56f2c7619b5849d18541d4640657c",
+      "template_id": "stage4-normal-reverse-auto-visible-cycle",
+      "stage": 4,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 0.96
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage4-accelerate-reverse-auto-visible-cycle.json",
+      "sha256": "c22f04340dcaa6ff9349adc1291dd9cc99871e36f200f1e6472cedd803635800",
+      "template_id": "stage4-accelerate-reverse-auto-visible-cycle",
+      "stage": 4,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "automatic_visible_cycle",
+      "period_seconds": 0.78
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/stage5-normal-forward-legacy-trial.json",
+      "sha256": "e50e771ab0d3ecd01485b27feb8149003e9d39555ecdc8027a9fcec264554f2e",
+      "template_id": "stage5-normal-forward-legacy-trial",
+      "stage": 5,
+      "state": "normal",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.6980802792321117
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/stage5-normal-reverse-legacy-trial.json",
+      "sha256": "edd1b36f7102fb4dde5ee07b8fb4dcda44b2319f9a29118adc710ce5acf76bc0",
+      "template_id": "stage5-normal-reverse-legacy-trial",
+      "stage": 5,
+      "state": "normal",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.6980802792321117
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/stage5-accelerate-forward-legacy-trial.json",
+      "sha256": "f8598f48ba1f87357e66236cad62edbedfff7d9a394ffa9720b2a4c7a9489810",
+      "template_id": "stage5-accelerate-forward-legacy-trial",
+      "stage": 5,
+      "state": "accelerate",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.6896551724137927
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/stage5-accelerate-reverse-legacy-trial.json",
+      "sha256": "f8e9eacc80892b1809eb50233a30aa4712f789ba7d5b4b72105bf492889fc42e",
+      "template_id": "stage5-accelerate-reverse-legacy-trial",
+      "stage": 5,
+      "state": "accelerate",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.6896551724137927
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/stage5-decelerate-forward-legacy-trial.json",
+      "sha256": "66ac153e7e22ae44f4d3f34fe769c27ada4275af20fca9c57dfd153649ecb57b",
+      "template_id": "stage5-decelerate-forward-legacy-trial",
+      "stage": 5,
+      "state": "decelerate",
+      "direction": "forward",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.9345794392523364
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/stage5-decelerate-reverse-legacy-trial.json",
+      "sha256": "7d0e46ede4ca611c28ceea97c82feb98d8f9d13d196549a99c92cb0e26da55a2",
+      "template_id": "stage5-decelerate-reverse-legacy-trial",
+      "stage": 5,
+      "state": "decelerate",
+      "direction": "reverse",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 0.9345794392523364
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/stage5-low_swing-bidirectional-legacy-trial.json",
+      "sha256": "51ccbba6ff3752c94bbd217e0197b2359867a6a6076494af1a70e5739aa27d7d",
+      "template_id": "stage5-low_swing-bidirectional-legacy-trial",
+      "stage": 5,
+      "state": "low_swing",
+      "direction": "bidirectional",
+      "source_kind": "legacy_shape_and_warp_compiled_to_time",
+      "period_seconds": 1.2772180843224186
+    }
+  ],
+  "excluded_states": [
+    {
+      "stage": 2,
+      "state": "decelerate",
+      "reason": "user_deferred"
+    }
+  ],
+  "runtime_verified": false,
+  "base_catalog": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/catalog.json",
+  "limits": "Stage 1–4 entries preserved. Stage 5 adds seven unverified legacy candidates for live trial."
+}

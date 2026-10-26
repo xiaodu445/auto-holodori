@@ -1,0 +1,6 @@
+{
+  "name": "entry_dialogue",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：为了抓住机会。来源：归档截图ab709d1b-1754-4fcc-9222-766a22aa604a，尚待实机验证。"
+}

@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "recording": "runtime\\jump-rope\\recordings\\20261005-185136-145077",
+  "annotations": [
+    {
+      "start": 24.049990738784373,
+      "end": 25.450872120603453,
+      "label": "low_swing",
+      "human_reviewed": true
+    },
+    {
+      "start": 34.02830045090321,
+      "end": 36.44977765212821,
+      "label": "falling_obstacles",
+      "human_reviewed": true
+    },
+    {
+      "start": 40.79970010237524,
+      "end": 41.65961943811199,
+      "label": "accelerate",
+      "human_reviewed": true
+    },
+    {
+      "start": 47.24620306263612,
+      "end": 48.690893255638564,
+      "label": "low_swing",
+      "human_reviewed": true
+    },
+    {
+      "start": 55.59017564775304,
+      "end": 56.5397392414684,
+      "label": "decelerate",
+      "human_reviewed": true
+    },
+    {
+      "start": 63.57023383086032,
+      "end": 64.23187275868747,
+      "label": "accelerate",
+      "human_reviewed": true
+    },
+    {
+      "start": 68.39716862070927,
+      "end": 69.3162206535206,
+      "label": "low_swing",
+      "human_reviewed": true
+    },
+    {
+      "start": 78.58027103462642,
+      "end": 79.49893190059655,
+      "label": "low_swing",
+      "human_reviewed": true
+    },
+    {
+      "start": 85.60698547766577,
+      "end": 86.59328827433242,
+      "label": "low_swing",
+      "human_reviewed": true
+    },
+    {
+      "start": 89.9762055107085,
+      "end": 91.07037051121983,
+      "label": "accelerate",
+      "human_reviewed": true
+    },
+    {
+      "start": 93.03863650487189,
+      "end": 93.9527821415849,
+      "label": "accelerate",
+      "human_reviewed": true
+    },
+    {
+      "start": 95.85956567122268,
+      "end": 96.57438578853616,
+      "label": "accelerate",
+      "human_reviewed": true
+    },
+    {
+      "start": 100.05229118944388,
+      "end": 101.23572269790651,
+      "label": "low_swing",
+      "human_reviewed": true
+    },
+    {
+      "start": 106.34870407275669,
+      "end": 107.32311638965767,
+      "label": "accelerate",
+      "human_reviewed": true
+    },
+    {
+      "start": 109.21073933796916,
+      "end": 110.32043653993044,
+      "label": "decelerate",
+      "human_reviewed": true
+    }
+  ]
+}

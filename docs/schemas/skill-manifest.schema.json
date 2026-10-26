@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SkillManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "version", "description", "environments", "input", "output", "verification"],
+  "properties": {
+    "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "version": {"type": "string"},
+    "description": {"type": "string"},
+    "environments": {"type": "array", "items": {"type": "string"}},
+    "input": {"type": "object"},
+    "output": {"type": "object"},
+    "preconditions": {"type": "array", "items": {"type": "string"}},
+    "verification": {"type": "string"},
+    "risk_level": {"enum": ["read_only", "low", "medium", "high"]}
+  }
+}

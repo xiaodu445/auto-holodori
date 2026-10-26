@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "samples": [
+    {
+      "sample_id": "20261006-115004-094950-segment-02",
+      "metadata": "domains/hololive_dreams/data/jump_rope_template_library/transitions/samples/20261006-115004-094950-segment-02/metadata.json"
+    },
+    {
+      "sample_id": "20261006-115004-094950-segment-06",
+      "metadata": "domains/hololive_dreams/data/jump_rope_template_library/transitions/samples/20261006-115004-094950-segment-06/metadata.json"
+    },
+    {
+      "sample_id": "20261006-115004-094950-segment-12",
+      "metadata": "domains/hololive_dreams/data/jump_rope_template_library/transitions/samples/20261006-115004-094950-segment-12/metadata.json"
+    },
+    {
+      "sample_id": "20261006-115004-094950-segment-15",
+      "metadata": "domains/hololive_dreams/data/jump_rope_template_library/transitions/samples/20261006-115004-094950-segment-15/metadata.json"
+    }
+  ],
+  "categories": [
+    "stage_change",
+    "skill_entry",
+    "skill_exit",
+    "direction_change",
+    "occlusion_recovery"
+  ],
+  "status": "needs_segmentation",
+  "limits": "Audio annotations retained in annotations; no precise transition boundaries invented."
+}

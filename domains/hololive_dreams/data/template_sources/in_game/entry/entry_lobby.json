@@ -1,0 +1,6 @@
+{
+  "name": "entry_lobby",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：大厅。来源：归档截图13225c2e-73c0-4ca4-b400-ed9b4970d493，尚待实机验证。"
+}

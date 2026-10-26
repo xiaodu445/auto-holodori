@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "verified": false,
+  "forward_coordinate": 0.74,
+  "reverse_coordinate": 0.25,
+  "low_forward_coordinate": 0.12,
+  "low_return_coordinate": 0.98,
+  "dispatch_window_seconds": 0.035,
+  "source": "20261005-185136-145077 manual Space onsets matched to guarded mainline; initial trial medians, not short-jump latency calibration",
+  "limits": "Human long/variable presses and imperfect fitted geometry cannot verify short-jump safety. Trial onset positions only; no avatar or landing recognition. Stage 5 retains current mainline, not the terminal-stage experiment.",
+  "late_window_seconds": 0.035,
+  "prediction_assumption": "User-directed trial: trust displayed prediction; no confidence, landing, or frame-age inhibit. Extrapolate clock to dispatch time."
+}

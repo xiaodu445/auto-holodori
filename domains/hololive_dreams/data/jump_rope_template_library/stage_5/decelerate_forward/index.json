@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "stage": 5,
+  "role": "decelerate",
+  "direction": "forward",
+  "status": "needs_recording_and_calibration",
+  "legacy_status": "pending_calibration",
+  "nominal_rate": 1.07,
+  "verified": false,
+  "active_runtime": false,
+  "template_ref": "domains/hololive_dreams/data/jump_rope_template_library/stage_5/decelerate_forward/generated/legacy_import/template.json",
+  "shape_ref": "domains/hololive_dreams/data/jump_rope_template_library/shapes/rotation/wide_camera_v1/candidates.json",
+  "samples": [],
+  "limits": "Imported legacy parameters are not new measurements. Whole original branch retained for traceability; use only requested direction."
+}

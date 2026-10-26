@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modular-agent"
+version = "0.1.0"
+description = "A safe, modular and self-extensible agent system MVP"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0", "opencv-python>=4.10", "mss>=10.0"]
+
+[project.optional-dependencies]
+capture = ["dxcam==0.3.0; sys_platform == 'win32'"]
+recording = ["PyAudioWPatch==0.2.12.8; sys_platform == 'win32'"]
+mcp = ["mcp>=1.12,<2"]
+vision = ["rapidocr-onnxruntime>=1.4,<2", "pywinauto>=0.6.9,<0.7; sys_platform == 'win32'"]
+
+[project.scripts]
+modular-agent = "modular_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

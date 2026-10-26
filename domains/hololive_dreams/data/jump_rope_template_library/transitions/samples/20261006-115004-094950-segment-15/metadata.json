@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "sample_id": "20261006-115004-094950-segment-15",
+  "recording_id": "20261006-115004-094950",
+  "stage": 4,
+  "state": "low_swing",
+  "direction": "both",
+  "kind": "transition",
+  "original_kind": "transition",
+  "frame_range": {
+    "start": 5305,
+    "end": 5443,
+    "end_exclusive": true
+  },
+  "time_range": {
+    "start": 91.72600709996186,
+    "end": 94.10880120005459
+  },
+  "time_reference": "timestamps.json",
+  "camera_id": "recording_20261006-115004-094950",
+  "label_certainty": "human_reviewed",
+  "status": "annotated_pending_extraction",
+  "quality": "transition_not_stable",
+  "stage_boundary_crossing": [
+    4,
+    5
+  ],
+  "source_annotation": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-115004-094950-user-intervals.json",
+  "source_annotation_index": 14,
+  "note": "无遮挡阶段4切换阶段5",
+  "cycle_boundaries": [],
+  "measurements_file": null,
+  "generated_template_file": null,
+  "split": "unassigned",
+  "review_flags": []
+}

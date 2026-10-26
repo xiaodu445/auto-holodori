@@ -1,0 +1,6 @@
+{
+  "name": "entry_keep",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：不进行更改。来源：归档截图7be9e448-7b6f-4a25-8a4f-fc705a07467d，尚待实机验证。"
+}

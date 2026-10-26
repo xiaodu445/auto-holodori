@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "mode": "low_swing_time",
+  "verified": false,
+  "reference_period": 2.3990226302757485,
+  "nominal_rate": 0.41683641803956556,
+  "profile": {
+    "clock_nodes": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6000000000000001,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0
+    ],
+    "angle_nodes": [
+      0.0,
+      0.0713273349919213,
+      0.15386234173365632,
+      0.22966718089877636,
+      0.286680618025214,
+      0.33494115353229137,
+      0.39421321439998247,
+      0.45668880549201757,
+      0.4828602669949942,
+      0.49495981024854874,
+      0.4986184664069743,
+      0.5033504449698553,
+      0.5268059325474463,
+      0.585586547850882,
+      0.6583052974165884,
+      0.7024704768304605,
+      0.7551709516309172,
+      0.8193844228485864,
+      0.8833047346927718,
+      0.9333359467802773,
+      1.0
+    ]
+  },
+  "provenance": {
+    "source": "domains\\hololive_dreams\\data\\jump_rope_samples\\calibration\\yellow-first.json",
+    "origin": 17.825,
+    "samples": 63,
+    "coordinate_rmse": 0.020920063193179954,
+    "method": "Two-repeat regularized angular fit; periodic slope penalty; endpoints constrained, missing nodes not clamped",
+    "limits": "Development recording only, common shape across stages unverified; does not correct state-switch geometry seams."
+  }
+}

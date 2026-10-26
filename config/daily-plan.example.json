@@ -1,0 +1,7 @@
+{
+  "selected_tasks": ["holowork", "wheel"],
+  "record_rewards": true,
+  "redispatch_holowork": true,
+  "max_rounds": 200,
+  "max_loss": 10000
+}

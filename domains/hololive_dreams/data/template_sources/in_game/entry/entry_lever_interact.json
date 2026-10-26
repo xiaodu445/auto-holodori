@@ -1,0 +1,6 @@
+{
+  "name": "entry_lever_interact",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：切换操纵杆。来源：归档截图6c3b8da1-0722-451d-9445-1dea3bfe803b，尚待实机验证。"
+}

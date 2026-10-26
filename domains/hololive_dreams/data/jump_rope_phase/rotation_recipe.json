@@ -1,0 +1,8 @@
+{
+  "recording": "runtime/jump-rope/recordings/20261003-135733-386995",
+  "background_interval": [3.8, 5.8],
+  "cycle_interval": [4.2, 5.51],
+  "sample_seconds": 0.05,
+  "seed": 7,
+  "output": "domains/hololive_dreams/data/jump_rope_phase/rotation_v1.json"
+}

@@ -1,0 +1,16 @@
+{
+  "version": "stable-2026-10-16-stage3-fixed",
+  "user_confirmed_fix": "stage3 low swing back_to_front phase=0.7705, extra early=0; stage4 extra early remains50ms",
+  "core_sha256": {
+    "learning/jump_rope_yolo/game_jump_live.py": "3d02f03d334b8620e39d1c37b22fa10d6c098773fd1e44d7237dd7d43b9e2948",
+    "learning/jump_rope_yolo/game_jump_logic.py": "b18b67cabb55a2c9ac870d8fe6edc9bc4ee3ff31f13cb38e2d345d0f5a073c2d",
+    "learning/jump_rope_yolo/game_jump_config.json": "da5661df8c460d20c2d1cd5d0d202222f201450c1bbe6cc23f855a650686b35a",
+    "learning/jump_rope_yolo/round_loop.py": "8ee6c92a871245cda3c4d877f0b902f7e4f4e63095e88097f13e566cfae97854",
+    "learning/jump_rope_yolo/failure_capture.py": "896e8e21d726e82f9beb578995c0f180b0babaa17e92bd92957d8973bfa0927d",
+    "learning/jump_rope_yolo/counter_reader.py": "202173611110b1de178153bf97ffff0dde1ce79d5ba1960c52e46854fa96583b",
+    "learning/jump_rope_yolo/count_digits_complete_v2.json": "290f07b4a600eb6ef2b9e385f18a5d0b78ad26c241e83e3e276566dece0984ff"
+  },
+  "offline_tests": 39,
+  "previous_snapshots_retained": true,
+  "environments": "Retained on original computer; excluded from archive; installer and runtime lock provided."
+}

@@ -1,0 +1,9 @@
+{
+  "name": "daily_rewards_get",
+  "role": "panel",
+  "threshold": 0.85,
+  "environments": [
+    "hololive_dreams"
+  ],
+  "notes": "GET!奖励弹窗标题；由用户奖励截图提取，用于排除奖励覆盖及Holowork关闭。"
+}

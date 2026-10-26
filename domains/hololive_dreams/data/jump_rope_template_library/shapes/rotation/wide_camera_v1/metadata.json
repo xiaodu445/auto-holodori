@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "source": "domains/hololive_dreams/data/jump_rope_phase/rotation_audio_wide_v1.json",
+  "sha256": "bc735e1e1e6ee3bbd8ab416f05316b0e37507ea7f6597b7e992af5c08e63b2c5",
+  "verified": false,
+  "provenance": {
+    "recording": "runtime/jump-rope/recordings/20261005-185136-145077",
+    "source_window": [
+      9,
+      19
+    ],
+    "method": "Local blue+background difference robust full curve samples, periodic 4-harmonic fit; no tracker labels.",
+    "rms_normalized": 0.008950255358737188,
+    "limits": "Spatial atlas for wider camera only. Its phase is an image-trajectory coordinate, not independently measured physical rope angle. Initial normal timing is embedded in geometric coordinate. Need independent cycle holdout."
+  },
+  "coordinate_space": "normalized_game_client",
+  "candidate_count": 96,
+  "tolerance_status": "needs_calibration",
+  "camera_status": "current_wide_camera_trial",
+  "usage": "Visible fragments must match fixed candidate geometry; full visibility is not required. No new runtime background rejection enabled by this organization."
+}

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "stage": 5,
+  "role": "low_swing",
+  "direction": "both",
+  "verified": false,
+  "shape_ref": "domains/hololive_dreams/data/jump_rope_template_library/shapes/low_swing/legacy_camera_v1/candidates.json",
+  "source": "domains/hololive_dreams/data/jump_rope_phase/audio_forward_decelerate_trial.json",
+  "source_branch": "stages[4].branches.low_swing",
+  "data": {
+    "clock_rate": 0.7829516448872657,
+    "verified": false,
+    "calibration": "scaled_unmeasured",
+    "status": "pending_calibration",
+    "directions": {},
+    "role_verified": false,
+    "period_seconds": 1.2772180843224186,
+    "direction_status": {
+      "rotation_forward": "pending_calibration",
+      "rotation_reverse": "pending_calibration"
+    },
+    "template_id": "stage_5/low_swing",
+    "timing_source": "legacy_prior_not_measured"
+  }
+}

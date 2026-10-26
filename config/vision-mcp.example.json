@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "game-agent-vision": {
+      "command": "F:\\Codex\\Game_agent\\.conda\\python.exe",
+      "args": ["-m", "modular_agent.perception.mcp_server", "--project-root", "F:\\Codex\\Game_agent"],
+      "env": {"PYTHONPATH": "F:\\Codex\\Game_agent\\src"}
+    }
+  }
+}

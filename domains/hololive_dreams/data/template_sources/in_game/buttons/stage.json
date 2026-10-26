@@ -1,0 +1,5 @@
+{
+  "notes": "粉色音符，下方文字“演出”。",
+  "threshold": 0.9,
+  "mask_mode": "warm_ui"
+}

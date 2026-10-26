@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "base_config": "docs/jump-rope/history/gear-v4-before-coherent-evidence/domains/hololive_dreams/models/jump_rope_phase_gear_config.json",
+  "cases": {
+    "baseline": {},
+    "frozen-branches": {
+      "freeze_unconfirmed_correction": true
+    },
+    "frozen-branches-slow-rate": {
+      "freeze_unconfirmed_correction": true,
+      "rate_adaptation_gain": 0.002,
+      "rate_step_limit": 0.0005
+    },
+    "frozen-branches-fixed-rate": {
+      "freeze_unconfirmed_correction": true,
+      "rate_adaptation_gain": 0,
+      "rate_step_limit": 0
+    },
+    "frozen-branches-ridge12": {
+      "freeze_unconfirmed_correction": true,
+      "rope_ridge_min": 12,
+      "rope_ridge_target": 14,
+      "strong_rotation_while_low": true
+    },
+    "frozen-branches-ridge16": {
+      "freeze_unconfirmed_correction": true,
+      "rope_ridge_min": 16,
+      "rope_ridge_target": 18,
+      "strong_rotation_while_low": true
+    },
+    "occlusion-rearm": {
+      "occlusion_tolerant_rearm": true
+    },
+    "occlusion-rearm-window11": {
+      "occlusion_tolerant_rearm": true,
+      "transition_evidence_window": 1.1
+    },
+    "occlusion-rearm-window14": {
+      "occlusion_tolerant_rearm": true,
+      "transition_evidence_window": 1.4
+    },
+    "multi-swing-innovation-0": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0
+    },
+    "multi-swing-innovation-0.08": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.08
+    },
+    "multi-swing-innovation-0.15": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.15
+    },
+    "multi-swing-innovation-0.25": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.25
+    },
+    "multi-swing-rate-proof-0": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.15,
+      "gear_rate_evidence": true,
+      "rate_evidence_bonus": 0.08,
+      "rate_prior_weight": 0
+    },
+    "multi-swing-rate-proof-0.06": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.15,
+      "gear_rate_evidence": true,
+      "rate_evidence_bonus": 0.08,
+      "rate_prior_weight": 0.06
+    },
+    "endpoints-min-0": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "endpoint_transitions": true,
+      "minimum_swing_cycles": 0,
+      "correction_energy_penalty": 0.15,
+      "confirmation_seconds": 0.16
+    },
+    "endpoints-min-1.5": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "endpoint_transitions": true,
+      "minimum_swing_cycles": 1.5,
+      "correction_energy_penalty": 0.15,
+      "confirmation_seconds": 0.16
+    },
+    "endpoints-min-2.0": {
+      "occlusion_tolerant_rearm": true,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "endpoint_transitions": true,
+      "minimum_swing_cycles": 2.0,
+      "correction_energy_penalty": 0.15,
+      "confirmation_seconds": 0.16
+    },
+    "edge-motion-single": {
+      "occlusion_tolerant_rearm": true,
+      "edge_motion_history": 0.05
+    },
+    "edge-motion-multi": {
+      "occlusion_tolerant_rearm": true,
+      "edge_motion_history": 0.05,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.15
+    },
+    "edge-motion-multi-relative": {
+      "occlusion_tolerant_rearm": true,
+      "edge_motion_history": 0.05,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.15,
+      "moving_support_ratio": 0.2
+    },
+    "edge-motion-endpoints": {
+      "occlusion_tolerant_rearm": true,
+      "edge_motion_history": 0.05,
+      "swing_gears": [
+        0.41683641803956556,
+        0.49880574854534915,
+        0.5848225200903135
+      ],
+      "correction_energy_penalty": 0.15,
+      "endpoint_transitions": true,
+      "minimum_swing_cycles": 2.0,
+      "confirmation_seconds": 0.16
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/clock-exit-reverse-cohort/index.html",
+  "frames": 4010,
+  "annotations": [
+    {
+      "frame": 902,
+      "time": 19.432618400081992,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "我发现你在这里出现了反摇的候选，实际上这里是从前到后根本不会换阶段。"
+    },
+    {
+      "frame": 958,
+      "time": 20.608126600040123,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里反而没有预测分支了，从后向前才会切换成反摇"
+    },
+    {
+      "frame": 1087,
+      "time": 23.413778400048614,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里明显从后向前切换成反摇了，且绳子没被遮挡，你却没有快速做出判断。记住反摇是左右摇从后往前才会切换，正摇是左右摇从前往后切换。且每次左右摇必定切换方向"
+    }
+  ]
+}

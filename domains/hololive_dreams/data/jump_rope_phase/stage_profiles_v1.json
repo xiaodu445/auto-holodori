@@ -1,0 +1,293 @@
+{
+  "schema": 1,
+  "verified": false,
+  "stages": [
+    {
+      "id": 1,
+      "count_min": 0,
+      "count_max": 9,
+      "milestone_time_bracket": null,
+      "branches": {
+        "normal": {
+          "clock_rate": 0.73,
+          "verified": false,
+          "calibration": "observed_rotation_cluster_role_provisional"
+        },
+        "accelerate": {
+          "clock_rate": 0.76,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "decelerate": {
+          "clock_rate": 0.6132,
+          "verified": false,
+          "calibration": "old_gear_bound_prior_unmeasured"
+        },
+        "low_swing": {
+          "clock_rate": 0.4003823489064248,
+          "verified": false,
+          "calibration": "scaled_unmeasured"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "count_min": 10,
+      "count_max": 29,
+      "milestone_time_bracket": [
+        14.545,
+        14.71
+      ],
+      "branches": {
+        "normal": {
+          "clock_rate": 0.76,
+          "verified": false,
+          "calibration": "observed_rotation_cluster_role_provisional"
+        },
+        "accelerate": {
+          "clock_rate": 0.9475,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "decelerate": {
+          "clock_rate": 0.73,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "low_swing": {
+          "clock_rate": 0.41683641803956556,
+          "verified": false,
+          "calibration": "independent_measured_period"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "count_min": 30,
+      "count_max": 49,
+      "milestone_time_bracket": [
+        39.914,
+        40.035
+      ],
+      "branches": {
+        "normal": {
+          "clock_rate": 0.9475,
+          "verified": false,
+          "calibration": "observed_rotation_cluster_role_provisional"
+        },
+        "accelerate": {
+          "clock_rate": 1.07,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "decelerate": {
+          "clock_rate": 0.76,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "low_swing": {
+          "clock_rate": 0.49880574854534915,
+          "verified": false,
+          "calibration": "independent_measured_period"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "count_min": 50,
+      "count_max": 69,
+      "milestone_time_bracket": [
+        60.307,
+        60.447
+      ],
+      "branches": {
+        "normal": {
+          "clock_rate": 1.07,
+          "verified": false,
+          "calibration": "observed_rotation_cluster_role_provisional"
+        },
+        "accelerate": {
+          "clock_rate": 1.4325,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "decelerate": {
+          "clock_rate": 0.9475,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "low_swing": {
+          "clock_rate": 0.5848225200903135,
+          "verified": false,
+          "calibration": "independent_measured_period"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "count_min": 70,
+      "count_max": null,
+      "milestone_time_bracket": [
+        78.095,
+        78.253
+      ],
+      "branches": {
+        "normal": {
+          "clock_rate": 1.4325,
+          "verified": false,
+          "calibration": "observed_rotation_cluster_role_provisional"
+        },
+        "accelerate": {
+          "clock_rate": 1.6617,
+          "verified": false,
+          "calibration": "old_gear_bound_prior_unmeasured"
+        },
+        "decelerate": {
+          "clock_rate": 1.07,
+          "verified": false,
+          "calibration": "neighboring_observed_rate_prior_role_unverified"
+        },
+        "low_swing": {
+          "clock_rate": 0.7829516448872657,
+          "verified": false,
+          "calibration": "scaled_unmeasured"
+        }
+      }
+    }
+  ],
+  "observed_rotation_fits": [
+    {
+      "window": [
+        4.5,
+        8
+      ],
+      "frames": 55,
+      "score": 0.6197454201222351,
+      "direction": 1,
+      "rate": 0.7300000000000004,
+      "initial_phase": 0.25
+    },
+    {
+      "window": [
+        8,
+        11.5
+      ],
+      "frames": 55,
+      "score": 0.6957899265277362,
+      "direction": 1,
+      "rate": 0.7200000000000004,
+      "initial_phase": 0.8020833333333334
+    },
+    {
+      "window": [
+        11.5,
+        14.5
+      ],
+      "frames": 42,
+      "score": 0.629743484867335,
+      "direction": 1,
+      "rate": 0.7300000000000004,
+      "initial_phase": 0.3333333333333333
+    },
+    {
+      "window": [
+        24.5,
+        28
+      ],
+      "frames": 53,
+      "score": 0.6381684931783961,
+      "direction": -1,
+      "rate": 0.7600000000000005,
+      "initial_phase": 0.53125
+    },
+    {
+      "window": [
+        28,
+        31.5
+      ],
+      "frames": 52,
+      "score": 0.6131046532420329,
+      "direction": -1,
+      "rate": 0.7550000000000003,
+      "initial_phase": 0.8333333333333334
+    },
+    {
+      "window": [
+        36,
+        39
+      ],
+      "frames": 45,
+      "score": 0.6900555775093506,
+      "direction": -1,
+      "rate": 0.7700000000000005,
+      "initial_phase": 0.8229166666666666
+    },
+    {
+      "window": [
+        40.5,
+        43
+      ],
+      "frames": 38,
+      "score": 0.6383429925763185,
+      "direction": -1,
+      "rate": 0.9100000000000006,
+      "initial_phase": 0.9791666666666666
+    },
+    {
+      "window": [
+        45,
+        48
+      ],
+      "frames": 44,
+      "score": 0.6292954857810603,
+      "direction": -1,
+      "rate": 0.9850000000000005,
+      "initial_phase": 0.4479166666666667
+    },
+    {
+      "window": [
+        65,
+        68
+      ],
+      "frames": 45,
+      "score": 0.5607480851789767,
+      "direction": -1,
+      "rate": 1.0700000000000007,
+      "initial_phase": 0.3854166666666667
+    },
+    {
+      "window": [
+        68,
+        71
+      ],
+      "frames": 48,
+      "score": 0.6710180361353023,
+      "direction": -1,
+      "rate": 1.0700000000000007,
+      "initial_phase": 0.21875
+    },
+    {
+      "window": [
+        80,
+        83
+      ],
+      "frames": 47,
+      "score": 0.6741967454371184,
+      "direction": 1,
+      "rate": 1.4350000000000012,
+      "initial_phase": 0.71875
+    },
+    {
+      "window": [
+        83,
+        86
+      ],
+      "frames": 43,
+      "score": 0.6678324098298,
+      "direction": 1,
+      "rate": 1.430000000000001,
+      "initial_phase": 0.6770833333333334
+    }
+  ],
+  "limits": "Counts 10/30/50/70 visually audited on development recording. Rotation samples are not independently labeled normal/fast/slow. Fast/slow use neighboring measured clusters as experimental priors; outer two use old gear bound ratios .84/1.16. These are NOT observed within-stage branch speeds. Stage1/5 swing rates are scaled and unmeasured. Original route remains default."
+}

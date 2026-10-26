@@ -1,0 +1,536 @@
+{
+  "schema": 1,
+  "features": [
+    {
+      "name": "achievement_rank",
+      "image": "achievement_rank.png",
+      "zone": [
+        0.4,
+        0.07,
+        0.8,
+        0.18
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-0fa79e05-fa45-4357-9fbd-0aec03562164.png",
+      "crop": [
+        603,
+        83,
+        752,
+        108
+      ],
+      "source_sha256": "a92659fbd4adeca650a3dc6daf814c551007c725b5644b476e7a714fbce6ea92"
+    },
+    {
+      "name": "achievement_title",
+      "image": "achievement_title.png",
+      "zone": [
+        0,
+        0.06,
+        0.2,
+        0.2
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-8aa2acca-3e60-4c4d-9117-2bfada427150.png",
+      "crop": [
+        99,
+        86,
+        157,
+        116
+      ],
+      "source_sha256": "93ed28f80031ecf990b8adee9edc06dea2bddb6e8a9666dfa7416ef36764286f"
+    },
+    {
+      "name": "achievement_claim_text",
+      "image": "achievement_claim_text.png",
+      "zone": [
+        0.72,
+        0.8,
+        0.97,
+        0.96
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-0fa79e05-fa45-4357-9fbd-0aec03562164.png",
+      "crop": [
+        1070,
+        665,
+        1178,
+        692
+      ],
+      "source_sha256": "a92659fbd4adeca650a3dc6daf814c551007c725b5644b476e7a714fbce6ea92"
+    },
+    {
+      "name": "notification_title",
+      "image": "notification_title.png",
+      "zone": [
+        0,
+        0.04,
+        0.22,
+        0.2
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-347c7a2a-03dd-4724-9d90-5f9a5c020577.png",
+      "crop": [
+        44,
+        80,
+        145,
+        111
+      ],
+      "source_sha256": "410cf70274c86a3ae97aaf0e257cc4be29da4ffcc92113db676ee7de48136105"
+    },
+    {
+      "name": "option_mouse",
+      "image": "option_mouse.png",
+      "zone": [
+        0.55,
+        0.35,
+        0.75,
+        0.72
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-7be9e448-7b6f-4a25-8a4f-fc705a07467d.png",
+      "crop": [
+        768,
+        391,
+        794,
+        423
+      ],
+      "source_sha256": "7131f2bab5981ed4c9ff030648c6010efbb3a48d5d28feb204d1381118e89c0c"
+    },
+    {
+      "name": "option_e",
+      "image": "option_e.png",
+      "zone": [
+        0.55,
+        0.35,
+        0.75,
+        0.72
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-7be9e448-7b6f-4a25-8a4f-fc705a07467d.png",
+      "crop": [
+        798,
+        392,
+        825,
+        421
+      ],
+      "source_sha256": "7131f2bab5981ed4c9ff030648c6010efbb3a48d5d28feb204d1381118e89c0c"
+    },
+    {
+      "name": "reward_title",
+      "image": "reward_title.png",
+      "zone": [
+        0.25,
+        0.04,
+        0.75,
+        0.28
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-176ca6d9-7836-4e3e-867b-85ad052919de.png",
+      "crop": [
+        565,
+        100,
+        720,
+        155
+      ],
+      "source_sha256": "4297c186c28470a943fd1c3fdad0d86f516182c069aae7ad78916fcc142f8af4"
+    },
+    {
+      "name": "rank_title",
+      "image": "rank_title.png",
+      "zone": [
+        0.4,
+        0.08,
+        0.98,
+        0.35
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-e1575559-6b3b-4a78-b537-f4db47e786f6.png",
+      "crop": [
+        711,
+        154,
+        1130,
+        224
+      ],
+      "source_sha256": "206ed49363316375bf85f63e2c708606c2ad5904fccb3053ea1cf7160fde99c2"
+    },
+    {
+      "name": "hud_activity",
+      "image": "hud_activity.png",
+      "zone": [
+        0.52,
+        0.05,
+        0.92,
+        0.22
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        728,
+        111,
+        764,
+        132
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81"
+    },
+    {
+      "name": "hud_game",
+      "image": "hud_game.png",
+      "zone": [
+        0.52,
+        0.05,
+        0.92,
+        0.22
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        802,
+        111,
+        837,
+        132
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81"
+    },
+    {
+      "name": "hud_stage",
+      "image": "hud_stage.png",
+      "zone": [
+        0.52,
+        0.05,
+        0.92,
+        0.22
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        874,
+        111,
+        909,
+        132
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81"
+    },
+    {
+      "name": "hud_task",
+      "image": "hud_task.png",
+      "zone": [
+        0.52,
+        0.05,
+        0.92,
+        0.22
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        945,
+        111,
+        982,
+        132
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81"
+    },
+    {
+      "name": "hud_achievement",
+      "image": "hud_achievement.png",
+      "zone": [
+        0.52,
+        0.05,
+        0.92,
+        0.22
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        1017,
+        111,
+        1054,
+        132
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81"
+    },
+    {
+      "name": "dialogue_e",
+      "image": "dialogue_e.png",
+      "zone": [
+        0.65,
+        0.83,
+        0.97,
+        1.0
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-ab709d1b-1754-4fcc-9222-766a22aa604a.png",
+      "crop": [
+        968,
+        704,
+        995,
+        731
+      ],
+      "source_sha256": "bcc8b23b706cf4318deaddb01c8259896ba2de5764e56851fc20de4f18051461"
+    },
+    {
+      "name": "dialogue_next",
+      "image": "dialogue_next.png",
+      "zone": [
+        0.65,
+        0.86,
+        0.97,
+        1.0
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-ab709d1b-1754-4fcc-9222-766a22aa604a.png",
+      "crop": [
+        1011,
+        728,
+        1036,
+        745
+      ],
+      "source_sha256": "bcc8b23b706cf4318deaddb01c8259896ba2de5764e56851fc20de4f18051461"
+    },
+    {
+      "name": "map_pin",
+      "image": "map_pin.png",
+      "zone": [
+        0.01,
+        0.04,
+        0.11,
+        0.2
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-8e6f38a1-d645-4bb5-8941-cd90ac89b6d6.png",
+      "crop": [
+        37,
+        56,
+        87,
+        118
+      ],
+      "source_sha256": "f946a37472005cd8b3cb7048f59bf0c66a258b604d3c74f6e474e50e1d39b4db"
+    },
+    {
+      "name": "map_label",
+      "image": "map_label.png",
+      "zone": [
+        0.06,
+        0.04,
+        0.18,
+        0.14
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-8e6f38a1-d645-4bb5-8941-cd90ac89b6d6.png",
+      "crop": [
+        105,
+        57,
+        149,
+        78
+      ],
+      "source_sha256": "f946a37472005cd8b3cb7048f59bf0c66a258b604d3c74f6e474e50e1d39b4db"
+    },
+    {
+      "name": "icon_activity",
+      "image": "icon_activity.png",
+      "zone": [
+        0.5593354430379747,
+        0.065,
+        0.6210443037974683,
+        0.18
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        721,
+        68,
+        771,
+        113
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81",
+      "foreground": "icon_activity.foreground.png",
+      "mask": "icon_activity.mask.png"
+    },
+    {
+      "name": "icon_game",
+      "image": "icon_game.png",
+      "zone": [
+        0.6162974683544303,
+        0.065,
+        0.6787974683544303,
+        0.18
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        793,
+        68,
+        844,
+        113
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81",
+      "foreground": "icon_game.foreground.png",
+      "mask": "icon_game.mask.png"
+    },
+    {
+      "name": "icon_stage",
+      "image": "icon_stage.png",
+      "zone": [
+        0.6772151898734177,
+        0.065,
+        0.7365506329113924,
+        0.18
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        870,
+        68,
+        917,
+        113
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81",
+      "foreground": "icon_stage.foreground.png",
+      "mask": "icon_stage.mask.png"
+    },
+    {
+      "name": "icon_task",
+      "image": "icon_task.png",
+      "zone": [
+        0.7349683544303798,
+        0.065,
+        0.7943037974683544,
+        0.18
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        943,
+        68,
+        990,
+        113
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81",
+      "foreground": "icon_task.foreground.png",
+      "mask": "icon_task.mask.png"
+    },
+    {
+      "name": "icon_achievement",
+      "image": "icon_achievement.png",
+      "zone": [
+        0.7935126582278481,
+        0.065,
+        0.8528481012658228,
+        0.18
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        1017,
+        68,
+        1064,
+        113
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81",
+      "foreground": "icon_achievement.foreground.png",
+      "mask": "icon_achievement.mask.png"
+    },
+    {
+      "name": "world_camera",
+      "image": "world_camera.png",
+      "zone": [
+        0.01,
+        0.72,
+        0.1,
+        0.9
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        32,
+        581,
+        92,
+        638
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81",
+      "foreground": "world_camera.foreground.png",
+      "mask": "world_camera.mask.png"
+    },
+    {
+      "name": "world_jump",
+      "image": "world_jump.png",
+      "zone": [
+        0.81,
+        0.73,
+        0.94,
+        0.92
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-9453cc6a-f96b-4d2e-9403-25b833c8a875.png",
+      "crop": [
+        1052,
+        581,
+        1146,
+        652
+      ],
+      "source_sha256": "3e68e6470daa40b999df89bb653fec8240793085d10c57de33f3e433bafd0a81",
+      "foreground": "world_jump.foreground.png",
+      "mask": "world_jump.mask.png"
+    },
+    {
+      "name": "gift_label",
+      "image": "gift_label.png",
+      "zone": [
+        0.7,
+        0.35,
+        0.99,
+        0.8
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-4328b6fa-9541-41c8-8987-32c8b632fef5.png",
+      "crop": [
+        1337,
+        536,
+        1396,
+        565
+      ],
+      "source_sha256": "3a4d75142688f2363b3a0e84f447ee84e48b62ed6dfcdeb45d92ce513af9c7ba",
+      "foreground": "gift_label.foreground.png",
+      "mask": "gift_label.mask.png"
+    },
+    {
+      "name": "scratch_label",
+      "image": "scratch_label.png",
+      "zone": [
+        0.7,
+        0.35,
+        0.99,
+        0.8
+      ],
+      "mode": "foreground",
+      "source": "codex-clipboard-09ae474c-9d87-4d32-b3eb-ad261aba4735.png",
+      "crop": [
+        920,
+        460,
+        992,
+        489
+      ],
+      "source_sha256": "f6bb8df701a3192e23b500d268162a044f0c434cef58af76d09eebaf023e2874",
+      "foreground": "scratch_label.foreground.png",
+      "mask": "scratch_label.mask.png"
+    },
+    {
+      "name": "scratch_open",
+      "image": "scratch_open.png",
+      "zone": [
+        0.3,
+        0.74,
+        0.74,
+        0.94
+      ],
+      "mode": "gray",
+      "source": "codex-clipboard-1655f28b-bb1f-4cb7-8273-2900900abaff.png",
+      "crop": [
+        575,
+        628,
+        677,
+        654
+      ],
+      "source_sha256": "7b1f658f8bce3bf3191b74071ac9259d71e510d9b196135026a503e9454e1dff"
+    }
+  ]
+}

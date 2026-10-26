@@ -1,0 +1,4 @@
+[
+  {"name": "wait", "arguments": {"duration": 3}},
+  {"name": "hold", "arguments": {"keys": ["w"], "duration": 1, "dx": 80, "dy": 0, "steps": 60}}
+]

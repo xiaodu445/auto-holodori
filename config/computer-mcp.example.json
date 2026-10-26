@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "game-agent-computer": {
+      "command": "F:\\Codex\\Game_agent\\.conda\\python.exe",
+      "args": ["-m", "modular_agent.computer.mcp_server", "--live", "--audit", "F:\\Codex\\Game_agent\\runtime\\computer-actions.jsonl"],
+      "env": {"PYTHONPATH": "F:\\Codex\\Game_agent\\src"}
+    }
+  }
+}

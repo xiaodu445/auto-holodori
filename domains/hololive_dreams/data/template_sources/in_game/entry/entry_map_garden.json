@@ -1,0 +1,6 @@
+{
+  "name": "entry_map_garden",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：MAP 协律花园。来源：归档截图e4d701bc-5942-43ed-8ca5-c631d58a2674，尚待实机验证。"
+}

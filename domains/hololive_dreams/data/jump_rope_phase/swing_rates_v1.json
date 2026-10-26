@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "verified": false,
+  "periods": [
+    2.3990226302757485,
+    2.0047884430287084,
+    1.7099204727026773
+  ],
+  "gears": [
+    0.41683641803956556,
+    0.49880574854534915,
+    0.5848225200903135
+  ],
+  "middle_crossings": [
+    {
+      "level": 0.56,
+      "times": [
+        50.99008433184466,
+        52.99487277487337
+      ],
+      "period": 2.0047884430287084
+    },
+    {
+      "level": 0.59,
+      "times": [
+        58.36327418817461,
+        60.38755188026178
+      ],
+      "period": 2.024277692087175
+    },
+    {
+      "level": 0.62,
+      "times": [
+        58.49497180766786,
+        60.45705686718934
+      ],
+      "period": 1.9620850595214776
+    }
+  ],
+  "blue_crossings": [
+    {
+      "level": 0.48,
+      "times": [
+        76.2297009722225,
+        77.9528188696737
+      ],
+      "period": 1.7231178974512034
+    },
+    {
+      "level": 0.5,
+      "times": [
+        76.26298911311986,
+        77.97680397781053
+      ],
+      "period": 1.7138148646906757
+    },
+    {
+      "level": 0.53,
+      "times": [
+        76.31570728890009,
+        78.02515840847472
+      ],
+      "period": 1.7094511195746378
+    },
+    {
+      "level": 0.56,
+      "times": [
+        76.37571665241079,
+        78.08275991025108
+      ],
+      "period": 1.7070432578402972
+    },
+    {
+      "level": 0.59,
+      "times": [
+        76.45484615486669,
+        78.1652359806974
+      ],
+      "period": 1.7103898258307169
+    },
+    {
+      "level": 0.62,
+      "times": [
+        76.56407869410907,
+        78.25977383421301
+      ],
+      "period": 1.6956951401039362
+    }
+  ],
+  "sources": [
+    "domains/hololive_dreams/data/jump_rope_phase/swing_time_v1.json",
+    "domains/hololive_dreams/data/jump_rope_samples/calibration/yellow-middle.json",
+    "domains/hololive_dreams/data/jump_rope_samples/calibration/blue-late.json"
+  ],
+  "method": "Independent color-specific quadratic rope fits; matching ascending center-height crossings with bounded sample gaps, no tracker rates or extrapolation. Blue uses two wholly low-swing passes after 76s, excludes prior normal rotation and skill onset.",
+  "limits": "Empirical candidate gears on one development recording; not verified engine gears/global extrema. Common time warp from first yellow episode; dense holdout unavailable."
+}

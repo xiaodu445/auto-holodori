@@ -1,0 +1,34 @@
+{
+  "fps": 120,
+  "timeout": 0,
+  "analysis_width": 960,
+  "key_lookahead_ms": 0,
+  "roi": [0, 0, 1, 1],
+  "hit_line_y": 0.8059071729957806,
+  "detection_start_y": 0.06,
+  "prediction_zone": [0.22, 0.54],
+  "motion_curve": {"power": -0.2, "offset": 0.15},
+  "locked_prediction_ms": 750,
+  "pink_tap_trial": true,
+  "geometry": {
+    "top_y": 0.01828410689170183,
+    "top_left": 0.46835443037974683,
+    "top_right": 0.5316455696202531,
+    "hit_left": 0.09651898734177215,
+    "hit_right": 0.9034810126582279
+  },
+  "tap_ms": 25,
+  "input_offset_ms": 10,
+  "preview": false,
+  "visual_window": 0.035,
+  "min_area": 18,
+  "max_area": 50000,
+  "keys": ["s", "d", "f", "j", "k", "l"],
+  "bpm": null,
+  "dry_run": true,
+  "colors": {
+    "tap": [[75, 100, 100], [135, 255, 255]],
+    "hold": [[35, 70, 70], [95, 255, 255]],
+    "special": [[135, 70, 70], [179, 255, 255]]
+  }
+}

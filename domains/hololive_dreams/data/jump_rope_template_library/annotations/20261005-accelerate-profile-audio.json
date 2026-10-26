@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/half-cycle/index.html",
+  "frames": 4010,
+  "annotations": [
+    {
+      "frame": 1866,
+      "time": 40.819913000101224,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "其实低30次已经进入阶段3了。这里是阶段3的正常。你的阶段2加速太快，然后被修正回阶段二正常又太慢，导致预测出错"
+    },
+    {
+      "frame": 2090,
+      "time": 45.77556750015356,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里确实还是阶段3加速，有遮挡，我感觉是你存储的三阶段加速模板有一点偏差"
+    },
+    {
+      "frame": 3302,
+      "time": 72.6817850000225,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "四阶段加速识别没问题但是模板好像还是错的"
+    },
+    {
+      "frame": 3804,
+      "time": 83.61799530009739,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "加速模板可能有问题"
+    }
+  ]
+}

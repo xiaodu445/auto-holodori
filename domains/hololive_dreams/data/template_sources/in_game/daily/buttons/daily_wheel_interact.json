@@ -1,0 +1,6 @@
+{
+  "name": "daily_wheel_interact",
+  "role": "button",
+  "threshold": 0.85,
+  "notes": "转盘现场可按E交互的提示；需要明确区别其他E交互目标。来源：用户提供模板；尚待每日流程验证。"
+}

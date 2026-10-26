@@ -1,0 +1,379 @@
+[
+  {
+    "class_id": "seaweed",
+    "file": "seaweed.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261021-212928-866150",
+      "frame": 842,
+      "slot": 0,
+      "key": "seaweed",
+      "score": 0.9661035243432649,
+      "margin": 0.22603037577764484,
+      "candidate": 3
+    }
+  },
+  {
+    "class_id": "chili",
+    "file": "chili.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261023-215020-8411f1a9",
+      "frame": 500,
+      "slot": 2,
+      "key": "chili",
+      "score": 0.9259869596084598,
+      "margin": 0.33279998891912443,
+      "candidate": 8
+    }
+  },
+  {
+    "class_id": "hamburger_patty",
+    "file": "hamburger_patty.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261021-212928-866150",
+      "frame": 842,
+      "slot": 1,
+      "key": "hamburger_patty",
+      "score": 0.8034794298746675,
+      "margin": 0.0021814581072305828,
+      "candidate": 13
+    }
+  },
+  {
+    "class_id": "fish_fillet_board",
+    "file": "fish_fillet_board.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261022-203025-769094",
+      "frame": 544,
+      "slot": 2,
+      "key": "fish_fillet_board",
+      "score": 0.7369734229149203,
+      "margin": 0.017361783702305678,
+      "candidate": 17
+    }
+  },
+  {
+    "class_id": "udon",
+    "file": "udon.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261022-203025-769094",
+      "frame": 2902,
+      "slot": 1,
+      "key": "udon",
+      "score": 0.627601406652521,
+      "margin": 0.0027965049580180867,
+      "candidate": 23
+    }
+  },
+  {
+    "class_id": "instant_noodles",
+    "file": "instant_noodles.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-130420-04a18f1a",
+      "frame": 1308,
+      "slot": 2,
+      "key": "instant_noodles",
+      "score": 0.7144003100979104,
+      "margin": 0.001044009453132766,
+      "candidate": 29
+    }
+  },
+  {
+    "class_id": "onion",
+    "file": "onion.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-134524-a5549342",
+      "frame": 957,
+      "slot": 0,
+      "key": "onion",
+      "score": 0.9851054844565524,
+      "margin": 0.21645337269735765,
+      "candidate": 33
+    }
+  },
+  {
+    "class_id": "gravy_boat",
+    "file": "gravy_boat.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-132143-cae35240",
+      "frame": 1375,
+      "slot": 0,
+      "key": "gravy_boat",
+      "score": 0.9697455095559571,
+      "margin": 0.40895359057778335,
+      "candidate": 38
+    }
+  },
+  {
+    "class_id": "breadcrumbs",
+    "file": "breadcrumbs.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261021-212757-320577",
+      "frame": 1299,
+      "slot": 0,
+      "key": "breadcrumbs",
+      "score": 0.7821749710941688,
+      "margin": 0.09163204325610264,
+      "candidate": 43
+    }
+  },
+  {
+    "class_id": "tuna_can",
+    "file": "tuna_can.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261022-142617-095737",
+      "frame": 4237,
+      "slot": 4,
+      "key": "tuna_can",
+      "score": 0.8108923243466293,
+      "margin": 0.25311566874251024,
+      "candidate": 48
+    }
+  },
+  {
+    "class_id": "milk_blue",
+    "file": "milk_blue.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-135353-bde3b593",
+      "frame": 139,
+      "slot": 0,
+      "key": "milk_blue",
+      "score": 0.9791629648598396,
+      "margin": 0.16855474290470907,
+      "candidate": 53
+    }
+  },
+  {
+    "class_id": "meat_pack",
+    "file": "meat_pack.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261021-212928-866150",
+      "frame": 2528,
+      "slot": 0,
+      "key": "meat_pack",
+      "score": 0.9598205815840463,
+      "margin": 0.3375309688826771,
+      "candidate": 58
+    }
+  },
+  {
+    "class_id": "zhaxiashi",
+    "file": "zhaxiashi.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-134636-7b3bc3f0",
+      "frame": 666,
+      "slot": 0,
+      "key": "zhaxiashi",
+      "score": 0.9630794691396315,
+      "margin": 0.36012177996438466,
+      "candidate": 63
+    }
+  },
+  {
+    "class_id": "Yellow_egg",
+    "file": "Yellow_egg.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261022-202506-664483",
+      "frame": 2031,
+      "slot": 0,
+      "key": "Yellow_egg",
+      "score": 0.9244414832967319,
+      "margin": 0.15491972719652625,
+      "candidate": 68
+    }
+  },
+  {
+    "class_id": "Hand",
+    "file": "Hand.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-125921-0ca14eab",
+      "frame": 965,
+      "slot": 0,
+      "key": "Hand",
+      "score": 0.9828883632656801,
+      "margin": 0.28187728907823906,
+      "candidate": 73
+    }
+  },
+  {
+    "class_id": "White_Egg",
+    "file": "White_Egg.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-130049-05d8f8ca",
+      "frame": 872,
+      "slot": 0,
+      "key": "White_Egg",
+      "score": 0.9739287483422261,
+      "margin": 0.16422344897133412,
+      "candidate": 83
+    }
+  },
+  {
+    "class_id": "Source",
+    "file": "Source.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-134636-7b3bc3f0",
+      "frame": 1628,
+      "slot": 3,
+      "key": "Source",
+      "score": 0.8730637228723549,
+      "margin": 0.144899586446127,
+      "candidate": 88
+    }
+  },
+  {
+    "class_id": "cereal",
+    "file": "cereal.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-133336-bef0caf3",
+      "frame": 1848,
+      "slot": 0,
+      "key": "cereal",
+      "score": 0.9821018723028396,
+      "margin": 0.29303502237445256,
+      "candidate": 93
+    }
+  },
+  {
+    "class_id": "noodle_pan",
+    "file": "noodle_pan.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261021-212928-866150",
+      "frame": 4552,
+      "slot": 0,
+      "key": "noodle_pan",
+      "score": 0.707766058828309,
+      "margin": 0.09564968663021911,
+      "candidate": 98
+    }
+  },
+  {
+    "class_id": "ham",
+    "file": "ham.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\review-errors-20261024-merged",
+      "frame": 4,
+      "slot": 4,
+      "key": "ham",
+      "score": 0.9125943222899181,
+      "margin": 0.20301820537100512,
+      "candidate": 108
+    }
+  },
+  {
+    "class_id": "can",
+    "file": "can.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-133336-bef0caf3",
+      "frame": 2819,
+      "slot": 1,
+      "key": "can",
+      "score": 0.9384733728687134,
+      "margin": 0.20182275922843806,
+      "candidate": 113
+    }
+  },
+  {
+    "class_id": "rice_plate",
+    "file": "rice_plate.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-132346-7dfbf117",
+      "frame": 2162,
+      "slot": 2,
+      "key": "rice_plate",
+      "score": 0.9430497998717471,
+      "margin": 0.3643629253735703,
+      "candidate": 118
+    }
+  },
+  {
+    "class_id": "rice_bowl",
+    "file": "rice_bowl.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261021-212757-320577",
+      "frame": 539,
+      "slot": 0,
+      "key": "rice_bowl",
+      "score": 0.9340269543421181,
+      "margin": 0.2099093346335924,
+      "candidate": 123
+    }
+  },
+  {
+    "class_id": "rice_box",
+    "file": "rice_box.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261022-203025-769094",
+      "frame": 544,
+      "slot": 3,
+      "key": "rice_box",
+      "score": 0.9572020440763516,
+      "margin": 0.3677477235266493,
+      "candidate": 128
+    }
+  },
+  {
+    "class_id": "scallion",
+    "file": "scallion.png",
+    "source": {
+      "source": "runtime\\kitchen\\recordings\\20261022-203025-769094",
+      "frame": 3537,
+      "slot": 0,
+      "key": "scallion",
+      "score": 0.9364449508833523,
+      "margin": 0.3446081847678013,
+      "candidate": 133
+    }
+  },
+  {
+    "class_id": "poteto",
+    "file": "poteto.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-135143-f389fcab",
+      "frame": 240,
+      "slot": 0,
+      "key": "poteto",
+      "score": 0.8975476406687968,
+      "margin": 0.10986686015326463,
+      "candidate": 138
+    }
+  },
+  {
+    "class_id": "Spider",
+    "file": "Spider.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\hud-integration-20261023",
+      "frame": 0,
+      "slot": 1,
+      "key": "Spider",
+      "score": 0.980952494346416,
+      "margin": 0.24537999392198528,
+      "candidate": 143
+    }
+  },
+  {
+    "class_id": "cucumber",
+    "file": "cucumber.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-135143-f389fcab",
+      "frame": 1923,
+      "slot": 2,
+      "key": "IANGCHANG",
+      "score": 0.6846302679657907,
+      "margin": 0.06602477321948441,
+      "candidate": 79
+    }
+  },
+  {
+    "class_id": "IANGCHANG",
+    "file": "IANGCHANG.png",
+    "source": {
+      "source": "runtime\\kitchen\\sessions\\20261024-133336-bef0caf3",
+      "frame": 184,
+      "slot": 3,
+      "key": "IANGCHANG",
+      "score": 0.6552480090655676,
+      "margin": 0,
+      "candidate": 19
+    }
+  }
+]

@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "current_auto": "local_motion_v6",
+  "routes": [
+    {
+      "id": "local_motion_v6",
+      "status": "active_experimental_input",
+      "flags": [
+        "--local-motion"
+      ],
+      "files": [
+        "jump_rope.py",
+        "jump_rope_vision.py",
+        "jump_rope_controller.py",
+        "jump_rope_fragments.py"
+      ],
+      "config": "jump_rope_config.json",
+      "live_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_local_motion.cmd",
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_local_motion_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/local-motion.md"
+    },
+    {
+      "id": "whole_curve_v2",
+      "status": "diagnostic",
+      "flags": [
+        "--whole-rope"
+      ],
+      "files": [
+        "jump_rope_whole.py"
+      ],
+      "config": "jump_rope_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_whole_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/whole-curves.md"
+    },
+    {
+      "id": "whole_shape_v3",
+      "status": "opt_in_experiment",
+      "flags": [
+        "--whole-rope",
+        "--whole-shape"
+      ],
+      "files": [
+        "jump_rope_whole.py"
+      ],
+      "config": "jump_rope_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_whole_shape_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/whole-curves.md"
+    },
+    {
+      "id": "fixed_phase_v1",
+      "status": "opt_in_experiment",
+      "flags": [
+        "--phase-rope"
+      ],
+      "files": [
+        "jump_rope_phase.py"
+      ],
+      "config": "jump_rope_phase_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_phase_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/fixed-phase.md"
+    },
+    {
+      "id": "baseline",
+      "status": "legacy_reference",
+      "flags": [],
+      "files": [
+        "jump_rope_vision.py",
+        "jump_rope_controller.py"
+      ],
+      "config": "jump_rope_config.json",
+      "live_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_live.cmd",
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/legacy.md"
+    },
+    {
+      "id": "joint_shape",
+      "status": "legacy_experiment",
+      "flags": [
+        "--shape-vision"
+      ],
+      "files": [
+        "jump_rope_vision.py",
+        "jump_rope_controller.py"
+      ],
+      "config": "jump_rope_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_shape_preview.cmd",
+      "documentation": "docs/jump-rope/routes/legacy.md"
+    },
+    {
+      "id": "fixed_phase_signed_v2",
+      "status": "opt_in_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-reverse"
+      ],
+      "files": [
+        "jump_rope_phase.py"
+      ],
+      "config": "jump_rope_phase_reverse_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_phase_reverse_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/fixed-phase-reverse.md"
+    },
+    {
+      "id": "fixed_phase_state_v3",
+      "status": "opt_in_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-state"
+      ],
+      "files": [
+        "jump_rope_phase_state.py"
+      ],
+      "config": "jump_rope_phase_state_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_phase_state_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/fixed-phase-state.md"
+    },
+    {
+      "id": "trajectory_gear_v4",
+      "status": "independent_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_phase_gear_config.json",
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_phase_gear_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/trajectory-gears.md"
+    },
+    {
+      "id": "stage_templates_v1",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_stage_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_stage_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_stage_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/stage-templates.md",
+      "framework_files": [
+        "src/modular_agent/realtime/staged_trajectory_bank.py",
+        "src/modular_agent/realtime/stage_badge.py"
+      ]
+    },
+    {
+      "id": "reverse_time_v1",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_reverse_timing_gear_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "framework_files": [
+        "src/modular_agent/realtime/trajectory_bank.py",
+        "src/modular_agent/realtime/build_jump_rope_reverse_time.py"
+      ],
+      "config": "jump_rope_reverse_timing_gear_config.json",
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_reverse_timing_judgment.cmd",
+      "documentation": "docs/jump-rope/routes/reverse-timing.md"
+    },
+    {
+      "id": "human_calibration_v1",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_human_calibration_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_human_calibration_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_human_calibration_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/human-calibration-20261005.md",
+      "framework_files": [
+        "src/modular_agent/realtime/staged_trajectory_bank.py",
+        "src/modular_agent/realtime/landing_trajectory_bank.py"
+      ]
+    },
+    {
+      "id": "clock_exit_v1",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_clock_exit_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "framework_files": [
+        "src/modular_agent/realtime/trajectory_bank.py",
+        "src/modular_agent/realtime/landing_trajectory_bank.py",
+        "src/modular_agent/realtime/staged_trajectory_bank.py"
+      ],
+      "config": "jump_rope_clock_exit_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_clock_exit_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/clock-exit-20261005.md"
+    },
+    {
+      "id": "directional_exit_v1",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_directional_exit_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_directional_exit_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_directional_exit_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/directional-exit-20261005.md",
+      "framework_files": [
+        "src/modular_agent/realtime/trajectory_bank.py"
+      ]
+    },
+    {
+      "id": "stage_clock_library_v1",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_stage_clock_library_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_stage_clock_library_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_stage_clock_library_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/stage-clock-library-20261005.md",
+      "framework_files": [
+        "src/modular_agent/realtime/staged_trajectory_bank.py",
+        "src/modular_agent/realtime/trajectory_bank.py",
+        "src/modular_agent/realtime/build_jump_rope_clock_library.py"
+      ]
+    },
+    {
+      "id": "stage_clock_v2",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_stage_clock_v2_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_stage_clock_v2_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_stage_clock_v2_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/stage-clock-v2-20261005.md"
+    },
+    {
+      "id": "stage_coexist",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_stage_coexist_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_stage_coexist_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_stage_coexist_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/stage-coexist-20261005.md",
+      "framework_files": [
+        "src/modular_agent/realtime/coexisting_stage_bank.py"
+      ]
+    },
+    {
+      "id": "temporal_recovery",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_temporal_recovery_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_temporal_recovery_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_temporal_recovery_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/temporal-recovery-20261005.md",
+      "framework_files": [
+        "src/modular_agent/realtime/evidence_recovery_bank.py"
+      ]
+    },
+    {
+      "id": "half_cycle_switch",
+      "status": "independent_unvalidated_judgment_experiment",
+      "flags": [
+        "--phase-rope",
+        "--phase-gear",
+        "--gear-settings",
+        "domains/hololive_dreams/models/jump_rope_half_cycle_config.json"
+      ],
+      "files": [
+        "jump_rope_phase_gear.py"
+      ],
+      "config": "jump_rope_half_cycle_config.json",
+      "live_launcher": null,
+      "judgment_launcher": "tools/jump_rope/legacy_launchers/run_jump_rope_half_cycle_judgment.cmd",
+      "documentation": "docs/jump-rope/reports/half-cycle-20261005.md"
+    }
+  ],
+  "retained_trials": [
+    "jump_rope_local_motion.py",
+    "src/modular_agent/realtime/learn_jump_rope.py"
+  ],
+  "notes": "Metadata index, not a runtime routing switch. All existing launchers are preserved.",
+  "development_mainline": "template_whole_curve_audio",
+  "offline_baseline": "jump_rope_audio_prefix_config.json",
+  "current_auto_note": "local_motion_v6 is retained live fallback; audio mainline is offline only"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "entry_area",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：游玩区域。来源：归档截图8e6f38a1-d645-4bb5-8941-cd90ac89b6d6，尚待实机验证。"
+}

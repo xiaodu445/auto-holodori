@@ -1,0 +1,33 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>跳绳逐帧审阅</title>
+<style>body{margin:16px;background:#151c29;color:#e7eefb;font:15px system-ui}button,input,select,textarea{font:inherit;margin:4px;padding:6px;background:#243149;color:white;border:1px solid #536781;border-radius:5px}main{display:grid;grid-template-columns:minmax(450px,960px) minmax(340px,1fr);gap:16px}img{width:100%;border:1px solid #536781}pre{white-space:pre-wrap;line-height:1.55}table{width:100%;font-size:13px;border-collapse:collapse}td,th{padding:5px;border-bottom:1px solid #42516a}textarea{width:95%}#slider{width:65%}.muted{color:#adc0d8}@media(max-width:950px){main{display:block}}</style>
+<h2>跳绳逐帧审阅 · 只回放，不发送游戏输入</h2><p class="muted">每张图对应一个原始采集帧，未经30 FPS重采样。绿色＝可见支持，橙色＝模型续推；候选不是已经确认的状态。阶段未知显示“未启用”，请在标注中填写实际阶段。</p>
+<div><button id="prev">上一帧 ←</button><button id="next">下一帧 →</button><button id="play">播放</button><button id="event">下一切换/跳变</button><input id="number" type="number" min="0" value="0"><input id="slider" type="range" min="0" value="0"></div>
+<main><section><img id="image"><p id="caption"></p><h3>人工标注当前帧</h3><select id="truth"><option value="">未标注</option><option>正摇</option><option>反摇</option><option>低空左右摇</option><option>看不清</option></select><input id="stage" type="number" min="1" placeholder="实际阶段"><select id="verdict"><option value="">判定问题</option><option>正确</option><option>状态切换过早</option><option>状态切换过晚</option><option>绳子位置错误</option><option>速度错误</option><option>瞬移</option><option>仅遮挡</option></select><textarea id="note" rows="3" placeholder="例如：从后往前前半程；哪一侧仍可见；这里应确认哪个候选"></textarea><button id="save">保存当前帧</button><button id="download">导出人工标注 JSON</button><p id="saved" class="muted"></p></section><section><h3>当前确认与预测</h3><pre id="summary"></pre><h3>模板播放候选（同名可有不同起点，不代表重复存储）</h3><table><thead><tr><th>编号/状态</th><th>阶段/模板/位置</th><th>平滑分数</th><th>同帧窗口优势</th><th>可见/合法</th><th>证据帧</th></tr></thead><tbody id="candidates"></tbody></table><pre id="branch"></pre><p class="muted">原始参数见同目录 frames.jsonl。人工标注只保存在本页/浏览器中，请用“导出”保存文件；标注不会自动改代码。</p></section></main>
+<script>const frames=/*FRAME_DATA*/;let index=0,timer=null,annotations={};const $=id=>document.getElementById(id);const key='jump-rope-review:'+location.pathname;try{annotations=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}const n=v=>typeof v==='number'?v.toFixed(5):String(v??'--');const roles={normal:'正常',accelerate:'加速',decelerate:'减速',low_swing:'低空摇摆'};const roleName=r=>roles[r]??(r?.startsWith('rotation_slot_')?'旧速度槽 '+r.split('_').pop():r??'—');const names={rotation_forward:'正摇',rotation_reverse:'反摇',low_swing:'低空左右摇'};
+function draw(i){index=Math.max(0,Math.min(frames.length-1,Number(i)||0));let f=frames[index];$('number').value=$('slider').value=index;$('image').src=f.image;$('caption').textContent=`原始帧 ${index} / ${frames.length-1} · ${n(f.time)}秒 · 本帧间隔 ${n(f.dt*1000)}ms`;
+$('summary').textContent=`阶段：${f.stage??'未启用'}（来源 ${f.stage_source??'--'}，置信度 ${n(f.stage_confidence)}）
+计数阶段：${f.count_stage??f.stage??'—'} · 有效速度阶段：${f.effective_speed_stage??f.stage??'—'}
+状态：${names[f.motion_state]} · ${f.tracking}
+阶段5独立策略：${f.terminal_stage_policy?.locked?'已接管，只竞争三个固定速度档':f.terminal_stage_policy?.requested?'等待当前技能与速度交接':'未接管'}
+当前活动模板：阶段 ${f.stage??'未知'} / ${roleName(f.stage_role)}
+同名候选共享一份存储模板，区别是起始时钟与落地批次。
+标定：${f.template_calibration??'待标定'}；模板名称不代表技能已确认
+初始跟踪已建立：${f.locked} · 本帧视觉支持：${f.visual}
+选中模型：${f.hypothesis} · ${f.visual?'视觉支持的模板':'仅预测，未确认本帧图像'}
+待确认：${JSON.stringify(f.pending)}
+连续确认时间：${n(f.pending_seconds)}s / ${n(f.confirmation_seconds)}s
+事件：${f.event??'无'} · 模型切换：${f.candidate_changed}
+时钟：${n(f.clock)} · 轨迹位置：${n(f.coordinate)}
+时钟速度：${n(f.rate)} · 位置速度：${n(f.velocity)}
+模板加速度：${n(f.acceleration)}
+模型置信度：${n(f.confidence)} · 视觉质量：${n(f.quality)}
+可见覆盖：${n(f.support)} · 相邻帧位置变化P95：${n(f.curve_step_p95)}
+低空片段：${f.episode} · 进入方向：${f.entry_direction}
+低空经过：${f.swing_pass==='back_to_front'?'从后往前':f.swing_pass==='front_to_back'?'从前往后':'—'} · 本半摆允许退出：${f.exit_half_allowed??'—'}
+退出边界时钟：${n(f.exit_boundary)} · 接续图集位置：${JSON.stringify(f.exit_rotation_join??null)}
+落地批次：${f.landing} · 阶段分支：${f.stage_role??'未启用'}`;
+$('candidates').replaceChildren();for(let c of f.candidates){let tr=document.createElement('tr');for(let v of [`${c.key} ${names[c.mode]} · ${c.key===f.hypothesis?"当前播放":c.landing?"本圈重计时候选":"其他起点候选"}`,`阶段 ${c.stage??f.stage??'—'} / ${roleName(c.role??'rotation_slot_'+c.gear)} / ${n(c.coordinate)}`,n(c.score),n(c.window_advantage),`${c.visual} / ${c.legal}`,c.evidence_frames??'--']){let td=document.createElement('td');td.textContent=v;tr.append(td)}$('candidates').append(tr)}$('branch').textContent='最近落地确认：'+JSON.stringify(f.branch,null,2);let a=annotations[index]||{};for(let id of ['truth','stage','verdict','note'])$(id).value=a[id]??'';$('saved').textContent=`已保存 ${Object.keys(annotations).length} 个标注帧`;}
+function stop(){clearTimeout(timer);timer=null;$('play').textContent='播放'}function tick(){if(index===frames.length-1){stop();return}let dt=Math.min(150,Math.max(15,(frames[index+1].time-frames[index].time)*1000));timer=setTimeout(()=>{draw(index+1);tick()},dt)}
+$('prev').onclick=()=>{stop();draw(index-1)};$('next').onclick=()=>{stop();draw(index+1)};$('play').onclick=()=>{if(timer)stop();else{$('play').textContent='暂停';tick()}};$('event').onclick=()=>{stop();let j=frames.findIndex((f,i)=>i>index&&(f.candidate_changed||f.curve_step_p95>.06||f.stage_change?.time===f.time));if(j>=0)draw(j)};for(let id of ['slider','number'])$(id).oninput=()=>{stop();draw($(id).value)};
+$('save').onclick=()=>{let a={frame:index,time:frames[index].time};for(let id of ['truth','stage','verdict','note'])a[id]=$(id).value;annotations[index]=a;try{localStorage.setItem(key,JSON.stringify(annotations))}catch(e){}$('saved').textContent=`已保存 ${Object.keys(annotations).length} 个标注帧，请导出文件`};$('download').onclick=()=>{const b=new Blob([JSON.stringify({schema:1,source:location.pathname,frames:frames.length,annotations:Object.values(annotations)},null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='jump-rope-human-labels.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();stop();draw(index+(e.key==='ArrowRight'?1:-1)*(e.shiftKey?10:1))}});$('slider').max=$('number').max=frames.length-1;draw(0);</script></html>

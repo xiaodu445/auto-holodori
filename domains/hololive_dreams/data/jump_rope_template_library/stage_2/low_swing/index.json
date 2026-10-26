@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "stage": 2,
+  "role": "low_swing",
+  "direction": "both",
+  "status": "needs_recording_and_calibration",
+  "legacy_status": "pending_calibration",
+  "nominal_rate": 0.41683641803956556,
+  "verified": false,
+  "active_runtime": false,
+  "template_ref": "domains/hololive_dreams/data/jump_rope_template_library/stage_2/low_swing/generated/legacy_import/template.json",
+  "shape_ref": "domains/hololive_dreams/data/jump_rope_template_library/shapes/low_swing/legacy_camera_v1/candidates.json",
+  "samples": [
+    {
+      "sample_id": "20261006-115004-094950-segment-07",
+      "metadata": "domains/hololive_dreams/data/jump_rope_template_library/stage_2/low_swing/samples/20261006-115004-094950-segment-07/metadata.json"
+    }
+  ],
+  "limits": "Imported legacy parameters are not new measurements. Whole original branch retained for traceability; use only requested direction.",
+  "sample_status": "annotated_pending_extraction",
+  "timed_runtime": {
+    "catalog": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/catalog.json",
+    "templates": [
+      "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-low_swing-bidirectional-legacy-timed.json",
+      "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-low_swing-bidirectional-auto-visible-cycle.json"
+    ],
+    "active": true,
+    "verified": false
+  }
+}

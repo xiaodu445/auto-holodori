@@ -1,0 +1,9 @@
+{
+  "name": "daily_work_setup_all_sample",
+  "role": "button",
+  "threshold": 0.9,
+  "environments": [
+    "hololive_dreams"
+  ],
+  "notes": "旧截图统一设置核心文字补充；映射到daily_work_setup_all"
+}

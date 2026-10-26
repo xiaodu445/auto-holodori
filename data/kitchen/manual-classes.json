@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "classes": [
+    {
+      "id": "seaweed",
+      "name": "海苔",
+      "name_status": "user_named"
+    },
+    {
+      "id": "chili",
+      "name": "辣椒",
+      "name_status": "user_named"
+    },
+    {
+      "id": "hamburger_patty",
+      "name": "汉堡肉",
+      "name_status": "user_named"
+    },
+    {
+      "id": "fish_fillet_board",
+      "name": "木板底鱼排",
+      "name_status": "user_named"
+    },
+    {
+      "id": "udon",
+      "name": "乌冬面",
+      "name_status": "user_named"
+    },
+    {
+      "id": "instant_noodles",
+      "name": "方便面",
+      "name_status": "user_confirmed",
+      "merged_ids": [
+        "noodle_block"
+      ]
+    },
+    {
+      "id": "onion",
+      "name": "洋葱",
+      "name_status": "existing_user_annotation"
+    },
+    {
+      "id": "gravy_boat",
+      "name": "金属酱汁盅",
+      "name_status": "existing_user_annotation"
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "面包糠袋（PANKO）",
+      "name_status": "existing_user_annotation"
+    },
+    {
+      "id": "tuna_can",
+      "name": "蓝色金枪鱼罐头",
+      "name_status": "existing_user_annotation"
+    },
+    {
+      "id": "milk_blue",
+      "name": "蓝白牛奶盒",
+      "name_status": "existing_user_annotation"
+    },
+    {
+      "id": "meat_pack",
+      "name": "托盘肉",
+      "name_status": "existing_user_annotation"
+    },
+    {
+      "id": "zhaxiashi",
+      "name": "炸虾狮",
+      "name_status": "user_defined",
+      "merged_ids": [
+        "fried_shrimp"
+      ]
+    },
+    {
+      "id": "Yellow_egg",
+      "name": "鸡蛋（黄蛋／棕蛋）",
+      "name_status": "user_defined",
+      "merged_ids": [
+        "egg_brown"
+      ]
+    },
+    {
+      "id": "Hand",
+      "name": "蓝色手掌",
+      "name_status": "user_defined",
+      "merged_ids": [
+        "blue_glove"
+      ]
+    },
+    {
+      "id": "IANGCHANG",
+      "name": "香肠",
+      "name_status": "user_defined"
+    },
+    {
+      "id": "White_Egg",
+      "name": "白蛋",
+      "name_status": "user_defined"
+    },
+    {
+      "id": "Source",
+      "name": "棕色酱汁",
+      "name_status": "user_confirmed",
+      "merged_ids": [
+        "sauce_bottle"
+      ]
+    },
+    {
+      "id": "cereal",
+      "name": "麦片",
+      "name_status": "suggested_needs_user_review",
+      "reference": "references/cereal.png",
+      "source_frame": 3082,
+      "source_box": [
+        489,
+        65,
+        537,
+        118
+      ],
+      "merged_ids": [
+        "RED"
+      ]
+    },
+    {
+      "id": "noodle_pan",
+      "name": "面条锅",
+      "name_status": "suggested_needs_user_review",
+      "reference": "references/noodle_pan.png",
+      "source_frame": 3082,
+      "source_box": [
+        293,
+        170,
+        388,
+        279
+      ]
+    },
+    {
+      "id": "flour_bag",
+      "name": "面粉袋",
+      "name_status": "suggested_needs_user_review",
+      "reference": "references/flour_bag.png",
+      "source_frame": 3082,
+      "source_box": [
+        400,
+        394,
+        569,
+        558
+      ]
+    },
+    {
+      "id": "ham",
+      "name": "火腿块",
+      "name_status": "suggested_needs_user_review",
+      "reference": "references/ham.png",
+      "source_frame": 3082,
+      "source_box": [
+        286,
+        438,
+        417,
+        556
+      ]
+    },
+    {
+      "id": "can",
+      "name": "豆芽罐（暂定）",
+      "name_status": "user_proposed",
+      "reference": "references/can.png",
+      "source_frame": 4624,
+      "source_box": [
+        611,
+        59,
+        652,
+        116
+      ]
+    },
+    {
+      "id": "rice_plate",
+      "name": "盘装米饭",
+      "name_status": "user_confirmed",
+      "merged_ids": [
+        "white_plate"
+      ]
+    },
+    {
+      "id": "rice_bowl",
+      "name": "碗装米饭",
+      "name_status": "user_named_visual_mapping_reviewed",
+      "merged_ids": [
+        "rice"
+      ]
+    },
+    {
+      "id": "rice_box",
+      "name": "盒装米饭",
+      "name_status": "user_confirmed",
+      "merged_ids": [
+        "Rice_Packet",
+        "pink_carton",
+        "white_tray"
+      ]
+    },
+    {
+      "id": "scallion",
+      "name": "大葱",
+      "name_status": "user_named"
+    },
+    {
+      "id": "cucumber",
+      "name": "黄瓜",
+      "name_status": "user_named"
+    },
+    {
+      "id": "poteto",
+      "name": "土豆",
+      "name_status": "user_defined"
+    },
+    {
+      "id": "Spider",
+      "name": "袋装蜘蛛",
+      "name_status": "user_defined"
+    }
+  ],
+  "aliases": {
+    "egg_brown": "Yellow_egg",
+    "blue_glove": "Hand",
+    "fried_shrimp": "zhaxiashi",
+    "RED": "cereal",
+    "rice": "rice_bowl",
+    "Rice_Packet": "rice_box",
+    "white_tray": "rice_box",
+    "white_plate": "rice_plate",
+    "noodle_block": "instant_noodles",
+    "pink_carton": "rice_box",
+    "sauce_bottle": "Source"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/stage-coexist/index.html",
+  "frames": 4010,
+  "annotations": [
+    {
+      "frame": 1741,
+      "time": 37.98657750012353,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段2加速"
+    },
+    {
+      "frame": 1768,
+      "time": 38.61248000012711,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "该切换了，阶段2加速"
+    },
+    {
+      "frame": 2007,
+      "time": 43.93456980003975,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段3的加速"
+    },
+    {
+      "frame": 2009,
+      "time": 43.98599259997718,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "此时已严重跟不上阶段3加速"
+    },
+    {
+      "frame": 2784,
+      "time": 61.212513300124556,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里不知为何模型跟不上？难道是左右摇切换阶段会立即更新速度？"
+    },
+    {
+      "frame": 2896,
+      "time": 63.66534340009093,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段4正常，已严重偏离却未修复切换"
+    },
+    {
+      "frame": 3239,
+      "time": 71.1731958000455,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段4的加速，还是偏离却为切换，我发现这种情况总是出现在后半段，难道说要减弱后半圈的修正切换门槛？"
+    },
+    {
+      "frame": 3655,
+      "time": 80.4069724001456,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里已是阶段5正常，后半圈应该立刻切换并排除掉之后所有阶段4的预测。"
+    },
+    {
+      "frame": 3721,
+      "time": 81.81279090000317,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段5加速，好长时间未切换"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "stage": 2,
+  "role": "accelerate",
+  "direction": "reverse",
+  "status": "trial_needs_independent_validation",
+  "legacy_status": "human_role_anchored_contrast_fit_trial",
+  "nominal_rate": 0.9100000000000004,
+  "verified": false,
+  "active_runtime": false,
+  "template_ref": "domains/hololive_dreams/data/jump_rope_template_library/stage_2/accelerate_reverse/generated/legacy_import/template.json",
+  "shape_ref": "domains/hololive_dreams/data/jump_rope_template_library/shapes/rotation/wide_camera_v1/candidates.json",
+  "samples": [],
+  "limits": "Imported legacy parameters are not new measurements. Whole original branch retained for traceability; use only requested direction.",
+  "timed_runtime": {
+    "catalog": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/catalog.json",
+    "templates": [
+      "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-accelerate-reverse-legacy-timed.json",
+      "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-accelerate-reverse-borrowed-human-cycle.json"
+    ],
+    "active": true,
+    "verified": false
+  }
+}

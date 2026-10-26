@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "sample_id": "REPLACE_ME",
+  "recording_id": "REPLACE_ME",
+  "stage": null,
+  "state": null,
+  "direction": null,
+  "kind": "stable",
+  "frame_range": {
+    "start": null,
+    "end": null,
+    "end_exclusive": true
+  },
+  "time_reference": "timestamps.json original frame indexes",
+  "camera_id": null,
+  "label_certainty": "unreviewed",
+  "visibility": null,
+  "cycle_boundaries": [],
+  "audio_event_range": null,
+  "status": "unannotated",
+  "annotation_file": null,
+  "measurements_file": null,
+  "generated_template_file": null,
+  "split": "unassigned",
+  "limits": "No measurements until extraction; clip.avi is optional and not a timing authority."
+}

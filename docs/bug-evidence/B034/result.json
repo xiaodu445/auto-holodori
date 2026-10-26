@@ -1,0 +1,9 @@
+{
+  "outcome": "unknown",
+  "verified": false,
+  "reason": "rhythm_stopped_without_settlement:song_timeout",
+  "completed_rounds": 34,
+  "target_rounds": 999,
+  "rewards_verified": false,
+  "verification": null
+}

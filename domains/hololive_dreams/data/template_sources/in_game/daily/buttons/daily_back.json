@@ -1,0 +1,6 @@
+{
+  "name": "daily_back",
+  "role": "button",
+  "threshold": 0.85,
+  "notes": "Holowork页面右上蓝色返回箭头，非原生窗口关闭按钮。来源：用户提供模板；尚待每日流程验证。"
+}

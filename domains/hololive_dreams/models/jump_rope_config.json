@@ -1,0 +1,94 @@
+{
+  "fps": 60,
+  "timeout": 180,
+  "roi": [
+    0.35,
+    0.03,
+    0.78,
+    0.68
+  ],
+  "analysis_width": 960,
+  "rope_probes": [
+    [
+      0.5,
+      0.525
+    ],
+    [
+      0.605,
+      0.63
+    ]
+  ],
+  "rope_y": [
+    0.04,
+    0.68
+  ],
+  "rope_hsv_ranges": [
+    [
+      [
+        95,
+        50,
+        140
+      ],
+      [
+        115,
+        200,
+        255
+      ]
+    ]
+  ],
+  "avatar_template": [
+    0.544,
+    0.448,
+    0.584,
+    0.518
+  ],
+  "avatar_search": [
+    0.525,
+    0.3,
+    0.61,
+    0.64
+  ],
+  "avatar_threshold": 0.65,
+  "ground_tolerance": 0.009,
+  "ground_frames": 3,
+  "pulse_seconds": 0.035,
+  "short_loss_seconds": 0.08,
+  "long_loss_seconds": 0.5,
+  "max_frame_age": 0.045,
+  "max_observation_gap": 0.08,
+  "fit_samples": 6,
+  "prediction_horizon": 0.25,
+  "speed_change_ratio": 0.4,
+  "initial_mode": "rotation",
+  "calibration": {
+    "verified": false,
+    "input_latency_seconds": null,
+    "safe_airborne_seconds": null,
+    "danger_y": null,
+    "rotation_direction": null,
+    "max_prediction_error": null,
+    "source": "Pending timestamped motion/input validation; screenshot alone is insufficient"
+  },
+  "acquisition_timeout": 20,
+  "rope_stable_frames": 3,
+  "association_max_age": 0.12,
+  "association_gate": 0.035,
+  "association_ambiguity": 0.008,
+  "curve_max_error": 0.008,
+  "rope_max_center_slope": 0.7,
+  "rope_max_curvature": 5.0,
+  "rope_max_tangent_slope": 1.3,
+  "slow_arrival": {
+    "min_speed": 0.03,
+    "approach_max_speed": 4.5,
+    "lead_seconds": 0.1,
+    "danger_y": 0.57,
+    "rearm_distance": 0.015
+  },
+  "whole_continuity": {
+    "max_speed": 6.0,
+    "max_acceleration": 90.0,
+    "position_noise": 0.008
+  },
+  "whole_shape_model": false
+}

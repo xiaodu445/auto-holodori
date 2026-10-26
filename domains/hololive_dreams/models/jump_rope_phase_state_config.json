@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "atlas": "domains/hololive_dreams/data/jump_rope_phase/rotation_v1.json",
+  "max_rate": 4.0,
+  "max_acceleration": 8.0,
+  "inference_width": 512,
+  "input_enabled": false,
+  "allow_reverse": true,
+  "state_model": true,
+  "swing_atlas": "domains/hololive_dreams/data/jump_rope_phase/swing_v1.json",
+  "zero_timeout": 0.65
+}

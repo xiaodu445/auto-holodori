@@ -1,0 +1,61 @@
+{
+  "domain": "hololive_dreams",
+  "aliases": [
+    "hololivedreams",
+    "hololive dreams",
+    "hololive_dreams",
+    "ホロライブドリームス",
+    "holodori",
+    "hololovedreams"
+  ],
+  "launch_template": "launch_icon",
+  "window_title_patterns": [
+    "hololive[\\s_-]*dreams",
+    "ホロライブ.*ドリーム"
+  ],
+  "timeout_seconds": 60,
+  "poll_seconds": 1,
+  "template_scales": [
+    1.0
+  ],
+  "minimum_similarity": 0.9,
+  "navigation_hint": "用户报告此前启动后曾尝试单击游戏画面中央推进。若窗口可见且前台、未识别到明确按钮或加载提示，可由模型选择单击中央一次，然后观察反馈；无变化不要连续盲点。该经验尚未独立验证。",
+  "launch_method": "steam",
+  "steam_executable": "D:/Steam/steam.exe",
+  "steam_app_id": "4282500",
+  "interaction_policy": {
+    "mouse_modifiers": [
+      "alt"
+    ],
+    "description": "用户说明：游戏内鼠标 UI 操作需要按住 Alt，否则鼠标移动转动视角；操作结束释放 Alt。桌面/Steam 操作不加 Alt。"
+  },
+  "perception_policy": {
+    "game_uia": false,
+    "game_cv_buttons": false,
+    "ocr_max_side": 960,
+    "game_template_scales": [
+      1.0
+    ],
+    "description": "游戏默认同时匹配图标和小尺寸OCR，避免模板命中后丢失导航文字。full 使用完整识别；icons 显式仅匹配模板。",
+    "prefer_templates": false
+  },
+  "local_models": {
+    "greed_cards_entry": {
+      "enabled": true,
+      "description": "匹配进入强欲之牌的目标时先调用本地导航，未知状态交回顶层模型。"
+    },
+    "greed_cards_play": {
+      "enabled": true,
+      "description": "本地玩法，先核对模板、当前下注页及账目；素材不足和未知状态交回",
+      "timeout_seconds": 1800,
+      "template_scales": [
+        1.0
+      ]
+    }
+  },
+  "window_size": {
+    "width": 1280,
+    "height": 764
+  },
+  "window_resize_method": "drag"
+}

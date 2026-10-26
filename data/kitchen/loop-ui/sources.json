@@ -1,0 +1,35 @@
+{
+  "scope": "user-provided four kitchen end/restart screens; client cropped from title bar",
+  "sources": {
+    "score_next": "C:/Users/1/AppData/Local/Temp/codex-clipboard-20f7f82e-4226-4325-9b26-4bdbdb9be095.png",
+    "reward_ok": "C:/Users/1/AppData/Local/Temp/codex-clipboard-a983a125-c7ad-4541-b648-43a918401776.png",
+    "event_next": "C:/Users/1/AppData/Local/Temp/codex-clipboard-dcf9ba33-2a8e-4566-875e-461f0a419dab.png",
+    "play": "C:/Users/1/AppData/Local/Temp/codex-clipboard-f0bd9d44-82f7-45fc-914a-0ea07d10f1bb.png"
+  },
+  "anchors": {
+    "score_next": [
+      710,
+      465,
+      850,
+      515
+    ],
+    "reward_ok": [
+      642,
+      328,
+      785,
+      366
+    ],
+    "event_next": [
+      656,
+      263,
+      808,
+      295
+    ],
+    "play": [
+      30,
+      15,
+      320,
+      195
+    ]
+  }
+}

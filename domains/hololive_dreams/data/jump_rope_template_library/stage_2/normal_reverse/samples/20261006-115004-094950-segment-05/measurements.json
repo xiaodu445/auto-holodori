@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "stage": 2,
+  "state": "normal",
+  "direction": "reverse",
+  "boundary_certainty": "human_confirmed",
+  "visibility": "clear",
+  "cycle_start_frame": 2564,
+  "next_cycle_start_frame": 2641,
+  "start_time_seconds": 44.375005200039595,
+  "end_time_seconds": 45.696596400113776,
+  "period_seconds": 1.321591200074181,
+  "mean_cycles_per_second": 0.7566636339163502,
+  "frame_index_difference": 77,
+  "marked_frames_including_both_boundaries": 22,
+  "point_count": 366,
+  "source_annotation": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-115004-094950-rope-points-v1.json",
+  "runtime_verified": false,
+  "limitations": [
+    "Two consecutive human-confirmed cycles from the same recording; independent recording validation is pending.",
+    "Frame 2717 is a human-confirmed temporal boundary without rope points; second-cycle shapes extend to frame 2716.",
+    "Elapsed cycle progress is not geometric phase; phase alignment and within-cycle speed warp are not fitted."
+  ],
+  "confirmed_cycles": [
+    {
+      "start_frame": 2564,
+      "next_start_frame": 2641,
+      "start_time_seconds": 44.375005200039595,
+      "end_time_seconds": 45.696596400113776,
+      "period_seconds": 1.321591200074181,
+      "boundary_source": "human_confirmed"
+    },
+    {
+      "start_frame": 2641,
+      "next_start_frame": 2717,
+      "start_time_seconds": 45.696596400113776,
+      "end_time_seconds": 47.02845060010441,
+      "period_seconds": 1.3318541999906301,
+      "boundary_source": "human_confirmed"
+    }
+  ],
+  "two_cycle_summary": {
+    "mean_period_seconds": 1.3267227000324056,
+    "period_difference_seconds": 0.01026299991644919,
+    "relative_difference": 0.0077356028627523395,
+    "independent_recording_validation": false
+  },
+  "second_cycle_shapes": {
+    "source_annotation": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-115004-094950-rope-points-v2.json",
+    "marked_frames": 16,
+    "point_count": 270,
+    "last_marked_frame": 2716,
+    "next_cycle_boundary_has_points": false
+  }
+}

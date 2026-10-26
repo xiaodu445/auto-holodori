@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "model": "YOLO26x",
+  "weights": "learning/kitchen_yolo/runs/x-confusions-noaug-20261024-171143/weights/best-box.pt",
+  "description": "20261024混淆难例补训，关闭增强；检测框最佳mAP50 91.335%，epoch28",
+  "manual_targets": false,
+  "order_policy": "tray_then_hud_targets_then_other_triples",
+  "hud_bank": "data/kitchen/ui-icons",
+  "exploratory": true,
+  "reserve_slots": 3,
+  "previous_weights": "learning/kitchen_yolo/runs/x-seaweed-noaug-20261024-151541/weights/best-box.pt",
+  "exploration_policy": "only_without_match_one_item_per_round_existing_class_then_area",
+  "order_entry_delay_seconds": 0.33,
+  "tray_feedback": "after_queue_wait_occupied_minus_three",
+  "tensorrt": {
+    "source": "learning\\kitchen_yolo\\runs\\x-confusions-noaug-20261024-171143\\weights\\best-box.pt",
+    "source_sha256": "4fe22d0876491a7c61efb3125ccb69fda8cfa01a96f0e538bf83a69f640b2a59",
+    "engine": "learning\\kitchen_yolo\\engines\\confusions-20261024-736-fp16\\kitchen.engine",
+    "gpu": "NVIDIA GeForce RTX 5060",
+    "torch": "2.7.1+cu128",
+    "tensorrt": "10.16.1.11",
+    "ultralytics": "8.4.177",
+    "input_size": 736,
+    "precision": "FP16",
+    "nms": null,
+    "branch": "one-to-many plus external NMS, identical to current predict default",
+    "seconds": 41.997615700005554
+  }
+}

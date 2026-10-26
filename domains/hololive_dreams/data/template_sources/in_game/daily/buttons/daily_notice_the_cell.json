@@ -1,0 +1,6 @@
+{
+  "name": "daily_notice_the_cell",
+  "role": "button",
+  "threshold": 0.85,
+  "notes": "通知清单：可以在The Cell再临领取礼物了。。来源：用户提供模板；尚待每日流程验证。"
+}

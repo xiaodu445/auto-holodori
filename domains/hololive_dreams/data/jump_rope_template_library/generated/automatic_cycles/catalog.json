@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "templates": [
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage1-normal-forward-auto-visible-cycle.json",
+      "template_id": "stage1-normal-forward-auto-visible-cycle",
+      "stage": 1,
+      "state": "normal",
+      "direction": "forward"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage2-normal-forward-auto-visible-cycle.json",
+      "template_id": "stage2-normal-forward-auto-visible-cycle",
+      "stage": 2,
+      "state": "normal",
+      "direction": "forward"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage2-accelerate-forward-auto-visible-cycle.json",
+      "template_id": "stage2-accelerate-forward-auto-visible-cycle",
+      "stage": 2,
+      "state": "accelerate",
+      "direction": "forward"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage2-low_swing-bidirectional-auto-visible-cycle.json",
+      "template_id": "stage2-low_swing-bidirectional-auto-visible-cycle",
+      "stage": 2,
+      "state": "low_swing",
+      "direction": "bidirectional"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage3-low_swing-bidirectional-auto-visible-cycle.json",
+      "template_id": "stage3-low_swing-bidirectional-auto-visible-cycle",
+      "stage": 3,
+      "state": "low_swing",
+      "direction": "bidirectional"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage3-normal-forward-auto-visible-cycle.json",
+      "template_id": "stage3-normal-forward-auto-visible-cycle",
+      "stage": 3,
+      "state": "normal",
+      "direction": "forward"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage3-accelerate-forward-auto-visible-cycle.json",
+      "template_id": "stage3-accelerate-forward-auto-visible-cycle",
+      "stage": 3,
+      "state": "accelerate",
+      "direction": "forward"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage4-normal-reverse-auto-visible-cycle.json",
+      "template_id": "stage4-normal-reverse-auto-visible-cycle",
+      "stage": 4,
+      "state": "normal",
+      "direction": "reverse"
+    },
+    {
+      "file": "domains/hololive_dreams/data/jump_rope_template_library/generated/automatic_cycles/stage4-accelerate-reverse-auto-visible-cycle.json",
+      "template_id": "stage4-accelerate-reverse-auto-visible-cycle",
+      "stage": 4,
+      "state": "accelerate",
+      "direction": "reverse"
+    }
+  ],
+  "verified": false,
+  "source": "human intervals; automatic observed fragments only"
+}

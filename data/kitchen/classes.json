@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "classes": [
+    {
+      "id": "chili",
+      "name": "辣椒",
+      "name_status": "confirmed",
+      "reference": "references/chili.png",
+      "source_frame": 3853,
+      "source_box": [
+        345,
+        442,
+        481,
+        532
+      ]
+    },
+    {
+      "id": "rice",
+      "name": "米饭（白色团状，待核对）",
+      "name_status": "provisional",
+      "reference": "references/rice.png",
+      "source_frame": 3853,
+      "source_box": [
+        484,
+        63,
+        543,
+        112
+      ]
+    },
+    {
+      "id": "onion",
+      "name": "洋葱",
+      "name_status": "confirmed",
+      "reference": "references/onion.png",
+      "source_frame": 770,
+      "source_box": [
+        414,
+        157,
+        539,
+        272
+      ]
+    },
+    {
+      "id": "seaweed",
+      "name": "海苔",
+      "name_status": "confirmed",
+      "reference": "references/seaweed.png",
+      "source_frame": 770,
+      "source_box": [
+        592,
+        292,
+        749,
+        428
+      ]
+    },
+    {
+      "id": "milk_blue",
+      "name": "蓝白牛奶盒",
+      "name_status": "confirmed",
+      "reference": "references/milk_blue.png",
+      "source_frame": 3082,
+      "source_box": [
+        609,
+        61,
+        651,
+        116
+      ]
+    },
+    {
+      "id": "cereal",
+      "name": "红色麦片盒",
+      "name_status": "confirmed",
+      "reference": "references/cereal.png",
+      "source_frame": 3082,
+      "source_box": [
+        489,
+        65,
+        537,
+        118
+      ]
+    },
+    {
+      "id": "sauce_bottle",
+      "name": "棕色酱汁瓶",
+      "name_status": "confirmed",
+      "reference": "references/sauce_bottle.png",
+      "source_frame": 4624,
+      "source_box": [
+        285,
+        146,
+        430,
+        343
+      ]
+    },
+    {
+      "id": "gravy_boat",
+      "name": "金属酱汁盅",
+      "name_status": "confirmed",
+      "reference": "references/gravy_boat.png",
+      "source_frame": 3853,
+      "source_box": [
+        282,
+        460,
+        411,
+        559
+      ]
+    },
+    {
+      "id": "noodle_pan",
+      "name": "面条锅",
+      "name_status": "confirmed",
+      "reference": "references/noodle_pan.png",
+      "source_frame": 3082,
+      "source_box": [
+        293,
+        170,
+        388,
+        279
+      ]
+    },
+    {
+      "id": "meat_pack",
+      "name": "托盘肉",
+      "name_status": "confirmed",
+      "reference": "references/meat_pack.png",
+      "source_frame": 4624,
+      "source_box": [
+        673,
+        165,
+        791,
+        302
+      ]
+    },
+    {
+      "id": "flour_bag",
+      "name": "面粉袋",
+      "name_status": "confirmed",
+      "reference": "references/flour_bag.png",
+      "source_frame": 3082,
+      "source_box": [
+        400,
+        394,
+        569,
+        558
+      ]
+    },
+    {
+      "id": "ham",
+      "name": "火腿块",
+      "name_status": "confirmed",
+      "reference": "references/ham.png",
+      "source_frame": 3082,
+      "source_box": [
+        286,
+        438,
+        417,
+        556
+      ]
+    },
+    {
+      "id": "can",
+      "name": "银色罐头（暂名）",
+      "name_status": "provisional",
+      "reference": "references/can.png",
+      "source_frame": 4624,
+      "source_box": [
+        611,
+        59,
+        652,
+        116
+      ]
+    },
+    {
+      "id": "pink_carton",
+      "name": "粉色纸盒（暂名）",
+      "name_status": "provisional",
+      "reference": "references/pink_carton.png",
+      "source_frame": 2312,
+      "source_box": [
+        453,
+        240,
+        619,
+        360
+      ]
+    },
+    {
+      "id": "white_tray",
+      "name": "白色长方托盘（暂名）",
+      "name_status": "provisional",
+      "reference": "references/white_tray.png",
+      "source_frame": 2312,
+      "source_box": [
+        785,
+        385,
+        930,
+        538
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "面包糠袋（PANKO）",
+      "name_status": "visual_proposal",
+      "reference": "references/breadcrumbs.png",
+      "source_frame": 1085,
+      "source_box": [
+        320,
+        158,
+        471,
+        270
+      ]
+    },
+    {
+      "id": "fried_shrimp",
+      "name": "炸虾（黄色锥状、红尾）",
+      "name_status": "visual_proposal",
+      "reference": "references/fried_shrimp.png",
+      "source_frame": 1085,
+      "source_box": [
+        789,
+        146,
+        940,
+        242
+      ]
+    },
+    {
+      "id": "tuna_can",
+      "name": "蓝色金枪鱼罐头",
+      "name_status": "visual_proposal",
+      "reference": "references/tuna_can.png",
+      "source_frame": 1085,
+      "source_box": [
+        815,
+        237,
+        928,
+        303
+      ]
+    },
+    {
+      "id": "blue_glove",
+      "name": "蓝色手套",
+      "name_status": "visual_proposal",
+      "reference": "references/blue_glove.png",
+      "source_frame": 1846,
+      "source_box": [
+        386,
+        153,
+        562,
+        325
+      ]
+    },
+    {
+      "id": "egg_brown",
+      "name": "棕黄色鸡蛋（带贴标）",
+      "name_status": "visual_proposal",
+      "reference": "references/egg_brown.png",
+      "source_frame": 1846,
+      "source_box": [
+        448,
+        282,
+        528,
+        378
+      ]
+    },
+    {
+      "id": "white_plate",
+      "name": "白色圆盘",
+      "name_status": "visual_proposal",
+      "reference": "references/white_plate.png",
+      "source_frame": 3853,
+      "source_box": [
+        382,
+        215,
+        460,
+        293
+      ]
+    },
+    {
+      "id": "noodle_block",
+      "name": "黄色面饼",
+      "name_status": "visual_proposal",
+      "reference": "references/noodle_block.png",
+      "source_frame": 3853,
+      "source_box": [
+        457,
+        183,
+        579,
+        269
+      ]
+    },
+    {
+      "id": "hamburger_patty",
+      "name": "汉堡肉（肉球）",
+      "name_status": "user_confirmed",
+      "reference": "references/hamburger_patty.png",
+      "source_frame": 770,
+      "source_box": [
+        652,
+        154,
+        725,
+        219
+      ]
+    }
+  ]
+}

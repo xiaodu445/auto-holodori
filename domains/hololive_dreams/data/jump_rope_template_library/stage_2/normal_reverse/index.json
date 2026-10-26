@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "stage": 2,
+  "role": "normal",
+  "direction": "reverse",
+  "status": "trial_needs_independent_validation",
+  "legacy_status": "human_role_anchored_contrast_fit_trial",
+  "nominal_rate": 0.7500000000000002,
+  "verified": false,
+  "active_runtime": false,
+  "template_ref": "domains/hololive_dreams/data/jump_rope_template_library/stage_2/normal_reverse/generated/legacy_import/template.json",
+  "shape_ref": "domains/hololive_dreams/data/jump_rope_template_library/shapes/rotation/wide_camera_v1/candidates.json",
+  "samples": [
+    {
+      "sample_id": "20261006-115004-094950-segment-05",
+      "metadata": "domains/hololive_dreams/data/jump_rope_template_library/stage_2/normal_reverse/samples/20261006-115004-094950-segment-05/metadata.json"
+    }
+  ],
+  "limits": "Imported legacy parameters are not new measurements. Whole original branch retained for traceability; use only requested direction.",
+  "timed_playback_candidates": [
+    {
+      "template_ref": "domains/hololive_dreams/data/jump_rope_template_library/stage_2/normal_reverse/samples/20261006-115004-094950-segment-05/generated/timed_playback/template.json",
+      "validation_ref": "domains/hololive_dreams/data/jump_rope_template_library/stage_2/normal_reverse/samples/20261006-115004-094950-segment-05/generated/timed_playback/validation.json",
+      "active_runtime": false
+    }
+  ],
+  "timed_runtime": {
+    "catalog": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/catalog.json",
+    "templates": [
+      "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-normal-reverse-legacy-timed.json",
+      "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_4_timed/stage2-normal-reverse-human-2564-2641.json"
+    ],
+    "active": true,
+    "verified": false
+  }
+}

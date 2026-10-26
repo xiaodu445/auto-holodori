@@ -1,0 +1,6 @@
+{
+  "name": "daily_work_setup_all",
+  "role": "button",
+  "threshold": 0.85,
+  "notes": "新工作列表右下：统一设置。来源：用户提供模板；尚待每日流程验证。"
+}

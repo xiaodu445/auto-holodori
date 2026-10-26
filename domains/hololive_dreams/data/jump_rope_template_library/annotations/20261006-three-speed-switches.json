@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/audio-prefix-confirm/index.html",
+  "frames": 7529,
+  "annotations": [
+    {
+      "frame": 3554,
+      "time": 61.38907969999127,
+      "note": "这里为什么预测成加速了，感觉没多少依据啊，导致后面都错了"
+    },
+    {
+      "frame": 5165,
+      "time": 89.14356869994663,
+      "note": "这里为什么突然就是5加速了，感觉没什么道理啊"
+    },
+    {
+      "frame": 5763,
+      "time": 99.43322189990431,
+      "note": "这里也是，突然变成5加速"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "atlas": "domains/hololive_dreams/data/jump_rope_phase/rotation_v1.json",
+  "max_rate": 4.0,
+  "max_acceleration": 8.0,
+  "inference_width": 512,
+  "input_enabled": false,
+  "allow_reverse": true,
+  "state_model": true,
+  "swing_atlas": "domains/hololive_dreams/data/jump_rope_phase/swing_v1.json",
+  "zero_timeout": 0.65,
+  "gear_model": true,
+  "rotation_gears": [
+    0.4,
+    0.55,
+    0.75,
+    1.0
+  ],
+  "swing_gears": [
+    0.34,
+    0.418,
+    0.52
+  ],
+  "gear_tolerance": 0.22,
+  "phase_correction_fraction": 0.3,
+  "max_phase_correction": 0.008,
+  "switch_margin": 0.025,
+  "confirmation_seconds": 0.065,
+  "max_hypotheses": 24,
+  "speed_calibration": {
+    "verified": false,
+    "source": "runtime/jump-rope/phase-reverse/replay.json",
+    "description": "Provisional centers from coherent 11-frame candidate slopes; not game-engine gear labels. Low swing uses reference period 2.394s and neighboring hypotheses."
+  }
+}

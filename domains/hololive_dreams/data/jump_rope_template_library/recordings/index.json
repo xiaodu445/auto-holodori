@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "recordings": [
+    {
+      "id": "20261003-135719-282998",
+      "path": "runtime/jump-rope/recordings/20261003-135719-282998",
+      "files": [
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135719-282998/inputs.json",
+          "bytes": 138
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135719-282998/screen.avi",
+          "bytes": 7148510
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135719-282998/summary.json",
+          "bytes": 591
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135719-282998/timestamps.json",
+          "bytes": 8254
+        }
+      ],
+      "storage": "external_original_single_copy"
+    },
+    {
+      "id": "20261003-135733-386995",
+      "path": "runtime/jump-rope/recordings/20261003-135733-386995",
+      "files": [
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/imitation-model.json",
+          "bytes": 2061
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/inputs.json",
+          "bytes": 20007
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/local-motion-report.json",
+          "bytes": 192
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/manual-analysis.json",
+          "bytes": 3387
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/manual-preview.jpg",
+          "bytes": 663685
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/press-rope.jpg",
+          "bytes": 206876
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/screen.avi",
+          "bytes": 457461136
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/shape-motion-analysis.json",
+          "bytes": 735
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/shape-motion-final-regression.json",
+          "bytes": 505
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/shape-motion-regression.json",
+          "bytes": 322
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/slow-arrival-v5-report.json",
+          "bytes": 473
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/stages.jpg",
+          "bytes": 409075
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/summary.json",
+          "bytes": 594
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/timestamps.json",
+          "bytes": 694199
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/trajectory-motion-v2-report.json",
+          "bytes": 1039
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/trajectory-motion-v3-report.json",
+          "bytes": 436
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/trajectory-motion-v4-report.json",
+          "bytes": 462
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/vision-analysis.json",
+          "bytes": 2904316
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/vision-improved-first15.json",
+          "bytes": 590121
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261003-135733-386995/vision-shape-motion.json",
+          "bytes": 3387459
+        }
+      ],
+      "storage": "external_original_single_copy"
+    },
+    {
+      "id": "20261005-185136-145077",
+      "path": "runtime/jump-rope/recordings/20261005-185136-145077",
+      "files": [
+        {
+          "file": "runtime/jump-rope/recordings/20261005-185136-145077/audio-timestamps.jsonl",
+          "bytes": 1634704
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261005-185136-145077/audio-validation.json",
+          "bytes": 499
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261005-185136-145077/audio.wav",
+          "bytes": 24895532
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261005-185136-145077/inputs.json",
+          "bytes": 29380
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261005-185136-145077/screen.avi",
+          "bytes": 871601822
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261005-185136-145077/summary.json",
+          "bytes": 1444
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261005-185136-145077/timestamps.json",
+          "bytes": 1307857
+        }
+      ],
+      "storage": "external_original_single_copy"
+    },
+    {
+      "id": "20261006-114951-394396",
+      "path": "runtime/jump-rope/recordings/20261006-114951-394396",
+      "files": [
+        {
+          "file": "runtime/jump-rope/recordings/20261006-114951-394396/audio-timestamps.jsonl",
+          "bytes": 4295
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-114951-394396/audio.wav",
+          "bytes": 65580
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-114951-394396/inputs.json",
+          "bytes": 138
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-114951-394396/screen.avi",
+          "bytes": 1509980
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-114951-394396/summary.json",
+          "bytes": 1437
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-114951-394396/timestamps.json",
+          "bytes": 3453
+        }
+      ],
+      "storage": "external_original_single_copy"
+    },
+    {
+      "id": "20261006-115004-094950",
+      "path": "runtime/jump-rope/recordings/20261006-115004-094950",
+      "files": [
+        {
+          "file": "runtime/jump-rope/recordings/20261006-115004-094950/audio-timestamps.jsonl",
+          "bytes": 2234174
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-115004-094950/audio.wav",
+          "bytes": 33988652
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-115004-094950/inputs.json",
+          "bytes": 42031
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-115004-094950/screen.avi",
+          "bytes": 1167210182
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-115004-094950/summary.json",
+          "bytes": 1445
+        },
+        {
+          "file": "runtime/jump-rope/recordings/20261006-115004-094950/timestamps.json",
+          "bytes": 1783695
+        }
+      ],
+      "storage": "external_original_single_copy",
+      "reviews": [
+        {
+          "kind": "human_source_frame_annotation",
+          "path": "runtime/jump-rope/frame-review/recording-20261006-115004-094950/index.html",
+          "manifest": "runtime/jump-rope/frame-review/recording-20261006-115004-094950/manifest.json"
+        }
+      ]
+    }
+  ]
+}

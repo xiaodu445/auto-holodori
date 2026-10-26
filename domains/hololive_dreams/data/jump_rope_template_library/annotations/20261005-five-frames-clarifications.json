@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "original": "20261005-five-frames.json",
+  "clarifications": [
+    {
+      "frame": 1978,
+      "user_reply": "1978帧主要标记加速，方向可能选错",
+      "direction_label_applicable": false,
+      "acceleration_label_applicable": true
+    }
+  ]
+}

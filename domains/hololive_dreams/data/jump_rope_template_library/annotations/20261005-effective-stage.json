@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/stage-clock-v2-window/index.html",
+  "frames": 4010,
+  "annotations": [
+    {
+      "frame": 1902,
+      "time": 41.61837649997324,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "虽然30次之后进入阶段3但是会在当前技能结束之后才变成阶段3的速度，也就是说现在其实还是阶段2的加速"
+    },
+    {
+      "frame": 2496,
+      "time": 54.80600960017182,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段3的正常。不知道这里是命名问题还是判断问题还是模板问题"
+    },
+    {
+      "frame": 2857,
+      "time": 62.76052540005185,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段4的正常。你可能数据收集的不对，虽然播放正确但是没有拟合"
+    },
+    {
+      "frame": 3197,
+      "time": 70.3007831000723,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这一段的阶段4正常拟合的很好，不知道前面是怎么回事"
+    },
+    {
+      "frame": 3240,
+      "time": 71.20759600005113,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段4的加速，没有切换过来"
+    },
+    {
+      "frame": 3614,
+      "time": 79.46553630009294,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里是阶段5的正常。模板速度太快了"
+    }
+  ]
+}

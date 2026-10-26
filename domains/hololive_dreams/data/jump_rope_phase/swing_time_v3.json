@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "mode": "low_swing_time",
+  "verified": false,
+  "reference_period": 2.3990226302757485,
+  "nominal_rate": 0.41683641803956556,
+  "profile": {
+    "clock_nodes": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6000000000000001,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0
+    ],
+    "angle_nodes": [
+      0.0,
+      0.09854765613605046,
+      0.19709531227210092,
+      0.22912148283192002,
+      0.27406437934742245,
+      0.32607529861848306,
+      0.36935627304202057,
+      0.4548327646991334,
+      0.47747329317779397,
+      0.494,
+      0.5,
+      0.506,
+      0.522526706822206,
+      0.5802262945761345,
+      0.6457071753566783,
+      0.6845050597827727,
+      0.7420245163548608,
+      0.7969572625256784,
+      0.8825872654734098,
+      0.9179406652773812,
+      1.0
+    ]
+  },
+  "provenance": {
+    "source": "swing_time_v1.json",
+    "method": "Replace unsupported first internal angular node by interpolation between constrained start and next node; preserve all other calibrated nodes",
+    "limits": "The replaced node has no direct measurements. Conservative experiment, not engine truth."
+  }
+}

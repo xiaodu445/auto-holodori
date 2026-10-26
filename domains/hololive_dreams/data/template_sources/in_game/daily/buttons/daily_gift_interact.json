@@ -1,0 +1,6 @@
+{
+  "name": "daily_gift_interact",
+  "role": "button",
+  "threshold": 0.85,
+  "notes": "靠近礼物地点后出现的粉色礼物交互按钮，尽量只裁文字和礼物图案。来源：用户提供模板；尚待每日流程验证。"
+}

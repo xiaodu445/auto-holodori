@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/temporal-recovery-final/index.html",
+  "frames": 4010,
+  "annotations": [
+    {
+      "frame": 1504,
+      "time": 32.75654720002785,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里错误的切换为了加速"
+    },
+    {
+      "frame": 1682,
+      "time": 36.73055520001799,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里也错误切换了，前半圈应该加宽切换门槛"
+    },
+    {
+      "frame": 1709,
+      "time": 37.30172920017503,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里应该是正常，后半应该降低门槛"
+    }
+  ]
+}

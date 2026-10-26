@@ -1,0 +1,1390 @@
+{
+  "icons": [
+    {
+      "file": "target-2-0.png",
+      "class_id": "cereal",
+      "source_recording": "20261021-212928-866150",
+      "frame": 1085,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-2-1.png",
+      "class_id": "milk_blue",
+      "source_recording": "20261021-212928-866150",
+      "frame": 1085,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-2-2.png",
+      "class_id": "Hand",
+      "source_recording": "20261021-212928-866150",
+      "frame": 1085,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-4-0.png",
+      "class_id": "meat_pack",
+      "source_recording": "20261021-212928-866150",
+      "frame": 2312,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-4-1.png",
+      "class_id": "onion",
+      "source_recording": "20261021-212928-866150",
+      "frame": 2312,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-4-2.png",
+      "class_id": "breadcrumbs",
+      "source_recording": "20261021-212928-866150",
+      "frame": 2312,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-7-0.png",
+      "class_id": "rice_plate",
+      "source_recording": "20261021-212928-866150",
+      "frame": 3368,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-7-1.png",
+      "class_id": "gravy_boat",
+      "source_recording": "20261021-212928-866150",
+      "frame": 3368,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-7-2.png",
+      "class_id": "chili",
+      "source_recording": "20261021-212928-866150",
+      "frame": 3368,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-10-0.png",
+      "class_id": "noodle_pan",
+      "source_recording": "20261021-212928-866150",
+      "frame": 4624,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-10-1.png",
+      "class_id": "can",
+      "source_recording": "20261021-212928-866150",
+      "frame": 4624,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-10-2.png",
+      "class_id": "seaweed",
+      "source_recording": "20261021-212928-866150",
+      "frame": 4624,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-12-0.png",
+      "class_id": "IANGCHANG",
+      "source_recording": "20261022-142617-095737",
+      "frame": 320,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-12-1.png",
+      "class_id": "hamburger_patty",
+      "source_recording": "20261022-142617-095737",
+      "frame": 320,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-12-2.png",
+      "class_id": "rice_box",
+      "source_recording": "20261022-142617-095737",
+      "frame": 320,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-15-0.png",
+      "class_id": "udon",
+      "source_recording": "20261022-142617-095737",
+      "frame": 2487,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-15-1.png",
+      "class_id": "Yellow_egg",
+      "source_recording": "20261022-142617-095737",
+      "frame": 2487,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-15-2.png",
+      "class_id": "scallion",
+      "source_recording": "20261022-142617-095737",
+      "frame": 2487,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-16-0.png",
+      "class_id": "White_Egg",
+      "source_recording": "20261022-142617-095737",
+      "frame": 3331,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-16-1.png",
+      "class_id": "flour_bag",
+      "source_recording": "20261022-142617-095737",
+      "frame": 3331,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-16-2.png",
+      "class_id": "tuna_can",
+      "source_recording": "20261022-142617-095737",
+      "frame": 3331,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-live-0.png",
+      "class_id": "Spider",
+      "source_session": "20261023-002908-164722",
+      "frame": 136,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-live-1.png",
+      "class_id": "fish_fillet_board",
+      "source_session": "20261023-002908-164722",
+      "frame": 136,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "target-live-2.png",
+      "class_id": "instant_noodles",
+      "source_session": "20261023-002908-164722",
+      "frame": 136,
+      "region": "target",
+      "reviewed": true
+    },
+    {
+      "file": "tray-live-0.png",
+      "class_id": "milk_blue",
+      "source_session": "20261023-002908-164722",
+      "frame": 136,
+      "region": "tray",
+      "reviewed": true
+    },
+    {
+      "file": "tray-live-1.png",
+      "class_id": "Spider",
+      "source_session": "20261023-002908-164722",
+      "frame": 136,
+      "region": "tray",
+      "reviewed": true
+    },
+    {
+      "file": "tray-live-2.png",
+      "class_id": "rice_plate",
+      "source_session": "20261023-002908-164722",
+      "frame": 136,
+      "region": "tray",
+      "reviewed": true
+    },
+    {
+      "file": "tray-reviewed-0.png",
+      "class_id": "poteto",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 80,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-1.png",
+      "class_id": "Yellow_egg",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 80,
+      "slot": 2
+    },
+    {
+      "file": "tray-reviewed-2.png",
+      "class_id": "Yellow_egg",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 80,
+      "slot": 3
+    },
+    {
+      "file": "tray-reviewed-3.png",
+      "class_id": "ham",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 80,
+      "slot": 4
+    },
+    {
+      "file": "tray-reviewed-4.png",
+      "class_id": "cereal",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 80,
+      "slot": 5
+    },
+    {
+      "file": "tray-reviewed-5.png",
+      "class_id": "Source",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 80,
+      "slot": 6
+    },
+    {
+      "file": "tray-reviewed-21.png",
+      "class_id": "Source",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 360,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-31.png",
+      "class_id": "milk_blue",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 840,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-32.png",
+      "class_id": "milk_blue",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 840,
+      "slot": 1
+    },
+    {
+      "file": "tray-reviewed-33.png",
+      "class_id": "cereal",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 880,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-35.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1160,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-36.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1160,
+      "slot": 1
+    },
+    {
+      "file": "tray-reviewed-38.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1200,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-39.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1200,
+      "slot": 1
+    },
+    {
+      "file": "tray-reviewed-40.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1240,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-41.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1280,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-44.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1360,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-45.png",
+      "class_id": "flour_bag",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1360,
+      "slot": 2
+    },
+    {
+      "file": "tray-reviewed-46.png",
+      "class_id": "tuna_can",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1360,
+      "slot": 3
+    },
+    {
+      "file": "tray-reviewed-47.png",
+      "class_id": "tuna_can",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1360,
+      "slot": 4
+    },
+    {
+      "file": "tray-reviewed-48.png",
+      "class_id": "chili",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1360,
+      "slot": 5
+    },
+    {
+      "file": "tray-reviewed-50.png",
+      "class_id": "flour_bag",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1400,
+      "slot": 2
+    },
+    {
+      "file": "tray-reviewed-51.png",
+      "class_id": "chili",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1400,
+      "slot": 3
+    },
+    {
+      "file": "tray-reviewed-52.png",
+      "class_id": "flour_bag",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1440,
+      "slot": 2
+    },
+    {
+      "file": "tray-reviewed-53.png",
+      "class_id": "flour_bag",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1480,
+      "slot": 2
+    },
+    {
+      "file": "tray-reviewed-54.png",
+      "class_id": "flour_bag",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1560,
+      "slot": 3
+    },
+    {
+      "file": "tray-reviewed-55.png",
+      "class_id": "White_Egg",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1640,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-58.png",
+      "class_id": "rice_bowl",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1840,
+      "slot": 0
+    },
+    {
+      "file": "tray-reviewed-59.png",
+      "class_id": "zhaxiashi",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1840,
+      "slot": 2
+    },
+    {
+      "file": "tray-reviewed-60.png",
+      "class_id": "zhaxiashi",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1840,
+      "slot": 3
+    },
+    {
+      "file": "tray-reviewed-63.png",
+      "class_id": "breadcrumbs",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261023-002432-294827",
+      "frame": 1840,
+      "slot": 6
+    },
+    {
+      "file": "tray-tail-0.png",
+      "class_id": "rice_bowl",
+      "reviewed": true,
+      "region": "tray",
+      "id": 0,
+      "source": "20261023-002432-294827",
+      "frame": 1920,
+      "slot": 0
+    },
+    {
+      "file": "tray-tail-1.png",
+      "class_id": "rice_bowl",
+      "reviewed": true,
+      "region": "tray",
+      "id": 1,
+      "source": "20261023-002432-294827",
+      "frame": 1920,
+      "slot": 1
+    },
+    {
+      "file": "tray-tail-2.png",
+      "class_id": "zhaxiashi",
+      "reviewed": true,
+      "region": "tray",
+      "id": 2,
+      "source": "20261023-002432-294827",
+      "frame": 1920,
+      "slot": 2
+    },
+    {
+      "file": "tray-tail-3.png",
+      "class_id": "zhaxiashi",
+      "reviewed": true,
+      "region": "tray",
+      "id": 3,
+      "source": "20261023-002432-294827",
+      "frame": 1920,
+      "slot": 3
+    },
+    {
+      "file": "tray-tail-7.png",
+      "class_id": "zhaxiashi",
+      "reviewed": true,
+      "region": "tray",
+      "id": 7,
+      "source": "20261023-002432-294827",
+      "frame": 2080,
+      "slot": 0
+    },
+    {
+      "file": "tray-tail-8.png",
+      "class_id": "zhaxiashi",
+      "reviewed": true,
+      "region": "tray",
+      "id": 8,
+      "source": "20261023-002432-294827",
+      "frame": 2080,
+      "slot": 1
+    },
+    {
+      "file": "tray-tail-9.png",
+      "class_id": "rice_box",
+      "reviewed": true,
+      "region": "tray",
+      "id": 9,
+      "source": "20261023-002432-294827",
+      "frame": 2080,
+      "slot": 2
+    },
+    {
+      "file": "tray-tail-10.png",
+      "class_id": "rice_box",
+      "reviewed": true,
+      "region": "tray",
+      "id": 10,
+      "source": "20261023-002432-294827",
+      "frame": 2080,
+      "slot": 3
+    },
+    {
+      "file": "tray-tail-11.png",
+      "class_id": "meat_pack",
+      "reviewed": true,
+      "region": "tray",
+      "id": 11,
+      "source": "20261023-002432-294827",
+      "frame": 2080,
+      "slot": 4
+    },
+    {
+      "file": "tray-tail-12.png",
+      "class_id": "meat_pack",
+      "reviewed": true,
+      "region": "tray",
+      "id": 12,
+      "source": "20261023-002432-294827",
+      "frame": 2080,
+      "slot": 5
+    },
+    {
+      "file": "tray-tail-14.png",
+      "class_id": "gravy_boat",
+      "reviewed": true,
+      "region": "tray",
+      "id": 14,
+      "source": "20261023-002432-294827",
+      "frame": 2240,
+      "slot": 0
+    },
+    {
+      "file": "tray-tail-15.png",
+      "class_id": "gravy_boat",
+      "reviewed": true,
+      "region": "tray",
+      "id": 15,
+      "source": "20261023-002432-294827",
+      "frame": 2240,
+      "slot": 1
+    },
+    {
+      "file": "tray-tail-29.png",
+      "class_id": "tuna_can",
+      "reviewed": true,
+      "region": "tray",
+      "id": 29,
+      "source": "20261021-212757-320577",
+      "frame": 300,
+      "slot": 1
+    },
+    {
+      "file": "user-review-can-0-20261023.png",
+      "class_id": "can",
+      "source_session": "20261023-214309-bb3f360f",
+      "source_frame": 910,
+      "source_slot": 0,
+      "reviewed_by": "user issue notes and visual inspection"
+    },
+    {
+      "file": "user-review-Hand-0-20261023.png",
+      "class_id": "Hand",
+      "source_session": "20261023-214309-bb3f360f",
+      "source_frame": 1574,
+      "source_slot": 0,
+      "reviewed_by": "user issue notes and visual inspection"
+    },
+    {
+      "file": "user-review-Hand-1-20261023.png",
+      "class_id": "Hand",
+      "source_session": "20261023-214309-bb3f360f",
+      "source_frame": 1574,
+      "source_slot": 1,
+      "reviewed_by": "user issue notes and visual inspection"
+    },
+    {
+      "file": "user-can-20261024-f1717-s0.png",
+      "class_id": "can",
+      "source_session": "20261024-000817-fc00feae",
+      "source_frame": 1717,
+      "source_slot": 0,
+      "reviewed_by": "user identified both leading slots as bean-sprout cans"
+    },
+    {
+      "file": "user-can-20261024-f1717-s1.png",
+      "class_id": "can",
+      "source_session": "20261024-000817-fc00feae",
+      "source_frame": 1717,
+      "source_slot": 1,
+      "reviewed_by": "user identified both leading slots as bean-sprout cans"
+    },
+    {
+      "file": "user-can-20261024-f1721-s0.png",
+      "class_id": "can",
+      "source_session": "20261024-000817-fc00feae",
+      "source_frame": 1721,
+      "source_slot": 0,
+      "reviewed_by": "user identified both leading slots as bean-sprout cans"
+    },
+    {
+      "file": "user-can-20261024-f1721-s1.png",
+      "class_id": "can",
+      "source_session": "20261024-000817-fc00feae",
+      "source_frame": 1721,
+      "source_slot": 1,
+      "reviewed_by": "user identified both leading slots as bean-sprout cans"
+    },
+    {
+      "file": "user-scallion-20261024-s0.png",
+      "class_id": "scallion",
+      "source_recording": "20261024-123536-b2a254bc",
+      "frame": 2467,
+      "region": "tray",
+      "reviewed": true
+    },
+    {
+      "file": "user-scallion-20261024-s1.png",
+      "class_id": "scallion",
+      "source_recording": "20261024-123536-b2a254bc",
+      "frame": 2467,
+      "region": "tray",
+      "reviewed": true
+    },
+    {
+      "file": "user-tray-20261024-f929-s0.png",
+      "class_id": "seaweed",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 929,
+      "slot": 0
+    },
+    {
+      "file": "user-tray-20261024-f929-s1.png",
+      "class_id": "seaweed",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 929,
+      "slot": 1
+    },
+    {
+      "file": "user-tray-20261024-f929-s2.png",
+      "class_id": "cereal",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 929,
+      "slot": 2
+    },
+    {
+      "file": "user-tray-20261024-f1256-s0.png",
+      "class_id": "onion",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 1256,
+      "slot": 0
+    },
+    {
+      "file": "user-tray-20261024-f1256-s1.png",
+      "class_id": "onion",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 1256,
+      "slot": 1
+    },
+    {
+      "file": "user-tray-20261024-f1256-s2.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 1256,
+      "slot": 2
+    },
+    {
+      "file": "user-tray-20261024-f1616-s0.png",
+      "class_id": "meat_pack",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 1616,
+      "slot": 0
+    },
+    {
+      "file": "user-tray-20261024-f1616-s1.png",
+      "class_id": "meat_pack",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 1616,
+      "slot": 1
+    },
+    {
+      "file": "user-tray-20261024-f1616-s2.png",
+      "class_id": "Source",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-133614-0e5322d8",
+      "frame": 1616,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-seaweed-0.png",
+      "class_id": "seaweed",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133614-0e5322d8",
+      "frame": 1958,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-seaweed-1.png",
+      "class_id": "seaweed",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133614-0e5322d8",
+      "frame": 951,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-chili-5.png",
+      "class_id": "chili",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\review-errors-20261024",
+      "frame": 2,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-chili-6.png",
+      "class_id": "chili",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\review-errors-20261024-merged",
+      "frame": 2,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-hamburger_patty-10.png",
+      "class_id": "hamburger_patty",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-135143-f389fcab",
+      "frame": 2364,
+      "slot": 6
+    },
+    {
+      "file": "audit-tray-hamburger_patty-11.png",
+      "class_id": "hamburger_patty",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261022-225802-131767",
+      "frame": 2535,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-fish_fillet_board-15.png",
+      "class_id": "fish_fillet_board",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132143-cae35240",
+      "frame": 1351,
+      "slot": 4
+    },
+    {
+      "file": "audit-tray-fish_fillet_board-16.png",
+      "class_id": "fish_fillet_board",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132722-6c592ecd",
+      "frame": 3270,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-udon-20.png",
+      "class_id": "udon",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-130049-05d8f8ca",
+      "frame": 1105,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-udon-21.png",
+      "class_id": "udon",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261022-225802-131767",
+      "frame": 338,
+      "slot": 1
+    },
+    {
+      "file": "audit-tray-instant_noodles-27.png",
+      "class_id": "instant_noodles",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-130049-05d8f8ca",
+      "frame": 3664,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-instant_noodles-28.png",
+      "class_id": "instant_noodles",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261021-212928-866150",
+      "frame": 3709,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-onion-30.png",
+      "class_id": "onion",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-130548-7d030784",
+      "frame": 2435,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-onion-31.png",
+      "class_id": "onion",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-130049-05d8f8ca",
+      "frame": 2443,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-gravy_boat-35.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-130548-7d030784",
+      "frame": 1816,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-gravy_boat-36.png",
+      "class_id": "gravy_boat",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133614-0e5322d8",
+      "frame": 2350,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-breadcrumbs-40.png",
+      "class_id": "breadcrumbs",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-125921-0ca14eab",
+      "frame": 468,
+      "slot": 4
+    },
+    {
+      "file": "audit-tray-breadcrumbs-41.png",
+      "class_id": "breadcrumbs",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261021-212928-866150",
+      "frame": 505,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-tuna_can-45.png",
+      "class_id": "tuna_can",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261022-202506-664483",
+      "frame": 3149,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-tuna_can-46.png",
+      "class_id": "tuna_can",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132722-6c592ecd",
+      "frame": 3193,
+      "slot": 4
+    },
+    {
+      "file": "audit-tray-milk_blue-50.png",
+      "class_id": "milk_blue",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132143-cae35240",
+      "frame": 1019,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-milk_blue-51.png",
+      "class_id": "milk_blue",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134850-44280423",
+      "frame": 1229,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-meat_pack-55.png",
+      "class_id": "meat_pack",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132722-6c592ecd",
+      "frame": 3802,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-meat_pack-56.png",
+      "class_id": "meat_pack",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134636-7b3bc3f0",
+      "frame": 740,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-zhaxiashi-60.png",
+      "class_id": "zhaxiashi",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132304-15e2f0fa",
+      "frame": 465,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-zhaxiashi-61.png",
+      "class_id": "zhaxiashi",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134524-a5549342",
+      "frame": 638,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-Yellow_egg-65.png",
+      "class_id": "Yellow_egg",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132143-cae35240",
+      "frame": 1280,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-Yellow_egg-66.png",
+      "class_id": "Yellow_egg",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261021-212928-866150",
+      "frame": 1685,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-Hand-70.png",
+      "class_id": "Hand",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133336-bef0caf3",
+      "frame": 1894,
+      "slot": 1
+    },
+    {
+      "file": "audit-tray-Hand-71.png",
+      "class_id": "Hand",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-135143-f389fcab",
+      "frame": 961,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-White_Egg-80.png",
+      "class_id": "White_Egg",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261021-212757-320577",
+      "frame": 269,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-White_Egg-81.png",
+      "class_id": "White_Egg",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261022-202506-664483",
+      "frame": 2946,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-Source-85.png",
+      "class_id": "Source",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133614-0e5322d8",
+      "frame": 1566,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-Source-86.png",
+      "class_id": "Source",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133336-bef0caf3",
+      "frame": 647,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-cereal-90.png",
+      "class_id": "cereal",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134636-7b3bc3f0",
+      "frame": 1887,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-cereal-91.png",
+      "class_id": "cereal",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\review-errors-20261024-merged",
+      "frame": 15,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-noodle_pan-96.png",
+      "class_id": "noodle_pan",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134636-7b3bc3f0",
+      "frame": 222,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-noodle_pan-97.png",
+      "class_id": "noodle_pan",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133336-bef0caf3",
+      "frame": 2819,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-ham-105.png",
+      "class_id": "ham",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133614-0e5322d8",
+      "frame": 1566,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-ham-106.png",
+      "class_id": "ham",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132346-7dfbf117",
+      "frame": 2451,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-can-110.png",
+      "class_id": "can",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132346-7dfbf117",
+      "frame": 3027,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-can-111.png",
+      "class_id": "can",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134636-7b3bc3f0",
+      "frame": 1924,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-rice_plate-115.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\hud-integration-20261023",
+      "frame": 2,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-rice_plate-116.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132722-6c592ecd",
+      "frame": 3878,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-rice_bowl-120.png",
+      "class_id": "rice_bowl",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134524-a5549342",
+      "frame": 893,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-rice_bowl-121.png",
+      "class_id": "rice_bowl",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133614-0e5322d8",
+      "frame": 2238,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-rice_box-125.png",
+      "class_id": "rice_box",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-133336-bef0caf3",
+      "frame": 1571,
+      "slot": 3
+    },
+    {
+      "file": "audit-tray-rice_box-126.png",
+      "class_id": "rice_box",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\current-framework-audit-20261023",
+      "frame": 5,
+      "slot": 2
+    },
+    {
+      "file": "audit-tray-scallion-130.png",
+      "class_id": "scallion",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132722-6c592ecd",
+      "frame": 2205,
+      "slot": 1
+    },
+    {
+      "file": "audit-tray-scallion-131.png",
+      "class_id": "scallion",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\review-errors-20261024-merged",
+      "frame": 20,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-poteto-135.png",
+      "class_id": "poteto",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132346-7dfbf117",
+      "frame": 4253,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-poteto-136.png",
+      "class_id": "poteto",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\recordings\\20261022-142617-095737",
+      "frame": 4394,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-Spider-140.png",
+      "class_id": "Spider",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-135143-f389fcab",
+      "frame": 2284,
+      "slot": 1
+    },
+    {
+      "file": "audit-tray-Spider-141.png",
+      "class_id": "Spider",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-135143-f389fcab",
+      "frame": 2204,
+      "slot": 1
+    },
+    {
+      "file": "audit-tray-cucumber-76.png",
+      "class_id": "cucumber",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-125921-0ca14eab",
+      "frame": 1268,
+      "slot": 1
+    },
+    {
+      "file": "audit-tray-cucumber-77.png",
+      "class_id": "cucumber",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-132346-7dfbf117",
+      "frame": 1513,
+      "slot": 0
+    },
+    {
+      "file": "audit-tray-IANGCHANG-18.png",
+      "class_id": "IANGCHANG",
+      "region": "tray",
+      "reviewed": true,
+      "source": "runtime\\kitchen\\sessions\\20261024-134636-7b3bc3f0",
+      "frame": 2257,
+      "slot": 4
+    },
+    {
+      "file": "user-rice-plate-20261024-f1431-s0.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-141420-5ed5cab2",
+      "frame": 1431,
+      "slot": 0
+    },
+    {
+      "file": "user-rice-plate-20261024-f1431-s1.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-141420-5ed5cab2",
+      "frame": 1431,
+      "slot": 1
+    },
+    {
+      "file": "user-rice-plate-20261024-f1436-s0.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-141420-5ed5cab2",
+      "frame": 1436,
+      "slot": 0
+    },
+    {
+      "file": "user-rice-plate-20261024-f1436-s1.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-141420-5ed5cab2",
+      "frame": 1436,
+      "slot": 1
+    },
+    {
+      "file": "user-rice-plate-20261024-f1441-s0.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-141420-5ed5cab2",
+      "frame": 1441,
+      "slot": 0
+    },
+    {
+      "file": "user-rice-plate-20261024-f1441-s1.png",
+      "class_id": "rice_plate",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-141420-5ed5cab2",
+      "frame": 1441,
+      "slot": 1
+    },
+    {
+      "file": "user-udon-pale-f199-s0.png",
+      "class_id": "udon",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-143215-2c38d00e",
+      "frame": 199,
+      "slot": 0
+    },
+    {
+      "file": "user-udon-pale-f199-s1.png",
+      "class_id": "udon",
+      "region": "tray",
+      "reviewed": true,
+      "source_session": "20261024-143215-2c38d00e",
+      "frame": 199,
+      "slot": 1
+    }
+  ],
+  "empty_icons": [
+    "empty-20261024-f2467-s2.png",
+    "empty-20261024-f2467-s5.png",
+    "empty-20261024-f2467-s6.png",
+    "empty-3.png",
+    "empty-4.png",
+    "empty-5.png",
+    "empty-6.png",
+    "empty-tail-21.png",
+    "empty-tail-22.png",
+    "empty-tail-23.png",
+    "empty-tail-24.png",
+    "empty-tail-25.png",
+    "empty-tail-26.png",
+    "empty-tail-27.png",
+    "empty-tail-30.png",
+    "empty-tail-31.png",
+    "empty-tail-32.png",
+    "empty-tail-33.png",
+    "empty-tail-34.png",
+    "tray-reviewed-49.png"
+  ],
+  "scope": "reviewed UI crops; incomplete category coverage; scores are similarities not calibrated probabilities"
+}

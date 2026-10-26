@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/audio-start-gated/index.html",
+  "frames": 7529,
+  "annotations": [
+    {
+      "frame": 3244,
+      "time": 56.046352199977264,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里明显看出来不是左右摇了，而且声音是减速。"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "sample_id": "20261006-115004-094950-segment-14",
+  "recording_id": "20261006-115004-094950",
+  "stage": 4,
+  "state": "accelerate",
+  "direction": "reverse",
+  "kind": "stable",
+  "original_kind": "stable",
+  "frame_range": {
+    "start": 4795,
+    "end": 4885,
+    "end_exclusive": true
+  },
+  "time_range": {
+    "start": 82.91481039999053,
+    "end": 84.46733739995398
+  },
+  "time_reference": "timestamps.json",
+  "camera_id": "recording_20261006-115004-094950",
+  "label_certainty": "human_reviewed",
+  "status": "annotated_pending_extraction",
+  "quality": "clear_sample_pending_extraction",
+  "stage_boundary_crossing": null,
+  "source_annotation": "domains/hololive_dreams/data/jump_rope_template_library/annotations/20261006-115004-094950-user-intervals.json",
+  "source_annotation_index": 13,
+  "note": "无遮挡一圈",
+  "cycle_boundaries": [],
+  "measurements_file": null,
+  "generated_template_file": null,
+  "split": "unassigned",
+  "review_flags": [
+    "Original note says one cycle. Endpoint frames4795/4884 show counts59/61 and near-repeated rope geometry: approximately two cycles, ~0.78s/cycle; boundaries still need verification."
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "notes": "粉色文档与感叹号，下方文字“任务”。",
+  "threshold": 0.9,
+  "mask_mode": "warm_ui"
+}

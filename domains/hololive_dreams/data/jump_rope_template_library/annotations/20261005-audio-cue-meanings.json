@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "recording": "runtime/jump-rope/recordings/20261005-185136-145077",
+  "source": "User phonetic cue names",
+  "verified_meanings": true,
+  "verified_audio_templates": false,
+  "cues": [
+    {
+      "user_spelling": "牛dong",
+      "skill": "falling_obstacles"
+    },
+    {
+      "user_spelling": "ikizo",
+      "skill": "low_swing"
+    },
+    {
+      "user_spelling": "otsupekoyo",
+      "skill": "accelerate"
+    },
+    {
+      "user_spelling": "减速da",
+      "skill": "decelerate"
+    }
+  ],
+  "limits": "Labels are not exact Japanese transcripts or audio fingerprints. Event timestamps require calibration."
+}

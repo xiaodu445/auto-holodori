@@ -1,0 +1,72 @@
+{
+  "fps": 60,
+  "timeout": 180,
+  "start_phase": "control",
+  "control_roi": [
+    0.667,
+    0.066,
+    0.722,
+    0.883
+  ],
+  "bite_roi": [
+    0.421,
+    0.434,
+    0.579,
+    0.706
+  ],
+  "yellow_hsv": [
+    [
+      18,
+      80,
+      170
+    ],
+    [
+      38,
+      255,
+      255
+    ]
+  ],
+  "fish_hsv": [
+    [
+      82,
+      80,
+      160
+    ],
+    [
+      105,
+      255,
+      255
+    ]
+  ],
+  "bite_threshold": 0.65,
+  "bite_stable_frames": 2,
+  "hook_press_seconds": 0.05,
+  "hook_timeout": 3,
+  "lookahead_seconds": 0.12,
+  "velocity_samples": 5,
+  "velocity_alpha": 0.45,
+  "max_speed": 3.0,
+  "inside_margin": 0.18,
+  "minimum_hold": 0.035,
+  "edge_margin": 0.045,
+  "edge_speed": 0.3,
+  "short_loss_seconds": 0.1,
+  "long_loss_seconds": 0.8,
+  "control_mode": "bang_bang",
+  "pwm_period_seconds": 0.16,
+  "pwm_hover_duty": 0.3,
+  "pwm_position_gain": 0.5,
+  "pwm_velocity_gain": 0.1,
+  "pwm_min_duty": 0.25,
+  "pwm_max_duty": 0.75,
+  "inertia_braking": true,
+  "approach_seconds": 0.15,
+  "approach_max_speed": 0.6,
+  "velocity_deadband": 0.08,
+  "continue_roi": [
+    0.6,
+    0.65,
+    1,
+    1
+  ]
+}

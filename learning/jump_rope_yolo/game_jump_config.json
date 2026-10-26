@@ -1,0 +1,66 @@
+{
+  "catalog": "domains/hololive_dreams/data/jump_rope_template_library/generated/stages_1_5_yolo07_trial/catalog.json",
+  "stage": 0,
+  "confidence": 0.03,
+  "max_predict_seconds": 0.25,
+  "reset_gap_seconds": 0.5,
+  "max_rope_thickness_fraction": 0.04,
+  "minimum_columns": 13,
+  "max_shape_error": 0.025,
+  "max_phase_correction": 0.08,
+  "switch_confirmation_seconds": 0.08,
+  "dispatch_window_seconds": 0.035,
+  "late_window_seconds": 0.035,
+  "pulse_seconds": 0.035,
+  "max_frame_age_seconds": 0.1,
+  "history_reset_seconds": 0.08,
+  "save_full_events": false,
+  "failure_capture": {
+    "enabled": true,
+    "output_dir": "learning/jump_rope_yolo/results/failure-clips",
+    "pre_seconds": 3.0,
+    "stall_seconds": 2.0,
+    "fps": 60.0,
+    "jpeg_quality": 90,
+    "max_buffer_mb": 96,
+    "counter_stable_seconds": 0.12,
+    "glyph_difference": 0.08,
+    "minimum_progress_changes": 2,
+    "auto_detect": false,
+    "save_on_reset": false,
+    "manual_seconds": 3.0
+  },
+  "low_swing_back_to_front_extra_early_seconds_by_stage": {
+    "3": 0.0,
+    "4": 0.05
+  },
+  "matching_overrides_by_stage": {
+    "5": {
+      "minimum_columns": 10,
+      "max_shape_error": 0.035,
+      "max_predict_seconds": 0.4
+    }
+  },
+  "extra_early_seconds_by_stage": {
+    "5": 0.05
+  },
+  "matching_overrides_by_context": {
+    "4:low_swing": {
+      "minimum_columns": 10,
+      "max_shape_error": 0.035,
+      "max_predict_seconds": 0.4
+    }
+  },
+  "round_loop": {
+    "enabled": true,
+    "output_dir": "learning/jump_rope_yolo/results/round-scores",
+    "stable_seconds": 0.8,
+    "click_interval_seconds": 2.0
+  },
+  "jump_progress_nodes_by_template": {
+    "stage3-low_swing-bidirectional-auto-visible-cycle": [
+      0.2981181391370996,
+      0.7705
+    ]
+  }
+}

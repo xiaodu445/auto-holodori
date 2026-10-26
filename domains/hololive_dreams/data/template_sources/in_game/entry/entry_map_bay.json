@@ -1,0 +1,6 @@
+{
+  "name": "entry_map_bay",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：MAP 汽水泡泡海湾。来源：归档截图22d43c4f-9a90-4b4c-800a-602839ec027f，尚待实机验证。"
+}

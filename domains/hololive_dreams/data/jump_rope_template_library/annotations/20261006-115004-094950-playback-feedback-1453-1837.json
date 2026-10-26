@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "recording": "runtime/jump-rope/recordings/20261006-115004-094950",
+  "replay_sha256": "c4f75cc464f8d8ad58939ba8c41c8ba61957df4e827fd5913bdc9e304fd95029",
+  "feedback": [
+    {
+      "frame": 1453,
+      "time": 25.159147400176153,
+      "problem": "模板选错",
+      "note": "这里为什么突然分开了，是因为什么",
+      "template": "stage2-normal-forward-auto-visible-cycle"
+    },
+    {
+      "frame": 1837,
+      "time": 31.79354490013793,
+      "problem": "绳形不贴合",
+      "note": "这里也是，出现了这种问题是什么逻辑",
+      "template": "stage2-normal-forward-auto-visible-cycle"
+    }
+  ]
+}

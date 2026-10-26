@@ -1,0 +1,6 @@
+{
+  "name": "entry_lever_detail",
+  "role": "panel",
+  "threshold": 0.9,
+  "notes": "入口模块稳定UI裁剪，语义：切换操纵杆 更改游玩区域。来源：归档截图5c5f91de-3ea7-4ac5-b0b7-5481d30a7983，尚待实机验证。"
+}

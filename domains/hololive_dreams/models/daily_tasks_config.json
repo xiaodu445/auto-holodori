@@ -1,0 +1,27 @@
+{
+  "holo_home_route": [
+    {
+      "key": "w",
+      "seconds": 2.5
+    },
+    {
+      "key": "d",
+      "seconds": 0.3
+    }
+  ],
+  "nearby_walk_step_seconds": 0.3,
+  "nearby_walk_max_seconds": 6,
+  "teleport_wait_seconds": 3,
+  "click_interval_seconds": 0.3,
+  "transition_timeout_seconds": 25,
+  "notification_scroll_pages": 3,
+  "unknown_notification_policy": "ignore_run",
+  "play_greed_cards": true,
+  "selected_tasks": ["holowork", "holo_home", "the_cell", "kaogan", "wheel", "achievements", "events", "task_pass"],
+  "record_rewards": false,
+  "attention_fixed_region": {"enabled": true, "x_ratio": 0.205, "y_ratio": 0.125},
+  "redispatch_holowork": true,
+  "max_rounds": 200,
+  "max_loss": 10000,
+  "template_threshold": 0.85
+}

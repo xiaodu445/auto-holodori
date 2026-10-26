@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "source": "/F:/Codex/Game_agent/runtime/jump-rope/frame-review/stage-clock-library-review/index.html",
+  "frames": 4010,
+  "annotations": [
+    {
+      "frame": 1151,
+      "time": 24.828158000018448,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里应该足以判断出来是阶段2的正常了"
+    },
+    {
+      "frame": 1184,
+      "time": 25.58997440012172,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这是阶段二的正常"
+    },
+    {
+      "frame": 1743,
+      "time": 38.018530200002715,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "这里应该可以判断出是阶段2的加速状态"
+    },
+    {
+      "frame": 1769,
+      "time": 38.63298370013945,
+      "truth": "",
+      "stage": "",
+      "verdict": "",
+      "note": "那你是不是仍未储存阶段二的加速状态，虽然我看候选有加速这个候选，但是就如之前说前半圈就已经能够判断是阶段2加速。可以告诉我是不是正摇前半圈相似度都很高？这里的错误匹配导致跟踪丢失严重"
+    }
+  ],
+  "receipt_note": "用户消息末尾截断；仅保存四条完整标注。"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "versions": [
+    {
+      "id": "stable-20261023",
+      "weights": "learning/kitchen_yolo/runs/x-sparse-20261023-220126/weights/best.pt",
+      "box_map50": 0.8986609462,
+      "sha256": "6ec0c2e8dfd1704d43ec722f625f9fe98f2150362f9bca7469502e0379c6e4a6"
+    },
+    {
+      "id": "single-rotation-trial-20261024",
+      "weights": "learning/kitchen_yolo/runs/x-single-aug-20261024-023424/weights/best.pt",
+      "box_map50": 0.8028226932,
+      "sha256": "05159e3618da0d39b7abb14d6462465a253b5d0856f61b1532b3e2b6496a7afc"
+    },
+    {
+      "id": "stable-finetune-noaug-20261024",
+      "weights": "learning/kitchen_yolo/runs/x-stable-finetune-noaug-20261024-123424/weights/best-box.pt",
+      "box_map50": 0.91205,
+      "epoch": 67,
+      "sha256": "206346d2225871c6b96014b570fc239fcd0b90338d3473c151793e2efbb6dafd"
+    },
+    {
+      "id": "seaweed-noaug-20261024",
+      "weights": "learning/kitchen_yolo/runs/x-seaweed-noaug-20261024-151541/weights/best-box.pt",
+      "box_map50": 0.90459,
+      "epoch": 1,
+      "sha256": "294f0b5723e94f595004763f40bdfb3883a8d50106e1d0dc701b2a202190a124"
+    },
+    {
+      "id": "confusions-noaug-20261024",
+      "weights": "learning/kitchen_yolo/runs/x-confusions-noaug-20261024-171143/weights/best-box.pt",
+      "box_map50": 0.91335,
+      "epoch": 28,
+      "sha256": "4fe22d0876491a7c61efb3125ccb69fda8cfa01a96f0e538bf83a69f640b2a59"
+    }
+  ],
+  "active": "confusions-noaug-20261024"
+}

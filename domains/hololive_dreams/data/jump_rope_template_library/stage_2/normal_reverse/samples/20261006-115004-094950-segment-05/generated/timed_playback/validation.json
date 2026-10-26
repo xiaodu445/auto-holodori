@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "active_runtime": false,
+  "metrics": {
+    "fixed_period_error": 0.014914546706762843,
+    "normalized_cycle_error": 0.016803593206219287,
+    "evaluated_interior_frames": 15,
+    "paths": {
+      "collecting_recovery": 3,
+      "gentle": 12,
+      "recovery": 1
+    }
+  },
+  "records": [
+    {
+      "frame": 2641,
+      "fixed_period_error": 0.003441825926034187,
+      "normalized_cycle_error": 0.003441825926034187,
+      "controller": {
+        "path": "collecting_recovery",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.9092003639300399,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.00625,
+            "error": 0.0029526021565415834,
+            "phase_margin": 0.012635780474790153,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ]
+      }
+    },
+    {
+      "frame": 2644,
+      "fixed_period_error": 0.014471551345309435,
+      "normalized_cycle_error": 0.014568943278795808,
+      "controller": {
+        "path": "collecting_recovery",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.9502107005619778,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.0625,
+            "error": 0.007617955105535785,
+            "phase_margin": 0.016676087122131398,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ]
+      }
+    },
+    {
+      "frame": 2650,
+      "fixed_period_error": 0.0038346322746824796,
+      "normalized_cycle_error": 0.004422791068462581,
+      "controller": {
+        "path": "collecting_recovery",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.02807850105067738,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.11875,
+            "error": 0.008675065306302868,
+            "phase_margin": 0.025116108100946034,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ]
+      }
+    },
+    {
+      "frame": 2655,
+      "fixed_period_error": 0.012227497837589345,
+      "normalized_cycle_error": 0.009914385863259307,
+      "controller": {
+        "path": "recovery",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.1875,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.1875,
+            "error": 0.009317625454566644,
+            "phase_margin": 0.046444436206891516,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.08720703501961236
+      }
+    },
+    {
+      "frame": 2660,
+      "fixed_period_error": 0.013506128463795007,
+      "normalized_cycle_error": 0.012847345072201819,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.24887978789875664,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.25,
+            "error": 0.010059642527034804,
+            "phase_margin": 0.057125761539258905,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.0003734040337477762
+      }
+    },
+    {
+      "frame": 2665,
+      "fixed_period_error": 0.007128554077007554,
+      "normalized_cycle_error": 0.008761007765809549,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.31283464634232183,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.3125,
+            "error": 0.010020459062705116,
+            "phase_margin": 0.05860840719051487,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": -0.00011154878077394847
+      }
+    },
+    {
+      "frame": 2672,
+      "fixed_period_error": 0.028447598126331654,
+      "normalized_cycle_error": 0.029494711066287243,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.4040453227143729,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.40625,
+            "error": 0.015490204963756419,
+            "phase_margin": 0.06107931968631393,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.0007348924285423553
+      }
+    },
+    {
+      "frame": 2673,
+      "fixed_period_error": 0.030808035636860368,
+      "normalized_cycle_error": 0.031778759807791115,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.42142293863859276,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.425,
+            "error": 0.019153195853221443,
+            "phase_margin": 0.05214880009722287,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.0011923537871361134
+      }
+    },
+    {
+      "frame": 2683,
+      "fixed_period_error": 0.007708794769905556,
+      "normalized_cycle_error": 0.0075273624195224716,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.5562090591097522,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.5625,
+            "error": 0.020063991056236293,
+            "phase_margin": 0.03506355618729835,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.0020969802967497064
+      }
+    },
+    {
+      "frame": 2692,
+      "fixed_period_error": 0.01310708407176072,
+      "normalized_cycle_error": 0.012267751098707482,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.6720946119420665,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.68125,
+            "error": 0.021501069710990535,
+            "phase_margin": 0.018763630964918225,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.0030517960193104376
+      }
+    },
+    {
+      "frame": 2697,
+      "fixed_period_error": 0.005844608332778166,
+      "normalized_cycle_error": 0.006034946603699405,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.7366778175779296,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.7375,
+            "error": 0.019964752175699863,
+            "phase_margin": 0.02362034384239139,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.00027406080735717375
+      }
+    },
+    {
+      "frame": 2701,
+      "fixed_period_error": 0.010359777061687184,
+      "normalized_cycle_error": 0.00828582144840143,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.8039282539383821,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.8,
+            "error": 0.008847875842007321,
+            "phase_margin": 0.04524444999469432,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": -0.0013094179794602978
+      }
+    },
+    {
+      "frame": 2702,
+      "fixed_period_error": 0.010700073347797455,
+      "normalized_cycle_error": 0.007025521285816691,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.8170030126362736,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.8125,
+            "error": 0.0075871525863245,
+            "phase_margin": 0.062168999394401875,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": -0.00150100421209165
+      }
+    },
+    {
+      "frame": 2704,
+      "fixed_period_error": 0.011014340450270041,
+      "normalized_cycle_error": 0.023110459078548747,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.8395223700003923,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.8375,
+            "error": 0.00956318051510716,
+            "phase_margin": 0.0763483955342817,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": -0.0006741233334639218
+      }
+    },
+    {
+      "frame": 2706,
+      "fixed_period_error": 0.01876068309308343,
+      "normalized_cycle_error": 0.029396239040577248,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.8674138953980973,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.86875,
+            "error": 0.012449466379785333,
+            "phase_margin": 0.07911626775004658,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": 0.0004453682006348436
+      }
+    },
+    {
+      "frame": 2716,
+      "fixed_period_error": 0.0033022515110580288,
+      "normalized_cycle_error": 0.004882559542855213,
+      "controller": {
+        "path": "gentle",
+        "template": "stage2-normal-reverse-human-2564-2641",
+        "progress": 0.9951532606896702,
+        "period_seconds": 1.321591200074181,
+        "candidates": [
+          {
+            "progress": 0.99375,
+            "error": 0.011471064048748656,
+            "phase_margin": 0.07945285640699075,
+            "template": "stage2-normal-reverse-human-2564-2641"
+          }
+        ],
+        "phase_correction": -0.00046775356322323325
+      }
+    }
+  ],
+  "error_units": "normalized game-client y, frame-weighted RMSE; marked supported points only"
+}

@@ -1,0 +1,1056 @@
+[
+  {
+    "id": "97219b40-6681-4bb9-a01d-fe00da239a9e",
+    "name": "launch_icon",
+    "image_file": "images\\launch_icon_36c69658e053.png",
+    "image_sha256": "36c69658e0533d58ba1da6b5ddcbf0c98a7824eb757b6c6d8af3f9ca8a5dddcc",
+    "environments": [
+      "*"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-01T13:19:33.271869+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "hololive dreams 的 Windows 启动快捷方式图标，包含左下角快捷方式箭头；用于桌面或启动器中的图标定位。实际启动方式由操作策略决定。",
+    "mask_mode": "none",
+    "role": "icon",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\launch_icon.md"
+  },
+  {
+    "id": "796edcd3-0622-426e-b1b4-23cb124670f7",
+    "name": "time",
+    "image_file": "images\\time_d85bec86f82a.png",
+    "image_sha256": "d85bec86f82af5ac2df3aabbe0a23acda81038ec1d7d33d6ec2889a1ab26d59f",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-01T18:17:01.211559+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "蓝色时钟图标；功能待确认。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\time.md"
+  },
+  {
+    "id": "ecd9d161-d968-4fca-a049-b014daad9e93",
+    "name": "bigmap",
+    "image_file": "images\\bigmap_8e4db43a34d7.png",
+    "image_sha256": "8e4db43a34d7a0fe5b4301f3380133ba013964a46ad26007066de5f7c1062f25",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T12:27:39.685248+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "用户确认：点击大地图可以进行地图间移动。模板包含局部圆形地图和动态标记，匹配稳定性待验证；使用当前观察位置，不使用旧坐标。 用户补充：游戏前台时按键盘 M 也可打开大地图；进入位置页面后可尝试点击当前页面右上角 X 返回，并观察反馈。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\bigmap.md"
+  },
+  {
+    "id": "a08741f8-39b7-44ff-a7c9-f60985a3d4f3",
+    "name": "game",
+    "image_file": "images\\game_f6a7b897a5a5.png",
+    "image_sha256": "f6a7b897a5a5b60089d096815f44f08d65588e217c0a47e8e684d373e5760e15",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T12:27:39.715110+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "粉色手柄，下方文字“游戏”。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\game.md"
+  },
+  {
+    "id": "30cebb39-a3a7-4f4a-8cff-55974c6a0beb",
+    "name": "map1",
+    "image_file": "images\\map1_a8012b50521f.png",
+    "image_sha256": "a8012b50521ff6f7b3de23e7af661d49258906626df68d16dfeffd74a10501bd",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T12:27:39.749119+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "黄色城堡剪影；功能待确认。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\map1.md"
+  },
+  {
+    "id": "3c24cd9f-0fbf-4049-8776-dd40575d0661",
+    "name": "map2",
+    "image_file": "images\\map2_d244da0b9830.png",
+    "image_sha256": "d244da0b9830f845eca0eab277126e54a585fa9854ba7cee4fc85287bb978883",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T12:27:39.786934+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "用户确认：电玩巨蛋城。包含大厅和游玩区域，游玩区域有游戏场和赌场两种状态；可在大厅时间设施更改时间。 这是电玩巨蛋城地图切换入口；命中不表示已进入。点击后核对 MAP 标题是否为电玩巨蛋城。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\map2.md"
+  },
+  {
+    "id": "97951ee1-59e6-4096-aaf2-bf2f031ef021",
+    "name": "menu",
+    "image_file": "images\\menu_35ae7207787f.png",
+    "image_sha256": "35ae7207787f5f28d87b81663b1432300dcf6ff34ffdda977187fb8c990edf1e",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T12:27:39.822944+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "粉色圆形三横线菜单图标。",
+    "mask_mode": "warm_ui",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\menu.md"
+  },
+  {
+    "id": "659f8bcb-0da7-410e-ba19-dd088e48aa3c",
+    "name": "smallgame",
+    "image_file": "images\\smallgame_080d2449d758.png",
+    "image_sha256": "080d2449d758efcff6c1b9e22906427a4691e36ddbeb6b4e28eb7048ba2a2cd5",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T12:27:39.878956+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "橙色圆形白色手柄小游戏图标。用户确认：电玩巨蛋城赌场游玩区域右边的小游戏图标是强欲之牌入口；点击后再点击“移动”，到达后 W 走两步触发对话，选择“猜高低”。不能把所有同外观图标都认作强欲之牌，需核对区域和右侧位置。 smallgame 是多个地图共用图标；协律花园中的图标不是强欲之牌。当前地图必须由 MAP 标题确认电玩巨蛋城，且处于赌场游玩区域，再选择右侧图标。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\smallgame.md"
+  },
+  {
+    "id": "a2c0d502-ee1e-46ed-94fd-29c22e1b09e5",
+    "name": "stage",
+    "image_file": "images\\stage_75df6c8580d3.png",
+    "image_sha256": "75df6c8580d3015d7d5f15fd582032ab2c7bb831cec0f851f22d2d77627e8915",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T12:27:39.907960+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "粉色音符，下方文字“演出”。",
+    "mask_mode": "warm_ui",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\stage.md"
+  },
+  {
+    "id": "b587ff2b-9e8e-42d1-8ef3-ffc99f14bfb2",
+    "name": "daily_back",
+    "image_file": "images\\daily_back_0cae204a16f7.png",
+    "image_sha256": "0cae204a16f76f53ac4cdb276ba7a81cd540c4b91d7097c0732a6f226cca49fb",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.090880+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "Holowork页面右上蓝色返回箭头，非原生窗口关闭按钮。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_back.md"
+  },
+  {
+    "id": "114af8cf-f0be-434e-b4a5-767e8843f63a",
+    "name": "daily_notice_holo_home",
+    "image_file": "images\\daily_notice_holo_home_7516badd5953.png",
+    "image_sha256": "7516badd59532e319651f62a7e30a3f4032395f257571d9d9702ce50783552db",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.229914+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "通知清单：可以在holo之家领取礼物了。。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_notice_holo_home.md"
+  },
+  {
+    "id": "a0ffadc4-4484-4c77-9ab3-e49b4db3292c",
+    "name": "daily_notice_holowork",
+    "image_file": "images\\daily_notice_holowork_ced03ab9551b.png",
+    "image_sha256": "ced03ab9551b642c2984bc49d0e42b3d11c59e878c57a51aca03db3a16ae1248",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.315933+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "通知清单：有些Holowork已经完成啦！。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_notice_holowork.md"
+  },
+  {
+    "id": "ea406c3f-f518-4746-938e-87d07f0e5f2c",
+    "name": "daily_notice_kaogan",
+    "image_file": "images\\daily_notice_kaogan_4d00603aa326.png",
+    "image_sha256": "4d00603aa326f5824cd3648c29613471510ca0561f2fbbb5775b8d05df667c96",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.396952+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "通知清单：可以在颜岩山领取礼物了。。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_notice_kaogan.md"
+  },
+  {
+    "id": "b0de0089-0aae-4ac5-81df-769f0c6a180c",
+    "name": "daily_notice_the_cell",
+    "image_file": "images\\daily_notice_the_cell_d3a2a5c797ab.png",
+    "image_sha256": "d3a2a5c797abe238d52dc7c59a0dc355cda7baa21afb2a7db7eaf8c581cc6fda",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.487021+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "通知清单：可以在The Cell再临领取礼物了。。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_notice_the_cell.md"
+  },
+  {
+    "id": "23acc691-3833-42aa-8642-e01d1ae2b545",
+    "name": "daily_notice_wheel",
+    "image_file": "images\\daily_notice_wheel_e6b21f65c13a.png",
+    "image_sha256": "e6b21f65c13a76dad1d75c24ed01fd3f19e6ab9c735b145864f1a9ffab8f8b26",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.570039+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "通知清单：可以游玩恰玛红心大转盘了。。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_notice_wheel.md"
+  },
+  {
+    "id": "b67112cd-796e-45ed-b253-16bebb1a83fe",
+    "name": "daily_work_claim_all",
+    "image_file": "images\\daily_work_claim_all_0c64700a0d9f.png",
+    "image_sha256": "0c64700a0d9fbbdbb2450b7771b0b2b36f77e7d6c4732df73128072c0e8555bd",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.738558+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "完成工作页面右下：全部领取。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_work_claim_all.md"
+  },
+  {
+    "id": "28d35b4c-0859-4a34-832c-282c2a51025b",
+    "name": "daily_work_claim_summary",
+    "image_file": "images\\daily_work_claim_summary_cbfa04c35f79.png",
+    "image_sha256": "cbfa04c35f792436a6ecc6eaac0da5f268c74a40b1644ca750caa17290ff77ed",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.796181+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "工作奖励汇总页右下：领取。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_work_claim_summary.md"
+  },
+  {
+    "id": "1bb70874-e7f4-45fa-8046-39c93135cc1f",
+    "name": "daily_work_decide",
+    "image_file": "images\\daily_work_decide_f81f094245c5.png",
+    "image_sha256": "f81f094245c555e87984e4aede9b16d1bf68912cfcaacef081e9603005286d50",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.851195+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "推荐填充后的可用决定按钮；不能用灰暗不可用状态。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_work_decide.md"
+  },
+  {
+    "id": "b5447431-50c0-4f2d-9486-e9826f9da8a3",
+    "name": "daily_work_recommend",
+    "image_file": "images\\daily_work_recommend_0cb93f6d1002.png",
+    "image_sha256": "0cb93f6d100267fd9d5a7a0b0e4ad7b982a1801f8287e486b9e157710dfd4e30",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.931211+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "成员设置页：推荐设置。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_work_recommend.md"
+  },
+  {
+    "id": "7ccdf5d5-29db-4872-b4f3-750c7c9681b7",
+    "name": "daily_work_setup_all",
+    "image_file": "images\\daily_work_setup_all_c3d68cea5c06.png",
+    "image_sha256": "c3d68cea5c06225734cbad91b07169d1b88604127f71a93661d0cb87088150c2",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:21:00.988224+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "新工作列表右下：统一设置。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_work_setup_all.md"
+  },
+  {
+    "id": "37b1ad4c-79b8-4e3c-9135-1a57d154564b",
+    "name": "daily_rewards_get",
+    "image_file": "images\\daily_rewards_get_9d1ed07a320f.png",
+    "image_sha256": "9d1ed07a320f821b62208e50f0f32de3758edfd76bc1eb564fa1d3e9bc4fba8a",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T14:36:36.442132+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "GET!奖励弹窗标题；由用户奖励截图提取，用于排除奖励覆盖及Holowork关闭。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_rewards_get.md"
+  },
+  {
+    "id": "749babaf-54d5-454b-b452-ebcf22d753ce",
+    "name": "daily_work_setup_all_sample",
+    "image_file": "images\\daily_work_setup_all_sample_daaf7d4f3bc0.png",
+    "image_sha256": "daaf7d4f3bc0ea3116edfee887448d570f685f19a3ddbdeb198ec9c65cfda389",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T14:41:04.353658+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "旧截图统一设置核心文字补充；映射到daily_work_setup_all",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_work_setup_all_sample.md"
+  },
+  {
+    "id": "8f016cfb-19fc-40c4-ad28-0891114d4117",
+    "name": "attention",
+    "image_file": "images\\attention_fe18940301e9.png",
+    "image_sha256": "fe18940301e9d261ef748810ea8f302b55ab3410256283b7762b502a1b6adb85",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T14:54:27.627565+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "黄色扩音器与感叹号；功能待确认。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\attention.md"
+  },
+  {
+    "id": "ad07864d-2c1c-4d2b-8f6e-1602e22a9a8c",
+    "name": "task",
+    "image_file": "images\\task_fb46ae26d3c2.png",
+    "image_sha256": "fb46ae26d3c2b4c74a44e5fe73416265ac895531e5124fd24927fa4bf7e578e2",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-06T14:54:27.670571+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "粉色文档与感叹号，下方文字“任务”。",
+    "mask_mode": "warm_ui",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\task.md"
+  },
+  {
+    "id": "7000accf-1dbe-4e19-bc92-527c836f732e",
+    "name": "daily_gift_interact",
+    "image_file": "images\\daily_gift_interact_110a0ca2d53f.png",
+    "image_sha256": "110a0ca2d53f03d72460835943b131934a6e0503d22af7f0f6550a9d5d64b562",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T15:12:29.230127+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "靠近礼物地点后出现的粉色礼物交互按钮，尽量只裁文字和礼物图案。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_gift_interact.md"
+  },
+  {
+    "id": "3ab9821e-933c-4f0b-bef6-106e8be6bb00",
+    "name": "daily_wheel_interact",
+    "image_file": "images\\daily_wheel_interact_cd0a117fe5e9.png",
+    "image_sha256": "cd0a117fe5e95d7694b5984d240afe3945e2701aafa0c20efcec4e847e43218d",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.85,
+    "created_at": "2026-10-06T15:19:36.739155+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "转盘现场可按E交互的提示；需要明确区别其他E交互目标。来源：用户提供模板；尚待每日流程验证。",
+    "mask_mode": "none",
+    "role": "button",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\daily_wheel_interact.md"
+  },
+  {
+    "id": "912ea61f-4a38-4b6c-9731-10235e0a599f",
+    "name": "entry_area",
+    "image_file": "images\\entry_area_dbc769d9f1c4.png",
+    "image_sha256": "dbc769d9f1c4392870407f89d85ce1a291905541b1f927602cd6fbea258f0a24",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.464104+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：游玩区域。来源：归档截图8e6f38a1-d645-4bb5-8941-cd90ac89b6d6，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_area.md"
+  },
+  {
+    "id": "c6db6151-cd40-4ec7-bbe3-43a7d75efb83",
+    "name": "entry_detail_greed",
+    "image_file": "images\\entry_detail_greed_1f4e81f9b8cd.png",
+    "image_sha256": "1f4e81f9b8cd7ee51aed5e2af9e95f07aa85f04ab9790c943e6e34d0f47a0923",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.484036+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：强欲之牌 猜高低。来源：归档截图320db1de-9bc8-479a-a218-d2ce4b7c9115，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_detail_greed.md"
+  },
+  {
+    "id": "d1f0803c-98b9-4caf-9a6c-bfefacedbe50",
+    "name": "entry_dialogue",
+    "image_file": "images\\entry_dialogue_881e6edabaee.png",
+    "image_sha256": "881e6edabaee12c7f5826b9e4fe777da22475101535e0fa55525d8daddc49780",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.509461+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：为了抓住机会。来源：归档截图ab709d1b-1754-4fcc-9222-766a22aa604a，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_dialogue.md"
+  },
+  {
+    "id": "b87b861f-0f26-43c9-8c75-9de2e15ac7b8",
+    "name": "entry_interact",
+    "image_file": "images\\entry_interact_8f6f501ecce5.png",
+    "image_sha256": "8f6f501ecce562e24f5680297029661164e0c4ea37bf2e89e961c4146c677940",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.535019+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：猜高低。来源：归档截图71d0a821-6f9d-4a0b-ba32-cb7fda90d0d8，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_interact.md"
+  },
+  {
+    "id": "577a04c2-77a6-49c6-aea0-32bb664b127d",
+    "name": "entry_keep",
+    "image_file": "images\\entry_keep_8ae8cd1ea395.png",
+    "image_sha256": "8ae8cd1ea39528682184c9e5659b944ce758c10da8e5d733ceb8a9052f767043",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.560932+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：不进行更改。来源：归档截图7be9e448-7b6f-4a25-8a4f-fc705a07467d，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_keep.md"
+  },
+  {
+    "id": "89a81463-7854-426e-be64-9f466cb43369",
+    "name": "entry_lever_detail",
+    "image_file": "images\\entry_lever_detail_218e58ff5a05.png",
+    "image_sha256": "218e58ff5a0553ab14866303993d835f95cf176b08c6096d8a3b3f10d77f171d",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.585848+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：切换操纵杆 更改游玩区域。来源：归档截图5c5f91de-3ea7-4ac5-b0b7-5481d30a7983，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_lever_detail.md"
+  },
+  {
+    "id": "dcc1031f-d100-477c-8d73-825aaaa5790b",
+    "name": "entry_lever_interact",
+    "image_file": "images\\entry_lever_interact_341c4f275b4a.png",
+    "image_sha256": "341c4f275b4aa06389288c7b26df1b851ce1787fdcdbe9ab9c17f80ba1f8d228",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.609769+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：切换操纵杆。来源：归档截图6c3b8da1-0722-451d-9445-1dea3bfe803b，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_lever_interact.md"
+  },
+  {
+    "id": "50f3586b-aeae-4839-ab2e-b77a8e0a6ae1",
+    "name": "entry_lobby",
+    "image_file": "images\\entry_lobby_a3f38cae8634.png",
+    "image_sha256": "a3f38cae86345a4e3219b5a8133df62e1a39817fc894e3f0ca7bd090bef3d024",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.635682+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：大厅。来源：归档截图13225c2e-73c0-4ca4-b400-ed9b4970d493，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_lobby.md"
+  },
+  {
+    "id": "20913f62-a8f6-4dda-8098-bd9339d465d8",
+    "name": "entry_map_arcade",
+    "image_file": "images\\entry_map_arcade_832288319657.png",
+    "image_sha256": "832288319657b0d79b9d1b7b989c3af2f28e72f255d4dce77d484d9c0d1d110b",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.660863+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：MAP 电玩巨蛋城。来源：归档截图8e6f38a1-d645-4bb5-8941-cd90ac89b6d6，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_map_arcade.md"
+  },
+  {
+    "id": "2c57242e-0372-4212-820c-a9dc106048fe",
+    "name": "entry_map_bay",
+    "image_file": "images\\entry_map_bay_fb5237db7847.png",
+    "image_sha256": "fb5237db7847b3ff94a152e1e3cbe1510510a4cdb1a7429c3c48d169947e3fbe",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.686777+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：MAP 汽水泡泡海湾。来源：归档截图22d43c4f-9a90-4b4c-800a-602839ec027f，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_map_bay.md"
+  },
+  {
+    "id": "e4270ae5-d197-4cb9-a887-2b7f4225147b",
+    "name": "entry_map_garden",
+    "image_file": "images\\entry_map_garden_e3e4feef7b4b.png",
+    "image_sha256": "e3e4feef7b4b420fdcf91106edbcd9455edb9bc246bdf9367707cf1747551811",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.713687+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：MAP 协律花园。来源：归档截图e4d701bc-5942-43ed-8ca5-c631d58a2674，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_map_garden.md"
+  },
+  {
+    "id": "8a177972-b6b3-4345-a478-bc2bfd60b446",
+    "name": "entry_move",
+    "image_file": "images\\entry_move_4a7de61d99df.png",
+    "image_sha256": "4a7de61d99dfd7bb83321a95c2ccfca77b7c69d2c99035cf763cd706b4b0dda8",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.738603+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：移动。来源：归档截图320db1de-9bc8-479a-a218-d2ce4b7c9115，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_move.md"
+  },
+  {
+    "id": "6aef3992-bcb9-489c-8cfa-8ddd2c912314",
+    "name": "entry_ready_logo",
+    "image_file": "images\\entry_ready_logo_e004b18bdd3a.png",
+    "image_sha256": "e004b18bdd3ac7db0590f17f6a8caeadbb04a21d59dafa9763ade03815e54a56",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.766885+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：High&Low。来源：归档截图826b8d5c-5a0f-4762-b8c6-46652ade974b，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_ready_logo.md"
+  },
+  {
+    "id": "b5f93d2a-e718-4b23-9bd7-536f02512076",
+    "name": "entry_ready_start",
+    "image_file": "images\\entry_ready_start_81d8c45404dc.png",
+    "image_sha256": "81d8c45404dc54ea614168ab896db0ecedef9cf1c5c338245dc9407403a96a30",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.792799+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：押注并开始游戏。来源：归档截图826b8d5c-5a0f-4762-b8c6-46652ade974b，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_ready_start.md"
+  },
+  {
+    "id": "bdde1b92-7bf1-459b-9828-abba90e0bcd1",
+    "name": "entry_to_game",
+    "image_file": "images\\entry_to_game_f751d9d59241.png",
+    "image_sha256": "f751d9d5924172672a990e3cc433f6d57680bc645babf1d1940b870d522a4f60",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.9,
+    "created_at": "2026-10-17T04:47:51.816719+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "入口模块稳定UI裁剪，语义：切换为游戏区。来源：归档截图7be9e448-7b6f-4a25-8a4f-fc705a07467d，尚待实机验证。",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\entry_to_game.md"
+  },
+  {
+    "id": "2fc6fc81-68e1-4506-9533-2a915c5820a6",
+    "name": "claim_achievement_page",
+    "image_file": "images\\claim_achievement_page_e1300f159194.png",
+    "image_sha256": "e1300f15919420def61f80a340b45b2f98625f08f45eb06b3b5467553f82dbd2",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.392755+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源8aa2acca-3e60-4c4d-9117-2bfada427150裁剪(99, 86, 157, 116)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_achievement_page.md"
+  },
+  {
+    "id": "5252c98b-27ed-4bda-bb7b-085f7fb16917",
+    "name": "claim_all",
+    "image_file": "images\\claim_all_2b9bfac7d25f.png",
+    "image_sha256": "2b9bfac7d25f3a2c943bc76a1d138afa51d6318eca1a38d3bb0551891212b801",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.413685+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源0fa79e05-fa45-4357-9fbd-0aec03562164裁剪(1070, 665, 1178, 692)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_all.md"
+  },
+  {
+    "id": "9daa116f-a62e-49de-92e5-07649becd2e6",
+    "name": "claim_available",
+    "image_file": "images\\claim_available_e25860e9024b.png",
+    "image_sha256": "e25860e9024b722db75e6e76e64f207bcf7c450b684ed59464a12cbfdb0e031b",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.439598+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源8aa2acca-3e60-4c4d-9117-2bfada427150裁剪(1115, 233, 1177, 256)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_available.md"
+  },
+  {
+    "id": "daac7490-27d2-48f0-a9c2-52e753372519",
+    "name": "claim_daily_tab",
+    "image_file": "images\\claim_daily_tab_26c6175dae25.png",
+    "image_sha256": "26c6175dae259e119d8a7c90decce4b053682472a6839f993ac1aeb494ce544c",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.467505+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源73fbf1d6-3348-4181-bbf4-d599c494280e裁剪(169, 286, 215, 313)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_daily_tab.md"
+  },
+  {
+    "id": "36f659e8-e1b2-4b4b-a34d-2cd5fd6adc3b",
+    "name": "claim_event_carousel",
+    "image_file": "images\\claim_event_carousel_c1362699834d.png",
+    "image_sha256": "c1362699834daee69b4a266de916d21dba309a9dd05c9ff81fac22ecb86bd6ea",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.494327+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源bda4e805-131f-4b85-81fb-07d2ef2d1bf6裁剪(113, 146, 212, 165)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_event_carousel.md"
+  },
+  {
+    "id": "9ce50ad2-24de-49f2-a5f7-52ee81f1999e",
+    "name": "claim_event_daily",
+    "image_file": "images\\claim_event_daily_2b388d4f9a36.png",
+    "image_sha256": "2b388d4f9a36c45dc9d64df6fb00fd4c8e577826c1583bc9e43b30be406170ff",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.519243+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源6922dbdd-9ea0-41e3-8511-5456d63c4aef裁剪(595, 171, 641, 197)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_event_daily.md"
+  },
+  {
+    "id": "f6ea4725-d20b-4015-96c7-2b83de7c8543",
+    "name": "claim_event_free",
+    "image_file": "images\\claim_event_free_20acb5d121d5.png",
+    "image_sha256": "20acb5d121d5c1b24698791e8d05d7654e27ae584853b05b58a4483934189968",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.545090+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源f5c82501-ab6d-4378-8770-a534ce14b84b裁剪(1003, 171, 1048, 197)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_event_free.md"
+  },
+  {
+    "id": "6f8e6af2-9031-4c13-a95b-9a3ce9536415",
+    "name": "claim_event_go",
+    "image_file": "images\\claim_event_go_cee9042861af.png",
+    "image_sha256": "cee9042861af0547405bc8dc88f8a2db735ab20eb379c85c7be4b2409d099e7f",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.571002+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源bda4e805-131f-4b85-81fb-07d2ef2d1bf6裁剪(1083, 679, 1155, 706)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_event_go.md"
+  },
+  {
+    "id": "0fe9dedb-cfe6-4cb3-92b8-c11000ea2241",
+    "name": "claim_event_home",
+    "image_file": "images\\claim_event_home_89f4eaed161f.png",
+    "image_sha256": "89f4eaed161f370e25990e295bcb795cef0fbeeaa41217aeaf245b298ace6b87",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.596612+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源5d6e9988-5b6d-4d05-9439-3b04c873e1b4裁剪(1195, 463, 1236, 488)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_event_home.md"
+  },
+  {
+    "id": "e1f7652a-1d9e-4334-a0eb-af4fe3048564",
+    "name": "claim_one",
+    "image_file": "images\\claim_one_6ff95e5a06fa.png",
+    "image_sha256": "6ff95e5a06faf2efbc1ef101811c603d51e09c8a8630d9f8be6a270418b63060",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.649537+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源a39c4d07-ac3d-4f8a-b056-96ab50604e0c裁剪(1080, 221, 1120, 245)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_one.md"
+  },
+  {
+    "id": "99096bed-c46e-4dbd-9fa8-41d071eb962a",
+    "name": "claim_pass_page",
+    "image_file": "images\\claim_pass_page_d99f2bad828d.png",
+    "image_sha256": "d99f2bad828d24bf924d27cdcdf9670ed059b9ccbc2c25c1aef098a4235bdc0c",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.676376+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源049a80a7-aa25-44ca-bb15-81f4d487d435裁剪(99, 70, 238, 105)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_pass_page.md"
+  },
+  {
+    "id": "0b9e86df-858b-42c2-a02f-1585d894b5ec",
+    "name": "claim_pass_tab",
+    "image_file": "images\\claim_pass_tab_bdc474325bcd.png",
+    "image_sha256": "bdc474325bcdb8d162547c97c638d1ef8df3806f968a49114649d0b2f3915a90",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.704018+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源049a80a7-aa25-44ca-bb15-81f4d487d435裁剪(141, 187, 215, 214)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_pass_tab.md"
+  },
+  {
+    "id": "f42bc3c0-eaac-4e04-a198-29ce8e976c28",
+    "name": "claim_season_tab",
+    "image_file": "images\\claim_season_tab_084615f6e73d.png",
+    "image_sha256": "084615f6e73d7d9037183e4cb2da0c2eff388b06ca5b1dfa94529f88e317cb20",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.731257+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源73fbf1d6-3348-4181-bbf4-d599c494280e裁剪(169, 458, 215, 486)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_season_tab.md"
+  },
+  {
+    "id": "3c88e19a-bcb6-4035-869a-a8aa585c87da",
+    "name": "claim_tasks_tab",
+    "image_file": "images\\claim_tasks_tab_6acb7840ddbb.png",
+    "image_sha256": "6acb7840ddbbcc300bd43cbe207a75790a17e6bdeda22c5fa78fd7a33d7d096b",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.758168+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源73fbf1d6-3348-4181-bbf4-d599c494280e裁剪(382, 187, 437, 214)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_tasks_tab.md"
+  },
+  {
+    "id": "c9317469-baab-49ea-80c9-d1c33eaa363c",
+    "name": "claim_weekly_tab",
+    "image_file": "images\\claim_weekly_tab_60d749159599.png",
+    "image_sha256": "60d749159599caac879f81bf81ca542c5044e01d62196caa0ac333cd17f6485a",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:32:48.786556+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源53418a90-0daa-44ae-bb50-0ae5aa489134裁剪(169, 368, 215, 396)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_weekly_tab.md"
+  },
+  {
+    "id": "6c97efb8-4f29-4edc-8168-517047b309af",
+    "name": "claim_all_task",
+    "image_file": "images\\claim_all_task_5dc8de63a735.png",
+    "image_sha256": "5dc8de63a735534dae4dfd161626143ee67f7a46800ade08ce8ee85eda1db360",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:41:23.052808+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源73fbf1d6-3348-4181-bbf4-d599c494280e裁剪(1030, 666, 1161, 694)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_all_task.md"
+  },
+  {
+    "id": "435ea5ec-2c70-4652-a943-1a1f86fd1183",
+    "name": "claim_event_page",
+    "image_file": "images\\claim_event_page_dbf637c40137.png",
+    "image_sha256": "dbf637c401379b070d4f4448ca750adb99fc0f8c8808d3bf0d25fa58ba85c719",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-18T11:41:23.099216+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "领取模块稳定文字；来源6922dbdd-9ea0-41e3-8511-5456d63c4aef裁剪(100, 55, 211, 117)；待实机验证",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_event_page.md"
+  },
+  {
+    "id": "44b3d8cf-3fec-4176-858d-91325f50d121",
+    "name": "claim_close",
+    "image_file": "images\\claim_close_c88b6b25b470.png",
+    "image_sha256": "c88b6b25b470d4042142f222978d570621c07ac5cd396e9c145ade8c47d1f57e",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-24T18:08:03.132766+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "20261025 archived 32e0fbcd-b280-4903-9a77-9bda1f7f5d03; crop (1188, 79, 1220, 109)",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_close.md"
+  },
+  {
+    "id": "faeb3214-1bc9-4a23-85a6-c9dc24ae7449",
+    "name": "claim_event_home_sample",
+    "image_file": "images\\claim_event_home_sample_13ed262509a9.png",
+    "image_sha256": "13ed262509a956c6f82623b3fa16f68c8de5c24595b9b44d2dd41094cad9efaa",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-24T18:08:03.159765+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "20261025 archived 3723fc7c-8137-4491-8a6d-5d7ff1af09f0; crop (1180, 460, 1216, 482)",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_event_home_sample.md"
+  },
+  {
+    "id": "db822a0e-510b-4dca-b2d2-2ba24d2d573c",
+    "name": "claim_pass_page_sample",
+    "image_file": "images\\claim_pass_page_sample_32a1021797de.png",
+    "image_sha256": "32a1021797de916e2f5b4c4aae1bda243fa065ad88d7e8a005108f2f5d95c46b",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-24T18:08:03.190765+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "20261025 archived 5162868c-17a2-494f-83d6-d25fd58fe187; crop (100, 70, 233, 102)",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_pass_page_sample.md"
+  },
+  {
+    "id": "c9dfcfd1-ad1b-42ed-ab20-3476e7986010",
+    "name": "claim_pt_limit",
+    "image_file": "images\\claim_pt_limit_dfa5dd22811c.png",
+    "image_sha256": "dfa5dd22811cb7ecc8100cd436d893eaf45f30bcc0c943d59c61c6facea4434a",
+    "environments": [
+      "hololive_dreams"
+    ],
+    "threshold": 0.92,
+    "created_at": "2026-10-24T18:08:03.220470+00:00",
+    "confirmed_successes": 0,
+    "confirmed_failures": 0,
+    "notes": "20261025 archived 5162868c-17a2-494f-83d6-d25fd58fe187; crop (610, 280, 857, 302)",
+    "mask_mode": "none",
+    "role": "panel",
+    "knowledge_file": "domains\\hololive_dreams\\knowledge\\templates\\claim_pt_limit.md"
+  }
+]
