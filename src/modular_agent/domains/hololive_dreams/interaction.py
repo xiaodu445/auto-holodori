@@ -11,7 +11,7 @@ SCENARIOS={
  'patrol_movement':'realtime','patrol_pickup':'claim','route_navigation':'realtime','route_jump':'realtime','motion_probe':'realtime',
  'route_memory_jump':'realtime','route_teaching':'passive',
  'minimap_mapping':'passive','minimap_exploration':'realtime',
- 'scratch_ticket':'claim',
+ 'scratch_ticket':'claim','return_to_free':'navigation',
  'startup':'navigation','world_navigation':'navigation','map_navigation':'navigation',
  'notifications':'navigation','holowork':'claim','gift':'claim','wheel':'claim',
  'task_pass':'claim','events':'menu','achievements':'claim','popup':'menu',

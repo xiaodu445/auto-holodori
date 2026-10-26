@@ -84,7 +84,7 @@ def validate_plan(catalog, plan):
     result = {'schema_version': 1, 'timeout_seconds': budget(plan.get('timeout_seconds', 3600)), 'steps': []}
     seen = set()
     for raw in steps:
-        if not isinstance(raw, dict) or raw.keys() - {'id', 'capability', 'params', 'depends_on', 'when', 'on_failure', 'timeout_seconds'}:
+        if not isinstance(raw, dict) or raw.keys() - {'id', 'capability', 'params', 'depends_on', 'when', 'on_failure', 'timeout_seconds','recovery'}:
             raise ValueError('Unknown step fields')
         name = raw.get('id')
         if not isinstance(name, str) or not re.fullmatch(r'[A-Za-z][A-Za-z0-9_-]{0,63}', name) or name in seen:
@@ -111,7 +111,9 @@ def validate_plan(catalog, plan):
         catalog.preflight(capability,params)
         step = {'id': name, 'capability': capability, 'params': params,
                 'depends_on': dependencies, 'on_failure': raw.get('on_failure', 'stop'),
+                'recovery':raw.get('recovery','auto'),
                 'timeout_seconds': budget(raw.get('timeout_seconds', result['timeout_seconds']))}
+        if step['recovery'] not in ('auto','none'):raise ValueError('recovery must be auto or none')
         if step['on_failure'] not in ('stop', 'continue'):
             raise ValueError('on_failure must be stop or continue; no implicit retries')
         if 'when' in raw:
@@ -130,6 +132,41 @@ def validate_plan(catalog, plan):
 class PlanRunner:
     def __init__(self, catalog, executor, *, clock=time.monotonic):
         self.catalog, self.executor, self.clock = catalog, executor, clock
+
+    def _invoke(self,step,params,*,progress,cancelled,deadline,directory,event):
+        from .recovery import recovery_target
+        def call(capability,arguments,path):
+            if cancelled():return {'outcome':'cancelled','verified':False}
+            return self.executor(capability,arguments,progress=progress,cancelled=cancelled,
+                timeout=max(.001,deadline-self.clock()),directory=path)
+        initial=call(step['capability'],params,directory)
+        target=recovery_target(self.catalog,step,initial)
+        if not target or cancelled() or deadline-self.clock()<.1:return initial
+        # Exactly one recovery plus one retry. The original step's clock keeps running.
+        event('recovery_started',id=step['id'],capability=target,initial_result=initial)
+        progress('前置状态不满足，尝试恢复界面后重试当前步骤一次：'+step['id'])
+        arguments=self.catalog.parameters(target,{'timeout_seconds':min(30,deadline-self.clock())})
+        try:
+            recovered=call(target,arguments,directory/'recovery')
+        except Exception as error:
+            recovered={'outcome':'failure','verified':False,'message':str(error)}
+        event('recovery_finished',id=step['id'],result=recovered)
+        history={'initial_result':initial,'capability':target,'result':recovered,'retries':0}
+        if isinstance(recovered,dict) and recovered.get('outcome')=='cancelled':
+            return {'outcome':'cancelled','verified':False,'reason':'recovery_cancelled','recovery_attempt':history}
+        if (not isinstance(recovered,dict) or recovered.get('outcome')!='success'
+                or recovered.get('verified') is not True
+                or recovered.get('state')!=initial['error']['expected_state'] or cancelled()):
+            return {**initial,'recovery_attempt':history}
+        history['retries']=1
+        event('step_retry_started',id=step['id'])
+        try:
+            retried=call(step['capability'],params,directory/'retry')
+        except Exception as error:
+            retried={'outcome':'failure','verified':False,'message':str(error)}
+        if not isinstance(retried,dict):retried={'outcome':'failure','verified':False,'message':'Invalid retry result'}
+        # No recursion: another precondition failure returns to the model as-is.
+        return {**retried,'recovery_attempt':history}
 
     def run(self, plan, *, live=False, progress=print, cancelled=lambda: False, run_id=None):
         plan=validate_plan(self.catalog,plan)
@@ -187,9 +224,8 @@ class PlanRunner:
                     state['active_step'] = name
                     event('step_started', id=name, params=params)
                     progress('执行计划步骤：' + name + ' / ' + step['capability'])
-                    value = self.executor(step['capability'], params, progress=progress,
-                                          cancelled=step_cancelled, timeout=max(.001, step_deadline-self.clock()),
-                                          directory=directory / name)
+                    value = self._invoke(step,params,progress=progress,cancelled=step_cancelled,
+                        deadline=step_deadline,directory=directory/name,event=event)
                     if not isinstance(value, dict) or value.get('outcome') not in ('success', 'unknown', 'failure', 'cancelled'):
                         raise ValueError('Capability returned no valid outcome')
                     value = deepcopy(value)

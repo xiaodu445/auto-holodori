@@ -15,6 +15,7 @@
 | 名称 | 主要参数 | 边界 |
 | --- | --- | --- |
 | launch_game | 无 | 启动/聚焦并走已有启动树 |
+| return_to_free | timeout_seconds | 退出已识别菜单、关闭已登记弹层；连续三帧确认自由界面，不退出未知小游戏 |
 | daily_tasks | request、startup | request 支持选择任务、派遣、奖励记录、玩法预算、通知策略和临时路线/等待/识别配置 |
 | greed_cards_entry | 无 | 只进入，不下注 |
 | greed_cards_play | max_rounds、max_loss、daily_collected、stage | 用户明确要求游玩；保留同会话账目，中途不能改起始参数 |
@@ -61,10 +62,40 @@
 - `depends_on:["earlier"]`：只可引用前面的步骤；依赖非 success 时跳过。
 - `when:{"ref":"earlier.outcome","equals":"success"}`：值相等才执行。要依据失败进入备用分支，前一步须显式 `on_failure:"continue"`，备用步骤不能再把失败步骤列为必须成功的依赖。
 - 参数中的 `{"$ref":"earlier.completed_rounds"}`：读取已返回字段。只支持对象字段路径，不支持代码表达式、数组索引或文件读取。字段缺失、类型或范围不符则该步失败。
-- `on_failure` 默认 stop；continue 仅继续后续独立步骤。unknown/failure 不会被后来的成功覆盖，不自动重试。
+- `on_failure` 默认 stop；continue 仅继续后续独立步骤。unknown/failure 不会被后来的独立成功覆盖；只有下文声明的前置条件恢复允许一次重试。
+- `recovery` 默认 auto；none 关闭自动恢复。不是让所有失败都重试，仍需能力接口声明恢复目标与可信前置条件失败证据。
 - 总预算与步骤预算取较小值。实时进程还有各自轮数/时长限制；取消以正常停止信号优先，卡死超时才结束进程并释放可能持有的输入。截图、推理或底层阻塞不承诺硬实时截止。
 
 条件和参数引用必须针对实际结果；返回结构中的可选字段可能因早期退出而缺失。不要假设厨房有通关结果、钓鱼有已确认奖励，或仅用 elapsed_seconds 推断任务成功。
+
+## 前置状态自纠正
+
+日常能力在业务操作前观察界面。已处于自由界面直接继续；已识别菜单或弹层则返回结构化错误，保留当前状态和未发送业务输入的事实：
+
+```json
+{
+  "outcome": "unknown",
+  "verified": false,
+  "error": {
+    "code": "precondition_not_met",
+    "phase": "precondition",
+    "expected_state": "world.free",
+    "observed_state": "menu.recognized",
+    "business_input_sent": false,
+    "recoverable": true
+  }
+}
+```
+
+接口的 `precondition_recovery` 将这种错误映射到 `return_to_free`。执行器最多进行一次“恢复 → 验证目标状态 → 重试当前步骤”，不重跑前序步骤，不重置原步骤/总计划预算。恢复必须同时返回 success、verified=true 和 state=world.free；只有退出动作成功还不够。第二次前置失败、恢复失败或预算不足都会返回模型，不递归重放。
+
+恢复状态机使用公共transition/RetryBudget：已识别地图、通知、任务/成就/活动/工作菜单优先用新鲜关闭目标，没有关闭目标时才对这些已知页面发送Escape；关闭控件明确禁用时等待。GET/RANK UP先处理当前弹层，不能点击后面的关闭按钮。未知页只允许一次重新发现，不盲按Escape或空白。最多6次退出/确认输入、默认30秒，连续三帧自由界面才完成；重复捕获时间的旧帧不能计入确认，verification_samples保留最后三帧状态及时间。输入前复核窗口焦点、位置和遮挡，F12或人工取消立即停止；输入发送后才发生的取消仍保留已发送记录，失败输入单独标记交付未知。
+
+未知小游戏、对话/选项、刮奖券、多人匹配/成员确认、购买确认不由这个恢复器退出。当前只为daily_tasks声明自动恢复，不会把要求进入钓鱼轨道或强欲下注页的能力错误地“修复”为自由界面。强欲、厨房等后续可以按各自明确前置状态增加独立恢复器，不能仅凭错误文字猜目标。
+
+已经发送领取、派遣、下注或实时输入后得到unknown，不添加可自动重试的前置错误标记。它仍交给顶层模型核对现场和结果。空日常选择不截图、不恢复；startup=true仍保留原有启动/聚焦路径。旧模型use_skill调用已登记能力时也走同一计划执行链；独立小游戏程序和local-daily入口保留原流程，不自动套此策略。
+
+`recovery_attempt` 保存初始失败、恢复结果和重试次数；事件日志记录recovery_started、recovery_finished、step_retry_started。恢复确认只证明回到自由界面，不证明奖励到账。可在步骤设置 `"recovery":"none"` 让前置失败直接返回模型。
 
 ## 命令行
 

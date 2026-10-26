@@ -63,6 +63,8 @@ on_failure默认stop；仅在用户允许继续其他独立任务时设continue�
 新能力入口包括jump_rope、kitchen、rhythm、multi_live，其前置条件必须遵守；调用不意味着会自动导航到小游戏，跳绳仍需F8武装。
 单步也优先execute_plan。旧use_skill仍兼容，可传params（daily_tasks用params.request，旧daily_request也兼容）。
 不要将不能映射到接口参数的用户要求偷偷省略；说明缺口并escalate。多步计划结果是每步事实，未verified的结果不得声称已领奖或获胜。
+接口声明precondition_recovery的能力支持一次受限自纠正：仅当error.phase=precondition且business_input_sent=false时，执行器会调用声明的恢复能力，验证目标状态后只重试失败步骤一次。步骤recovery="none"可关闭。已发送领取/下注后结果未知，不触发这条恢复。查看recovery_attempt和事件记录，已尝试失败的恢复不要原样循环重放，应针对当前状态重规划或escalate。
+return_to_free只退出已识别菜单、关闭已登记弹层并验证自由界面；不退出未知小游戏、多人等人或购买确认，不作为任意页面的通用Escape。
 '''
 
 def compact(report):
@@ -491,9 +493,9 @@ class GeneralAgent:
                 'navigation_hint':next((p.get('navigation_hint') for p in self.profiles if p['domain']==domain),None),
                 'available_skills':self._skill_index(domain),
                 'available_capabilities':capabilities.index(domain),
-                'plan_contract':{'schema_version':1,'source':'config/task-plan.schema.json','step_fields':['id','capability','params','depends_on','when','on_failure','timeout_seconds'],
+                'plan_contract':{'schema_version':1,'source':'config/task-plan.schema.json','step_fields':['id','capability','params','depends_on','when','on_failure','timeout_seconds','recovery'],
                     'order':'array order','on_failure':['stop','continue'],'references':'{"$ref":"earlier_step.result_field"}',
-                    'execution':'bounded serial, no implicit retries; params validated against read_capability.input_schema'},
+                    'execution':'bounded serial; only declared pre-input failures allow one verified recovery/retry; params validated against read_capability.input_schema'},
                 'local_model_conditions':self._local_entry_conditions(goal,report) if domain in (None,'hololive_dreams') and not local_used else {'eligible':False,'reason':'本任务已调用一次或属于其他领域。'},
                 'local_play_conditions':self._local_play_conditions(goal,report) if domain in (None,'hololive_dreams') else {'eligible':False,'reason':'属于其他领域'},
                 'available_local_models':[{'skill':'greed_cards_entry','domain':'hololive_dreams','requires':'先观察；游戏前台且无遮挡；local_model_conditions.eligible=true；理由说明当前状态证据','scope':'仅导航到实际 High&Low 页面，不下注'}, {'skill':'greed_cards_play','domain':'hololive_dreams','requires':'local_play_conditions.eligible=true','scope':'实际游玩与精确结算，未知条件交接'}],
@@ -636,7 +638,7 @@ class GeneralAgent:
                             'message':r.message,'data':r.data} for r in results]
                         feedback['outcome']='success' if all(r.outcome==Outcome.SUCCESS for r in results) else 'failure'
                     else:
-                        if decision.get('params') is not None or decision.get('skill') in ('jump_rope','kitchen','rhythm','multi_live'):
+                        if decision.get('params') is not None or decision.get('domain','')+'.'+decision.get('skill','') in capabilities.entries:
                             params=decision.get('params',{})
                             if decision.get('daily_request') is not None:
                                 if 'request' in params:raise ValueError('Use params.request or daily_request, not both')

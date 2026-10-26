@@ -36,6 +36,54 @@
           },
           "trace_directory": {
             "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -45,6 +93,114 @@
         "additionalProperties": true
       },
       "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.return_to_free",
+      "description": "退出已识别菜单或关闭已登记奖励弹层，确认返回自由界面",
+      "requires": "已定位且在前台的游戏窗口；不退出未知小游戏、匹配或购买确认",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "timeout_seconds": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 120,
+            "default": 30
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "state": {
+            "type": "string"
+          },
+          "recovery_inputs": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅确认自由界面连续三帧，不证明领取或通关；未知页停止交给模型。",
       "retry_policy": "never_automatic",
       "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
     },
@@ -229,6 +385,54 @@
           },
           "trace_directory": {
             "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -238,8 +442,14 @@
         "additionalProperties": true
       },
       "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
-      "retry_policy": "never_automatic",
-      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+      "retry_policy": "one_retry_after_verified_precondition_recovery_only",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。",
+      "precondition_recovery": {
+        "capability": "hololive_dreams.return_to_free",
+        "expected_state": "world.free",
+        "max_retries": 1,
+        "requires_no_business_input": true
+      }
     },
     {
       "id": "hololive_dreams.greed_cards_entry",
@@ -274,6 +484,54 @@
           },
           "trace_directory": {
             "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -342,6 +600,54 @@
           },
           "trace_directory": {
             "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -413,6 +719,54 @@
           },
           "trace_directory": {
             "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -486,6 +840,54 @@
             "type": "number",
             "minimum": 0,
             "maximum": 1000000000
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -556,6 +958,54 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 1000000000
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -827,6 +1277,54 @@
             "type": "number",
             "minimum": 0,
             "maximum": 1000000000
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -946,6 +1444,54 @@
             "type": "number",
             "minimum": 0,
             "maximum": 1000000
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -1066,6 +1612,54 @@
           },
           "rewards_verified": {
             "type": "boolean"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "phase": {
+                "type": "string"
+              },
+              "expected_state": {
+                "type": "string"
+              },
+              "observed_state": {
+                "type": "string"
+              },
+              "business_input_sent": {
+                "type": "boolean"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "recovery_attempt": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string"
+              },
+              "retries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "initial_result": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "result": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
           }
         },
         "required": [

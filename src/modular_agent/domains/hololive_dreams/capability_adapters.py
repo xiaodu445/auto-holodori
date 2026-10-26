@@ -56,8 +56,15 @@ def prepare_params(root, name, params, *, references=False):
 
 def execute(adapter, goal, name, params, *, progress, cancelled, timeout, directory):
     params = prepare_params(adapter.root, name, params)
+    if name=='return_to_free':
+        from .free_state_recovery import FreeStateRecovery
+        return FreeStateRecovery(lambda:adapter._observe(DOMAIN,progress,'full'),adapter.computer,
+            cancelled=cancelled,progress=progress,timeout=min(timeout,params['timeout_seconds']),
+            current_windows=(lambda:adapter._vision_for(DOMAIN).desktop.windows()) if hasattr(adapter,'_vision_for') else None).run()
     if name == 'daily_tasks':
         from modular_agent.local_models import execute_daily
+        failure=daily_precondition(adapter,params,progress=progress,cancelled=cancelled)
+        if failure is not None:return failure
         return execute_daily(adapter, progress, cancelled, request=params.get('request'), startup=params['startup'])
     if name == 'greed_cards_entry':
         return adapter._run_local_entry(goal, progress, cancelled)
@@ -75,6 +82,26 @@ def execute(adapter, goal, name, params, *, progress, cancelled, timeout, direct
     adapter.computer.release_all()
     return run_worker(adapter.root, name, params, timeout=timeout, cancelled=cancelled,
                       progress=progress, directory=directory)
+
+
+def daily_precondition(adapter,params,*,progress,cancelled):
+    from modular_agent.agent.recovery import precondition_failure
+    from .free_state_recovery import recovery_state,check_window,observed_state
+    if params.get('request',{}).get('selected_tasks')==[]:return None
+    if cancelled():return {'outcome':'cancelled','verified':False}
+    report=adapter._observe(DOMAIN,progress,'full')
+    if cancelled():return {'outcome':'cancelled','verified':False}
+    game=next((w for w in report.windows if w.get('handle')==report.frame.get('target_window_handle')),None)
+    if params.get('startup',True) and (not game or not game.get('foreground') or game.get('minimized')):
+        return None  # Preserve the existing explicitly enabled launch/focus path.
+    try:check_window(report)
+    except RuntimeError as error:
+        return precondition_failure('world.free','window_unavailable',str(error))
+    state=recovery_state(report)
+    if state=='free':return None
+    return precondition_failure('world.free',observed_state(report),
+        '日常尚未开始：当前不是自由界面；未发送业务操作。',
+        recoverable=state not in ('blocked','unsupported'))
 
 
 def run_worker(root, name, params, *, timeout, cancelled, progress, directory):

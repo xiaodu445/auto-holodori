@@ -22,6 +22,7 @@
             "properties": {"ref": {"type": "string"}, "equals": {}}
           },
           "on_failure": {"enum": ["stop", "continue"], "default": "stop"},
+          "recovery": {"enum": ["auto", "none"], "default": "auto", "description": "One verified precondition recovery and one retry, only if declared by the capability. Never retries uncertain business actions."},
           "timeout_seconds": {"type": "number", "minimum": 0.1, "maximum": 86400}
         }
       }
