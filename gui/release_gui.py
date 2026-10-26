@@ -56,7 +56,7 @@ class App:
             DATA.mkdir(parents=True,exist_ok=True)
             (DATA/'settings.json').write_text(json.dumps({**values,'recognition_preview':self.show_recognition.get()},ensure_ascii=False,indent=2),encoding='utf-8')
             self.stop_file=DATA/('stop-'+uuid.uuid4().hex)
-            args=[sys.executable,'-X','utf8',str(ROOT/'tools/run_multi_live.py'),'--live','--stop-file',str(self.stop_file)]
+            args=[sys.executable,'-X','utf8',str(ROOT/'entrypoints/run_multi_live.py'),'--live','--stop-file',str(self.stop_file)]
             for k,v in values.items():args.extend(['--'+k,v])
             if single_song:args.extend(['--single-song','--rounds','1'])
             if self.show_recognition.get():args.append('--recognition-preview')

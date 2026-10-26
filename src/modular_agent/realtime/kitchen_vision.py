@@ -24,7 +24,7 @@ def select_click_point(bbox,keypoint,other_boxes=()):
 class KitchenDetector:
     def __init__(self,weights,device='0',confidence=.25,roi=(.20,.21,.78,.79),tail_confidence=.12):
         root=Path(__file__).resolve().parents[3]
-        os.environ.setdefault('YOLO_CONFIG_DIR',str(root/'learning/kitchen_points/ultralytics-config'))
+        os.environ.setdefault('YOLO_CONFIG_DIR',str(root/'runtime/kitchen/ultralytics-config'))
         os.environ.setdefault('MPLCONFIGDIR',str(root/'runtime/kitchen/matplotlib-cache'))
         from ultralytics import YOLO
         self.hud=HudReader(root/'data/kitchen/ui-icons')
@@ -109,7 +109,7 @@ def choose_weights(root):
         if not weights.is_file():raise ValueError('固定模型文件不存在：'+str(weights))
         return weights
     choices=[]
-    for p in (Path(root)/'learning/kitchen_yolo/runs').glob('**/progress.json'):
+    for p in (Path(root)/'domains/hololive_dreams/models/kitchen/runs').glob('**/progress.json'):
         try:
             state=json.loads(p.read_text(encoding='utf-8'));weights=p.parent/'weights/best.pt'
             if state.get('phase')=='completed' and weights.exists() and state.get('model_size')=='x':choices.append(weights)

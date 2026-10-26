@@ -1,5 +1,6 @@
 .conda/
 .venv/
+.vision/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -40,6 +41,9 @@ learning/**/latest-run.json
 *.log
 *.local.json
 *.local.patch
+domains/*/models/**/engines/
+domains/*/models/**/runs/
+domains/*/models/**/results/
 docs/bug-evidence/**/*.jsonl
 data/kitchen/review-archive/
 

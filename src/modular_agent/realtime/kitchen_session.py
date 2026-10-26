@@ -2,7 +2,7 @@
 import json,queue,threading,time
 from pathlib import Path
 import cv2
-from modular_agent.realtime.record_jump_rope import offer_latest
+from modular_agent.realtime.frame_queue import offer_latest
 
 class SessionRecorder:
     def __init__(self,output,fps=30):
