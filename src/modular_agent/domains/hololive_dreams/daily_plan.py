@@ -24,13 +24,31 @@ CATALOG={
 }
 FUTURE_TASKS=('expiry_notice',)
 
+
+def effective_config(config, request=None, *, root=None):
+ from copy import deepcopy
+ from modular_agent.agent.capabilities import CapabilityCatalog,validate_schema
+ # Reuse the public contract for per-run overrides; never write user defaults.
+ request={} if request is None else request
+ if not isinstance(request,dict):raise ValueError('每日请求必须为对象')
+ overrides=request.get('config_overrides',{})
+ from pathlib import Path
+ if 'config_overrides' in request:
+  root=Path(root) if root is not None else Path(__file__).resolve().parents[4]
+  schema=CapabilityCatalog(root).read('hololive_dreams.daily_tasks')['input_schema']['properties']['request']['properties']['config_overrides']
+  overrides=validate_schema(overrides,schema,'config_overrides')
+ merged={**deepcopy(config),**overrides}
+ from modular_agent.domains.hololive_dreams.daily_tasks import validate_config
+ validate_config(merged)
+ return merged
+
 def catalog():
  return {'schema_version':1,'supported':[asdict(s) for s in CATALOG.values()],
          'not_implemented':list(FUTURE_TASKS)}
 
 def build_plan(config,request=None,extra_tasks=()):
  request={} if request is None else dict(request)
- allowed={'selected_tasks','record_rewards','redispatch_holowork','max_rounds','max_loss','unknown_notification_policy'}
+ allowed={'selected_tasks','record_rewards','redispatch_holowork','max_rounds','max_loss','unknown_notification_policy','config_overrides'}
  if request.keys()-allowed: raise ValueError('未知每日计划字段：'+','.join(sorted(request.keys()-allowed)))
  specs=dict(CATALOG)
  for name in extra_tasks:

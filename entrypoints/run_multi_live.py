@@ -68,6 +68,7 @@ def main(argv=None):
     parser.add_argument('--window-width',type=int,default=0)
     parser.add_argument('--window-height',type=int,default=0)
     parser.add_argument('--stop-file',type=Path)
+    parser.add_argument('--result-file',type=Path,help='Write the existing structured session result')
     parser.add_argument('--live',action='store_true',help='显式允许菜单及打歌输入')
     parser.add_argument('--recognition-preview',action='store_true',help='显示已有游戏采集画面和识别状态；不额外采集')
     parser.add_argument('--single-song',action='store_true',help=argparse.SUPPRESS)
@@ -208,6 +209,8 @@ def main(argv=None):
                 import cv2
                 cv2.imencode('.png',last_image)[1].tofile(journal.directory/'stopped-frame.png')
             journal.finish(result);print(json.dumps(result,ensure_ascii=False,indent=2),flush=True)
+            if args.result_file:
+                args.result_file.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
             return 0 if result['outcome']=='success' else 2
         finally:
             if capture:capture.close()

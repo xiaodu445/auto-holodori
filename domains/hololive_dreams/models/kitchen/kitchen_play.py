@@ -362,5 +362,6 @@ def main(argv=None):
         recorder.close(**summary)
         print('本局回放：'+str(output.resolve()),flush=True)
     print(json.dumps(summary,ensure_ascii=False),flush=True)
+    return summary
 
 if __name__=='__main__':main()

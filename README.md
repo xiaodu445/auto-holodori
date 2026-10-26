@@ -26,6 +26,7 @@
 src/modular_agent/                     通用引擎与运行组件
 domains/hololive_dreams/
   launch.json                         启动配置
+  capabilities.json                   模型可读的能力接口和参数规范
   daily_tasks_config.json             日常编排，可调用小游戏
   models/
     fishing/ | greed_cards/ | rhythm/
@@ -39,6 +40,8 @@ docs/                                 当前使用和架构说明
 ```
 
 主目录不再包含 tools、learning、tests、release、components 或寻路开发入口。src 保留运行实际需要的共用组件和兼容入口，外部开发目录保存完整源码、测试和历史资料。
+
+文字任务的模型接口与多步骤执行，见 [能力接口与计划](docs/CAPABILITY_PLANS.md)。支持接口读取、参数校验、条件步骤、结果引用、预算、状态查询和取消；小游戏仍沿用各自的运行前置条件和验证边界。
 
 ## 环境和资产
 

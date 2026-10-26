@@ -51,6 +51,20 @@ screen 是本地像素识别后的结构化信息，不是图片；texts 为空�
 navigation_hint 是用户报告的待验证经验，尝试后需观察实际反馈；不要将其当作已验证成功。
 图片默认留在本机，你收到的是结构化信息。每个决定提供简短 reason，避免复述整份屏幕。优先使用当前操作后的画面判断条件；只有确实缺少关键信息才再次 observe，并说明要确认什么。当前已确认地图页面打开时不反复按 M；仅出现 MAP 字样不足以确认具体区域。'''
 
+SYSTEM += '''
+能力接口以 available_capabilities 和 read_capability 返回的 domains/<domain>/capabilities.json 为准。
+先 read_capability 查看所需能力的完整 input_schema、前置条件和结果语义，再生成调用。不得读取模型服务密钥配置。
+新增决策：list_capabilities（可选domain）；read_capability（capability为完整ID）；
+execute_plan（plan为结构化计划，可选plan_only=true只预览）。
+计划格式：{"schema_version":1,"timeout_seconds":3600,"steps":[{"id":"step1","capability":"hololive_dreams.daily_tasks","params":{"request":{"selected_tasks":["holowork"],"redispatch_holowork":false}},"timeout_seconds":300,"on_failure":"stop"}]}。
+步骤按数组顺序执行，不自动排序、不自动重试；重复业务使用不同id。depends_on只能引用之前的步骤，依赖非success则跳过。
+when={"ref":"step1.outcome","equals":"success"}可条件执行；参数可用{"$ref":"step1.some_field"}引用已返回字段，缺字段或类型不符停止该步，不猜值。
+on_failure默认stop；仅在用户允许继续其他独立任务时设continue。unknown表示未确认，不能当完成。timeout_seconds为本次运行预算。
+新能力入口包括jump_rope、kitchen、rhythm、multi_live，其前置条件必须遵守；调用不意味着会自动导航到小游戏，跳绳仍需F8武装。
+单步也优先execute_plan。旧use_skill仍兼容，可传params（daily_tasks用params.request，旧daily_request也兼容）。
+不要将不能映射到接口参数的用户要求偷偷省略；说明缺口并escalate。多步计划结果是每步事实，未verified的结果不得声称已领奖或获胜。
+'''
+
 def compact(report):
     # Preserve the entire local report; do not truncate text or candidate lists.
     return report.to_dict()
@@ -171,6 +185,16 @@ class GeneralAgent:
                 'max_rounds':'1至1000，仅控制所选玩法','max_loss':'至少50，仅控制所选玩法'}})
             entries.append({'skill':'fishing_loop','domain':'hololive_dreams','requires':'用户要求循环钓鱼；先观察；实际轨道、TAP!或钓鱼结算继续页；执行器重新校验','scope':'本地决策树调用实时组件，识别继续后开启下一轮；最多999轮，不换饵不领奖'})
             entries.append({'skill':'fishing_assist','domain':'hololive_dreams','requires':'用户要求钓鱼辅助；先观察；人工已进入实际钓鱼轨道；执行器重新校验','scope':'独占本地实时控制；不判定成功、不换饵、不领奖'})
+        from .capabilities import CapabilityCatalog
+        for contract in CapabilityCatalog(self.root).entries.values():
+            if domain is not None and contract['domain']!=domain:continue
+            name=contract['id'].split('.')[1]
+            entry=next((e for e in entries if e['skill']==name and e['domain']==contract['domain']),None)
+            if entry is None:
+                entry={'skill':name,'domain':contract['domain'],'description':contract['description']}
+                entries.append(entry)
+            entry.update(capability=contract['id'],interface_file=contract['source'],
+                parameter_contract='read_capability('+contract['id']+')',requires=contract['requires'])
         return entries
 
     def _current_observation(self,report,domain):
@@ -271,7 +295,7 @@ class GeneralAgent:
             return {**result,'state':state,'reason':'新会话从下注页开始，不能猜测中途对局账目'}
         return {**result,'eligible':True,'state':state,'reason':'可从当前50下注页运行本地玩法；交接前重新识别'}
 
-    def _run_local_play(self,goal,progress,should_yield):
+    def _run_local_play(self,goal,progress,should_yield,*,params=None,timeout=None):
         from modular_agent.local_models import load_greed_cards_play_module, play_starting_policy, save_play_result
         report=self._observe('hololive_dreams',progress,'full')
         if should_yield(): return {'outcome':'unknown','verified':False,'handoff':'human_guidance','message':'人工引导取消玩法接管'}
@@ -279,13 +303,17 @@ class GeneralAgent:
         if not conditions['eligible']: raise ValueError('玩法初始条件不满足：'+conditions['reason'])
         module=load_greed_cards_play_module(self.root)
         profile=next(p for p in self.profiles if p['domain']=='hololive_dreams')
-        policy=play_starting_policy(self.root)
+        params={'max_rounds':200,'max_loss':10000,**({} if params is None else params)}
+        policy=play_starting_policy(self.root,**params)
         observer=module.PlayObserver(self.root,self._vision_for('hololive_dreams'),self.computer,profile)
         progress('初始条件确认：下注页；控制权交给本地玩法组件。')
         if getattr(self,'_play_tree',None) is None:
             self._play_tree=module.GreedCardsPlay(**policy)
             self._play_window=report.frame.get('target_window_handle')
-        result=self._play_tree.run(observer,self.computer,progress,should_yield=should_yield,timeout=profile.get("local_models",{}).get("greed_cards_play",{}).get("timeout_seconds",1800))
+            self._play_params=dict(params)
+        elif params!=getattr(self,'_play_params',{}):
+            raise ValueError('中途账目不能改写起始参数；请先结束当前玩法并核对结果')
+        result=self._play_tree.run(observer,self.computer,progress,should_yield=should_yield,timeout=timeout or profile.get("local_models",{}).get("greed_cards_play",{}).get("timeout_seconds",1800))
         progress('本地玩法返回：'+result.get('outcome','unknown')+'；'+result.get('message',''))
         save_play_result(self.root,result)
         return result
@@ -388,10 +416,11 @@ class GeneralAgent:
                 self._fishing_used=True
                 progress('控制权交给钓鱼循环决策树，树内串行调用实时组件与继续页识别。')
                 return run_fishing_loop(self.root,self.computer,windows[0]['handle'],live=True,
-                        should_yield=should_yield,progress=progress)
+                        should_yield=should_yield,progress=progress,
+                        **{('timeout' if k=='timeout_seconds' else k):v for k,v in decision.get('params',{}).items()})
             from modular_agent.realtime.fishing import load, run_fishing
             from modular_agent.realtime.runtime import WindowCapture
-            config,module,vision=load(self.root)
+            config,module,vision=load(self.root,decision.get('params',{}).get('config_path'))
             capture=WindowCapture(windows[0]['handle'])
             try:
                 image,_=capture.grab(config['control_roi'])
@@ -400,7 +429,8 @@ class GeneralAgent:
             if not eligible: raise ValueError('钓鱼辅助初始条件不满足：需人工进入实际轨道界面')
             self._fishing_used=True
             progress('控制权交给本地钓鱼辅助；返回后由其他模块判断结果。')
-            return run_fishing(self.root,self.computer,windows[0]['handle'],live=True,should_yield=should_yield,progress=progress)
+            return run_fishing(self.root,self.computer,windows[0]['handle'],live=True,should_yield=should_yield,progress=progress,
+                **{('timeout' if k=='timeout_seconds' else k):v for k,v in decision.get('params',{}).items()})
         if decision.get('skill')!='launch_game': raise ValueError('Unknown skill')
         domain=decision.get('domain')
         profile=next((p for p in self.profiles if p['domain']==domain),None)
@@ -422,6 +452,10 @@ class GeneralAgent:
         return result
 
     def _model_loop(self,goal,progress,guidance,initial_local_result=None):
+        from .capabilities import CapabilityCatalog
+        from .capability_executor import CapabilityExecutor
+        from .task_plan import PlanRunner
+        capabilities=CapabilityCatalog(self.root)
         self._fishing_used=False
         instructions=[]
         def collect_guidance():
@@ -456,6 +490,10 @@ class GeneralAgent:
                 'interaction_policy':next((p.get('interaction_policy',{}) for p in self.profiles if p['domain']==domain),{}),
                 'navigation_hint':next((p.get('navigation_hint') for p in self.profiles if p['domain']==domain),None),
                 'available_skills':self._skill_index(domain),
+                'available_capabilities':capabilities.index(domain),
+                'plan_contract':{'schema_version':1,'source':'config/task-plan.schema.json','step_fields':['id','capability','params','depends_on','when','on_failure','timeout_seconds'],
+                    'order':'array order','on_failure':['stop','continue'],'references':'{"$ref":"earlier_step.result_field"}',
+                    'execution':'bounded serial, no implicit retries; params validated against read_capability.input_schema'},
                 'local_model_conditions':self._local_entry_conditions(goal,report) if domain in (None,'hololive_dreams') and not local_used else {'eligible':False,'reason':'本任务已调用一次或属于其他领域。'},
                 'local_play_conditions':self._local_play_conditions(goal,report) if domain in (None,'hololive_dreams') else {'eligible':False,'reason':'属于其他领域'},
                 'available_local_models':[{'skill':'greed_cards_entry','domain':'hololive_dreams','requires':'先观察；游戏前台且无遮挡；local_model_conditions.eligible=true；理由说明当前状态证据','scope':'仅导航到实际 High&Low 页面，不下注'}, {'skill':'greed_cards_play','domain':'hololive_dreams','requires':'local_play_conditions.eligible=true','scope':'实际游玩与精确结算，未知条件交接'}],
@@ -485,7 +523,7 @@ class GeneralAgent:
                 if kind in ('launch_game','greed_cards_entry'):
                     decision={**decision,'decision':'use_skill','skill':kind}
                     kind='use_skill'
-                if kind not in ('observe','act','list_knowledge','read_knowledge','write_knowledge','list_skills','use_skill','done','escalate'):
+                if kind not in ('observe','act','list_knowledge','read_knowledge','write_knowledge','list_skills','use_skill','done','escalate','list_capabilities','read_capability','execute_plan'):
                     raise ValueError('Unsupported model decision')
                 reason=decision.get('reason','')
                 if not isinstance(reason,str): raise ValueError('reason must be a string')
@@ -523,7 +561,23 @@ class GeneralAgent:
                 return {'outcome':'success','verified':False,'verification':'model_assessment','message':reason}
             feedback={'decision':kind,'reason':reason}
             try:
-                if kind=='observe':
+                if kind=='list_capabilities':
+                    feedback.update(outcome='success',entries=capabilities.index(decision.get('domain')))
+                elif kind=='read_capability':
+                    feedback.update(outcome='success',document=capabilities.read(decision.get('capability')))
+                elif kind=='execute_plan':
+                    if type(decision.get('plan_only',False)) is not bool:raise ValueError('plan_only must be boolean')
+                    runner=PlanRunner(capabilities,CapabilityExecutor(self.root,self,goal))
+                    feedback['result']=runner.run(decision.get('plan'),live=self.computer.live and not decision.get('plan_only',False),
+                        progress=progress,cancelled=lambda:getattr(self.computer,'stopped',False) or collect_guidance())
+                    feedback['outcome']=feedback['result']['outcome']
+                    # Retain the dedicated gameplay evidence for the existing done gate.
+                    for item in feedback['result'].get('plan',{}).get('steps',[]):
+                        if item['capability']=='hololive_dreams.greed_cards_play':
+                            play_result=feedback['result'].get('steps',{}).get(item['id'])
+                    observation_streak=0
+                    report=None  # Each following UI action requires a fresh observation.
+                elif kind=='observe':
                     observation_streak+=1
                     if observation_streak>3 and report is not None and report.frame.get('detail')=='full' and decision.get('domain',domain)==domain:
                         return {'outcome':'unknown','verified':False,'message':'连续重复观察仍未推进操作。请补充具体目标或入口；已停止本次观察循环。'}
@@ -582,7 +636,16 @@ class GeneralAgent:
                             'message':r.message,'data':r.data} for r in results]
                         feedback['outcome']='success' if all(r.outcome==Outcome.SUCCESS for r in results) else 'failure'
                     else:
-                        if decision.get('skill')=='greed_cards_play':
+                        if decision.get('params') is not None or decision.get('skill') in ('jump_rope','kitchen','rhythm','multi_live'):
+                            params=decision.get('params',{})
+                            if decision.get('daily_request') is not None:
+                                if 'request' in params:raise ValueError('Use params.request or daily_request, not both')
+                                params={**params,'request':decision['daily_request']}
+                            plan={'schema_version':1,'steps':[{'id':'call','capability':decision.get('domain','')+'.'+decision.get('skill',''),'params':params}]}
+                            feedback['result']=PlanRunner(capabilities,CapabilityExecutor(self.root,self,goal)).run(plan,
+                                live=self.computer.live,progress=progress,cancelled=lambda:getattr(self.computer,'stopped',False) or collect_guidance())
+                            if decision.get('skill')=='greed_cards_play':play_result=feedback['result'].get('steps',{}).get('call')
+                        elif decision.get('skill')=='greed_cards_play':
                             if decision.get('domain')!='hololive_dreams': raise ValueError('玩法仅适用于hololive_dreams')
                             play_used=True
                             feedback['result']=self._run_local_play(goal,progress,collect_guidance)

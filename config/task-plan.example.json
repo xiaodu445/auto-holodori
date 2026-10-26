@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "timeout_seconds": 630,
+  "steps": [
+    {
+      "id": "fishing_five_rounds",
+      "capability": "hololive_dreams.fishing_loop",
+      "params": {
+        "max_rounds": 5,
+        "timeout_seconds": 600,
+        "phase": "auto"
+      },
+      "timeout_seconds": 610,
+      "on_failure": "stop"
+    }
+  ]
+}

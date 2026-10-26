@@ -96,6 +96,7 @@ class ActionComputer:
                 return
     def _check(self):
         if self._closed.is_set() or self._stop.is_set(): raise RuntimeError('Operation session stopped')
+        if getattr(self,'cancelled',lambda:False)(): raise RuntimeError('Current task cancelled or timed out')
         if self.live and self.backend.emergency_pressed():
             self._stop.set()
             raise RuntimeError('F12 emergency stop')

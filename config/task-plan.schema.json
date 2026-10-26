@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ordered capability plan",
+  "description": "Capability params use domains/<domain>/capabilities.json. References must target an earlier step. Runtime validates parameter types after resolving references.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "steps"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "timeout_seconds": {"type": "number", "minimum": 0.1, "maximum": 86400, "default": 3600},
+    "steps": {
+      "type": "array", "minItems": 1, "maxItems": 100,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["id", "capability"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"},
+          "capability": {"type": "string", "pattern": "^[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*$"},
+          "params": {"type": "object", "default": {}},
+          "depends_on": {"type": "array", "items": {"type": "string"}, "default": []},
+          "when": {
+            "type": "object", "additionalProperties": false, "required": ["ref", "equals"],
+            "properties": {"ref": {"type": "string"}, "equals": {}}
+          },
+          "on_failure": {"enum": ["stop", "continue"], "default": "stop"},
+          "timeout_seconds": {"type": "number", "minimum": 0.1, "maximum": 86400}
+        }
+      }
+    }
+  }
+}

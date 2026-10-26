@@ -1,5 +1,7 @@
 # 全游戏交互协议（2026-10-21）
 
+2026-10-26新增能力计划运输层：`capabilities.json`声明接口，`agent/task_plan.py`串行执行、预算与取消，`domains/hololive_dreams/capability_adapters.py`调用原启动/日常/高低牌/钓鱼程序及跳绳、厨房、音游、多人实时进程。未新增UI点击流程，各能力仍复用下表原有专用适配；不将接口可调用当作已实机覆盖。计划不自动重试，实时停止文件进入原程序清理路径；当前任务取消也由ActionComputer的逐动作/等待检查处理。卡死进程强停后仅释放对应引擎可能持有的键/鼠标。协议及边界见CAPABILITY_PLANS.md。
+
 这不是给每个按钮增加无条件连点。基础约束是：输入发送成功≠游戏接受≠业务完成。所有场景都要声明源页面、目标、后置条件、重试/等待/不重试策略；新模块禁止再次手写“点一次然后等到底”。
 
 通用执行机制：`src/modular_agent/agent/interaction.py`（转换循环、超时/重试预算、窗口检查）与 `agent/ui_actions.py`（输入发送及目标边界检查）。游戏适配：`src/modular_agent/domains/hololive_dreams/interaction.py`（场景策略、游戏状态映射、可交互按钮语义）；文字弹窗证据仍在领域 `popup_recovery.py`。详见 [日常与交互的分层](daily-layers.md)。

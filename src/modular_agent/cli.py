@@ -30,7 +30,7 @@ class CollectRewardSkill:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Modular Agent MVP")
-    parser.add_argument("command", choices=["init", "domain-init", "demo", "run", "vision-add-template", "vision-import", "vision-scan", "vision-feedback", "observe", "chat", "local-run", "local-start", "local-play", "local-daily"])
+    parser.add_argument("command", choices=["init", "domain-init", "demo", "run", "vision-add-template", "vision-import", "vision-scan", "vision-feedback", "observe", "chat", "local-run", "local-start", "local-play", "local-daily", "capabilities", "capability", "execute-plan", "plan-status", "plan-cancel"])
     parser.add_argument("--project-root", default=".")
     parser.add_argument("--runtime-dir", default="runtime")
     parser.add_argument("--log-window", action="store_true", help="Show floating live log window")
@@ -69,8 +69,35 @@ def main() -> None:
     parser.add_argument('--daily-tasks',help='Comma-separated task IDs; empty string runs no tasks')
     parser.add_argument('--record-rewards',action=argparse.BooleanOptionalAction,default=None)
     parser.add_argument('--plan-only',action='store_true',help='Preview daily plan without desktop control')
+    parser.add_argument('--capability',help='Full capability ID to read')
+    parser.add_argument('--task-plan',help='Structured capability plan JSON file')
+    parser.add_argument('--run-id',help='Task-plan execution ID for status/cancellation')
     args = parser.parse_args()
     root = Path(args.project_root).resolve()
+    if args.command in ('capabilities','capability','execute-plan','plan-status','plan-cancel'):
+        from modular_agent.agent.capabilities import CapabilityCatalog
+        from modular_agent.agent.task_plan import PlanRunner,validate_plan,plan_status
+        catalog=CapabilityCatalog(root)
+        if args.command=='capabilities':result=catalog.index(args.domain)
+        elif args.command=='capability':result=catalog.read(args.capability)
+        elif args.command in ('plan-status','plan-cancel'):
+            result=plan_status(root,args.run_id,cancel=args.command=='plan-cancel')
+        else:
+            if not args.task_plan:parser.error('execute-plan requires --task-plan')
+            plan=validate_plan(catalog,json.loads(Path(args.task_plan).read_text(encoding='utf-8-sig')))
+            if not args.live or args.plan_only:
+                result=PlanRunner(catalog,None).run(plan,live=False)
+            else:
+                if not args.goal:parser.error('Live execute-plan requires --goal (original user instruction)')
+                from modular_agent.agent.general import GeneralAgent
+                from modular_agent.agent.capability_executor import CapabilityExecutor
+                from modular_agent.computer import ActionComputer
+                with ActionComputer(live=True,audit_path=root/'runtime/computer-actions.jsonl') as computer:
+                    with GeneralAgent(root,computer,None,domain=args.domain or 'hololive_dreams') as adapter:
+                        result=PlanRunner(catalog,CapabilityExecutor(root,adapter,args.goal)).run(plan,live=True,
+                            cancelled=lambda:computer.stopped)
+        print(json.dumps(result,ensure_ascii=False,indent=2))
+        return
     if args.command == "local-play":
         if args.domain != "hololive_dreams": parser.error("local-play requires --domain hololive_dreams")
         from modular_agent.local_models import run_greed_cards_play

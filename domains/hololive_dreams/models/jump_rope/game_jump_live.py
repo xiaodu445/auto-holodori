@@ -73,7 +73,7 @@ class Pulse:
         if self.timer:self.timer.cancel()
         self.release()
 
-def main():
+def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--live',action='store_true',help='F8 enables actual Space pulses; otherwise judgment only')
     p.add_argument('--replay',type=Path)
@@ -82,7 +82,12 @@ def main():
     p.add_argument('--window-handle',type=int)
     p.add_argument('--config',type=Path,default=HERE/'game_jump_config.json')
     p.add_argument('--preview',action='store_true')
-    a=p.parse_args()
+    p.add_argument('--stop-file',type=Path)
+    p.add_argument('--timeout-seconds',type=float,default=0)
+    a=p.parse_args(argv)
+    import math
+    if not math.isfinite(a.timeout_seconds) or a.timeout_seconds<0:p.error('invalid timeout')
+    deadline=time.monotonic()+a.timeout_seconds if a.timeout_seconds else math.inf
     if a.live and a.replay:p.error('Replay cannot send game input')
     if a.start<2 or a.frames<1:p.error('start must be >=2 and frames positive')
     config=json.loads(a.config.read_text(encoding='utf-8'));clock=JumpClock(config);stage_hint=StageHint();rope_progress=RopeProgress()
@@ -137,6 +142,8 @@ def main():
     try:
         with ((out/'events.jsonl').open('w',encoding='utf-8') if config.get('save_full_events',False) else nullcontext(None)) as log:
             while True:
+                if (a.stop_file and a.stop_file.exists()) or time.monotonic()>=deadline:
+                    reason='cancelled_or_timeout';break
                 if a.replay:
                     if frame>=a.frames:break
                     index=a.start+frame
@@ -235,5 +242,6 @@ def main():
         if a.preview:cv2.destroyAllWindows()
         (out/'summary.json').write_text(json.dumps(dict(reason=reason,frames=frame,jumps=clock.jumps,live=a.live,weights=str(weights),replay=str(a.replay) if a.replay else None,verified=False,failure_capture=failure.stats() if failure else None),indent=2),encoding='utf-8')
         print('日志：'+str(out),flush=True)
+    return dict(outcome='unknown',verified=False,reason=reason,frames=frame,jumps=clock.jumps,trace_directory=str(out))
 
 if __name__=='__main__':main()

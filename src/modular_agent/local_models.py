@@ -158,12 +158,12 @@ def execute_daily(adapter,progress=print,should_yield=lambda:False,*,startup=Tru
                   request=None,on_event=None,reward_reader=None,task_handlers=None):
     """Validated plan -> selected tasks. Trusted Python hooks, JSON-only requests."""
     from modular_agent.domains.hololive_dreams.daily_tasks import DailyTasks,validate_config
-    from modular_agent.domains.hololive_dreams.daily_plan import build_plan,NOTIFICATION_TASKS
+    from modular_agent.domains.hololive_dreams.daily_plan import build_plan,NOTIFICATION_TASKS,effective_config
     from modular_agent.domains.hololive_dreams.daily_journal import DailyJournal
     from modular_agent.perception.template_import import import_game_templates
     root=adapter.root;computer=adapter.computer
     config=json.loads((root/'domains/hololive_dreams/daily_tasks_config.json').read_text(encoding='utf-8-sig'))
-    validate_config(config)
+    config=effective_config(config,request,root=root)
     handlers={} if task_handlers is None else dict(task_handlers)
     if any(not isinstance(k,str) or not callable(v) for k,v in handlers.items()):
         raise ValueError('task_handlers需任务ID到可信Python函数的映射')
@@ -265,9 +265,10 @@ def execute_daily(adapter,progress=print,should_yield=lambda:False,*,startup=Tru
 def run_daily_tasks(root,*,live=False,progress=print,request=None,plan_only=False,on_event=None,reward_reader=None,task_handlers=None):
     root=Path(root)
     if plan_only:
-        from modular_agent.domains.hololive_dreams.daily_plan import build_plan,catalog
+        from modular_agent.domains.hololive_dreams.daily_plan import build_plan,catalog,effective_config
         config=json.loads((root/'domains/hololive_dreams/daily_tasks_config.json').read_text(encoding='utf-8-sig'))
-        return {'outcome':'planned','executed':False,'plan':build_plan(config,request,task_handlers or ()),'catalog':catalog()}
+        config=effective_config(config,request,root=root)
+        return {'outcome':'planned','executed':False,'plan':build_plan(config,request,task_handlers or ()),'config':config,'catalog':catalog()}
     from datetime import datetime
     folder=root/'runtime/daily-tasks';folder.mkdir(parents=True,exist_ok=True)
     with (folder/(datetime.now().strftime('%Y%m%d-%H%M%S-%f')+'.log')).open('w',encoding='utf-8') as log:

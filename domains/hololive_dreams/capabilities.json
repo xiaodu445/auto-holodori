@@ -1,0 +1,1082 @@
+{
+  "schema_version": 1,
+  "domain": "hololive_dreams",
+  "description": "面向模型的执行接口，不含模型服务连接配置或密钥。",
+  "capabilities": [
+    {
+      "id": "hololive_dreams.launch_game",
+      "description": "启动游戏并处理已有登录/奖励，进入自由主界面",
+      "requires": "可以在无游戏窗口时调用",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.daily_tasks",
+      "description": "执行选择的每日任务；可临时覆盖路线、识别阈值和等待预算",
+      "requires": "用户要求日常；不购买、不追做未完成目标",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "type": "object",
+            "properties": {
+              "selected_tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "holowork",
+                    "holo_home",
+                    "the_cell",
+                    "kaogan",
+                    "wheel",
+                    "greed_cards_entry",
+                    "greed_cards_play",
+                    "achievements",
+                    "events",
+                    "task_pass"
+                  ]
+                },
+                "maxItems": 10
+              },
+              "record_rewards": {
+                "type": "boolean"
+              },
+              "redispatch_holowork": {
+                "type": "boolean"
+              },
+              "max_rounds": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1000
+              },
+              "max_loss": {
+                "type": "integer",
+                "minimum": 50,
+                "maximum": 10000000
+              },
+              "unknown_notification_policy": {
+                "type": "string",
+                "enum": [
+                  "ignore_run",
+                  "stop"
+                ]
+              },
+              "config_overrides": {
+                "type": "object",
+                "properties": {
+                  "template_threshold": {
+                    "type": "number",
+                    "minimum": 0.01,
+                    "maximum": 1
+                  },
+                  "nearby_walk_step_seconds": {
+                    "type": "number",
+                    "minimum": 0.01,
+                    "maximum": 30
+                  },
+                  "nearby_walk_max_seconds": {
+                    "type": "number",
+                    "minimum": 0.01,
+                    "maximum": 120
+                  },
+                  "teleport_wait_seconds": {
+                    "type": "number",
+                    "minimum": 0.01,
+                    "maximum": 30
+                  },
+                  "click_interval_seconds": {
+                    "type": "number",
+                    "minimum": 0.01,
+                    "maximum": 120
+                  },
+                  "transition_timeout_seconds": {
+                    "type": "number",
+                    "minimum": 0.01,
+                    "maximum": 120
+                  },
+                  "notification_scroll_pages": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10
+                  },
+                  "holo_home_route": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "enum": [
+                            "w",
+                            "a",
+                            "s",
+                            "d"
+                          ]
+                        },
+                        "seconds": {
+                          "type": "number",
+                          "minimum": 0.01,
+                          "maximum": 30
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "seconds"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "maxItems": 50
+                  },
+                  "attention_fixed_region": {
+                    "type": "object",
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "x_ratio": {
+                        "type": "number",
+                        "minimum": 0.02,
+                        "maximum": 0.98
+                      },
+                      "y_ratio": {
+                        "type": "number",
+                        "minimum": 0.02,
+                        "maximum": 0.98
+                      }
+                    },
+                    "required": [
+                      "enabled",
+                      "x_ratio",
+                      "y_ratio"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "startup": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.greed_cards_entry",
+      "description": "进入强欲之牌准备页，不下注",
+      "requires": "当前可识别的自由界面、地图、传送或现场入口",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.greed_cards_play",
+      "description": "游玩强欲之牌，保留已确认账目",
+      "requires": "用户明确要求游玩；首次必须从已识别下注页开始",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "daily_collected": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "stage": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "max_rounds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 200
+          },
+          "max_loss": {
+            "type": "integer",
+            "minimum": 50,
+            "maximum": 10000000,
+            "default": 10000
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.fishing_loop",
+      "description": "钓鱼循环，可限制轮数与时间",
+      "requires": "人工进入钓鱼轨道、TAP!或结算继续页；唯一前台游戏窗口",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "phase": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "waiting",
+              "control"
+            ],
+            "default": "auto"
+          },
+          "config_path": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "max_rounds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 999,
+            "default": 999
+          },
+          "timeout_seconds": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 86400,
+            "default": 3600
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.fishing_assist",
+      "description": "单次实时钓鱼辅助",
+      "requires": "人工进入实际钓鱼轨道；唯一前台游戏窗口",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "phase": {
+            "type": "string",
+            "enum": [
+              "waiting",
+              "control"
+            ]
+          },
+          "config_path": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "timeout_seconds": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 86400,
+            "default": 600
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          },
+          "frames": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "elapsed_seconds": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000000
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.jump_rope",
+      "description": "运行当前跳绳推理程序，仍用F8手动启停",
+      "requires": "人工进入跳绳；CUDA与当前引擎可用；F8武装后才发按键",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "config_path": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "preview": {
+            "type": "boolean",
+            "default": false
+          },
+          "timeout_seconds": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 86400,
+            "default": 600
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          },
+          "frames": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "jumps": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "返回运行统计，未实现完整胜局确认；正常退出仍为unknown。F8门控保持原行为。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.kitchen",
+      "description": "运行厨房当前识别与点击策略，可自定义目标、模型和批次参数",
+      "requires": "人工进入厨房；当前权重与GPU可用",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "device": {
+            "type": "string",
+            "maxLength": 32
+          },
+          "weights": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "no_loop": {
+            "type": "boolean",
+            "default": false
+          },
+          "start_delay": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 30,
+            "default": 5
+          },
+          "duration": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 86400,
+            "default": 600
+          },
+          "fps": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 60,
+            "default": 30
+          },
+          "interval_ms": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 5
+          },
+          "batch_interval": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 30,
+            "default": 0.5
+          },
+          "no_tray_vision": {
+            "type": "boolean",
+            "default": false
+          },
+          "reserve_slots": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6,
+            "default": 3
+          },
+          "only_targets": {
+            "type": "boolean",
+            "default": false
+          },
+          "no_exploration": {
+            "type": "boolean",
+            "default": false
+          },
+          "verify_removal": {
+            "type": "boolean",
+            "default": false
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.05,
+            "maximum": 1.0,
+            "default": 0.25,
+            "description": "正常置信度"
+          },
+          "tail_confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.12
+          },
+          "max_age_ms": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 5000,
+            "default": 600
+          },
+          "max_batch_clicks": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 300,
+            "default": 60
+          },
+          "max_batches": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000,
+            "default": 0
+          },
+          "scene_timeout": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 3600,
+            "default": 60
+          },
+          "idle_timeout": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 3600,
+            "default": 60
+          },
+          "no_adaptive_confidence": {
+            "type": "boolean",
+            "default": false
+          },
+          "no_enhanced_tail": {
+            "type": "boolean",
+            "default": false
+          },
+          "confidence_ceiling": {
+            "type": "number",
+            "minimum": 0.05,
+            "maximum": 1.0,
+            "default": 0.4,
+            "description": "置信度上限"
+          },
+          "confidence_min_free": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7,
+            "default": 4,
+            "description": "允许降门槛的最少空槽"
+          },
+          "confidence_visible_limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 8,
+            "description": "降门槛的可见目标上限"
+          },
+          "confidence_previous_click_limit": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 300,
+            "default": 3,
+            "description": "上轮少量点击界限"
+          },
+          "confidence_step": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 0.5,
+            "default": 0.04,
+            "description": "每轮最多降低幅度"
+          },
+          "confidence_pressure_boost": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 0.5,
+            "default": 0.05,
+            "description": "空槽吃紧时最多提高幅度"
+          },
+          "confidence_slot_weight": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 10,
+            "default": 0.7,
+            "description": "空槽权重（须≥另两项之和）"
+          },
+          "confidence_visible_weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10,
+            "default": 0.2,
+            "description": "稀疏程度权重"
+          },
+          "confidence_click_weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10,
+            "default": 0.1,
+            "description": "上轮少点击权重"
+          },
+          "tail_visible_limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 6,
+            "description": "强化残局可见目标上限"
+          },
+          "tail_min_free": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 7,
+            "default": 4,
+            "description": "强化残局最少空槽"
+          },
+          "tail_reserve_slots": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6,
+            "default": 2,
+            "description": "强化残局至少保留空槽"
+          },
+          "tail_max_singles": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 3,
+            "description": "强化残局最多额外零散点击"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          },
+          "clicks_sent": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "batches_dispatched": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "elapsed_seconds": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000000
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "现有程序只报告输入与运行统计，尚不证明取物、消除、奖励或完整通关。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.rhythm",
+      "description": "运行单曲实时音游引擎",
+      "requires": "人工进入实际打歌界面；窗口前台完整",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "config_path": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "preview": {
+            "type": "boolean",
+            "default": false
+          },
+          "timeout_seconds": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 86400,
+            "default": 1800
+          },
+          "overrides": {
+            "type": "object",
+            "properties": {
+              "input_offset_ms": {
+                "type": "number",
+                "minimum": -500,
+                "maximum": 500
+              },
+              "bpm": {
+                "type": "number",
+                "minimum": 40,
+                "maximum": 300
+              },
+              "analysis_width": {
+                "type": "integer",
+                "minimum": 480,
+                "maximum": 1600
+              },
+              "fps": {
+                "type": "integer",
+                "minimum": 30,
+                "maximum": 240
+              },
+              "capture_backend": {
+                "type": "string",
+                "enum": [
+                  "auto",
+                  "dxcam",
+                  "mss"
+                ]
+              },
+              "input_mode": {
+                "type": "string",
+                "enum": [
+                  "normal",
+                  "all-held"
+                ]
+              },
+              "release_scope": {
+                "type": "string",
+                "enum": [
+                  "target",
+                  "all"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          },
+          "frames": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "actual_fps": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    },
+    {
+      "id": "hololive_dreams.multi_live",
+      "description": "从现有菜单流程运行指定局数的多人演出",
+      "requires": "游戏已启动；菜单状态由现有多人树验证；等人不点击确认成员",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "rounds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          },
+          "timeout_seconds": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 86400,
+            "default": 7200
+          },
+          "offset": {
+            "type": "number",
+            "minimum": -500,
+            "maximum": 500
+          },
+          "grid_snap": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 25
+          },
+          "window_width": {
+            "type": "integer",
+            "minimum": 640,
+            "maximum": 7680
+          },
+          "window_height": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 4320
+          },
+          "song_timeout": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 7200,
+            "default": 1800
+          },
+          "matching_timeout": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 3600,
+            "default": 600
+          },
+          "config_path": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "rhythm_profile": {
+            "type": "string",
+            "enum": [
+              "mechanism",
+              "tuning",
+              "config"
+            ]
+          },
+          "recognition_preview": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "rounds"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "unknown",
+              "failure",
+              "cancelled"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "trace_directory": {
+            "type": "string"
+          },
+          "completed_rounds": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "target_rounds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          },
+          "rewards_verified": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "outcome",
+          "verified"
+        ],
+        "additionalProperties": true
+      },
+      "result_semantics": "仅专用识别证据可 verified=true；输入发送或进程退出不等于游戏目标完成。",
+      "retry_policy": "never_automatic",
+      "output_notes": "可选字段取决于实际执行阶段；引用前核对结果。额外领域证据原样保留。"
+    }
+  ]
+}
