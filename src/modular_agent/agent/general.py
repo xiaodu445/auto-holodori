@@ -407,7 +407,7 @@ class GeneralAgent:
             if len(windows)!=1: raise ValueError('钓鱼窗口必须唯一且前台')
             if decision.get('skill')=='fishing_loop':
                 from modular_agent.realtime.fishing_loop import LoopObserver,run_fishing_loop
-                observer=LoopObserver(self.root,windows[0]['handle'])
+                observer=LoopObserver(self.root,windows[0]['handle'],decision.get('params',{}).get('config_path'))
                 try: initial=observer()
                 finally: observer.close()
                 if initial['state'] not in ('control','bite','continue'):
