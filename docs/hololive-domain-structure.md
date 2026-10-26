@@ -8,7 +8,12 @@
 src/modular_agent/
   perception/                      通用截图、OCR、模板匹配
   computer/                        通用输入执行
+  agent/interaction.py             通用转换循环、重试预算、加载等待和窗口检查
+  agent/ui_actions.py              通用输入发送与目标边界检查
+  agent/daily_tasks.py             旧导入路径兼容层，不保存游戏流程
   domains/hololive_dreams/
+    daily_tasks.py                 日常模板、通知/派遣/礼物/轮盘状态流程
+    interaction.py                 游戏场景策略及游戏状态到通用转换状态的映射
     states.py                      界面状态枚举、识别结果、纯识别函数
     templates.py                   入口模板分组和模板语义
     entry_observer.py              按阶段观察、OCR时间兜底

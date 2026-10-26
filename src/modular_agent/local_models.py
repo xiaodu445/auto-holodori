@@ -157,7 +157,7 @@ def save_play_result(root,result):
 def execute_daily(adapter,progress=print,should_yield=lambda:False,*,startup=True,
                   request=None,on_event=None,reward_reader=None,task_handlers=None):
     """Validated plan -> selected tasks. Trusted Python hooks, JSON-only requests."""
-    from modular_agent.agent.daily_tasks import DailyTasks,validate_config
+    from modular_agent.domains.hololive_dreams.daily_tasks import DailyTasks,validate_config
     from modular_agent.domains.hololive_dreams.daily_plan import build_plan,NOTIFICATION_TASKS
     from modular_agent.domains.hololive_dreams.daily_journal import DailyJournal
     from modular_agent.perception.template_import import import_game_templates
@@ -194,7 +194,7 @@ def execute_daily(adapter,progress=print,should_yield=lambda:False,*,startup=Tru
         vision=adapter._vision_for('hololive_dreams')
         profile=next(p for p in adapter.profiles if p['domain']=='hololive_dreams')
         def observe(recovery=False):
-            from modular_agent.agent.daily_tasks import TEMPLATES,WORK
+            from modular_agent.domains.hololive_dreams.daily_tasks import TEMPLATES,WORK
             phase=tree.observation_phase
             names=TEMPLATES
             if phase=='holowork':names=['menu','stage','task',*WORK,'daily_work_setup_all_sample']
@@ -283,7 +283,7 @@ def run_daily_tasks(root,*,live=False,progress=print,request=None,plan_only=Fals
 
 
 def observe_daily(vision,computer,profile,progress=print,should_yield=lambda:False,*,threshold=.6,template_names=None,recovery=False):
-    from modular_agent.agent.daily_tasks import TEMPLATES
+    from modular_agent.domains.hololive_dreams.daily_tasks import TEMPLATES
     if should_yield() or getattr(computer,'stopped',False): raise RuntimeError('每日任务已停止或收到人工引导')
     launcher=GameLauncher(vision,computer,profile)
     game=launcher._window(vision.desktop.windows())

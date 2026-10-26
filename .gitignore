@@ -39,6 +39,7 @@ learning/**/latest-run.json
 *.zip
 *.log
 *.local.json
+*.local.patch
 docs/bug-evidence/**/*.jsonl
 data/kitchen/review-archive/
 

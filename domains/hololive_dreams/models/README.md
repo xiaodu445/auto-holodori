@@ -11,7 +11,7 @@
 
 各玩法的源码与配置放在同一目录，避免顶层平铺。根目录 `.cmd` 入口、GUI、共享加载器、回放和发布脚本已使用分类后的路径；不在旧位置留重复副本。直接引用旧源码或配置路径的外部脚本需增加分类目录。
 
-日常任务属于游戏层的编排，配置在上一级 `domains/hololive_dreams/daily_tasks_config.json`，与 `launch.json` 并列，可选择调用各小游戏。执行与状态识别仍在 `src/modular_agent/agent/` 及 `src/modular_agent/domains/hololive_dreams/`。
+日常任务属于游戏层的编排，配置在上一级 `domains/hololive_dreams/daily_tasks_config.json`，与 `launch.json` 并列，可选择调用各小游戏。具体流程和状态识别在 `src/modular_agent/domains/hololive_dreams/`；通用输入、等待和转换预算在 `src/modular_agent/agent/`，旧 `agent/daily_tasks.py` 仅转发导入。
 
 跳绳当前 YOLO 自用主线仍在 `learning/jump_rope_yolo/`，厨房实现仍在 `src/modular_agent/domains/hololive_dreams/`、`learning/kitchen_*`；本次不移动训练资料，不将历史跳绳路线提升为当前主线。下文保留组件历史，未写完整路径的文件名请在上表对应目录查找。
 
