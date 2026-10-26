@@ -24,7 +24,7 @@
 ## 文件和复现
 
 - 纯数学新分支：src/modular_agent/realtime/landing_trajectory_bank.py。原 TrajectoryBank 保留，只增加可覆盖的阶段兼容判断。
-- 领域工厂：domains/hololive_dreams/models/jump_rope_phase_gear.py，按 landing_branches 选择。
+- 领域工厂：domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear.py，按 landing_branches 选择。
 - 当前/基线参数分别为 jump_rope_phase_gear_config.json 与 jump_rope_phase_gear_baseline_config.json。
 - 修改前快照：docs/jump-rope/history/gear-v4-before-landing-branches/。
 - 新版G入口不变；旧版对照 run_jump_rope_phase_gear_baseline_judgment.cmd。全部仅判断，不发空格。

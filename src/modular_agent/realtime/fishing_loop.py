@@ -15,7 +15,7 @@ from modular_agent.realtime.fishing import load,run_fishing
 from modular_agent.realtime.runtime import WindowCapture
 
 def load_tree(root):
-    spec=importlib.util.spec_from_file_location('hololive_fishing_loop',Path(root)/'domains/hololive_dreams/models/fishing_loop.py')
+    spec=importlib.util.spec_from_file_location('hololive_fishing_loop',Path(root)/'domains/hololive_dreams/models/fishing/fishing_loop.py')
     module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
     return module.FishingLoop
 

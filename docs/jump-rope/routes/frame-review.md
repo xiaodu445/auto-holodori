@@ -53,7 +53,7 @@
 
 ```text
 .conda\python.exe -m modular_agent.realtime.build_jump_rope_smooth_time --regularized
-.conda\python.exe -m modular_agent.realtime.validate_jump_rope_phase --gear --no-video --gear-settings domains/hololive_dreams/models/jump_rope_stage_config_review.json --output-dir runtime/jump-rope/frame-review/stage-boundary
+.conda\python.exe -m modular_agent.realtime.validate_jump_rope_phase --gear --no-video --gear-settings domains/hololive_dreams/models/jump_rope/jump_rope_stage_config_review.json --output-dir runtime/jump-rope/frame-review/stage-boundary
 .conda\python.exe -m modular_agent.realtime.export_jump_rope_review --replay runtime/jump-rope/frame-review/stage-boundary/replay.json --output runtime/jump-rope/frame-review/stage-boundary --settings runtime/jump-rope/frame-review/stage-boundary/settings-used.json
 ```
 

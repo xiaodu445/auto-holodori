@@ -16,7 +16,7 @@ def export(root, replay, recording, output, settings, reuse_images=False, image_
     if len(stamps)!=len(rows):raise ValueError('source/replay frame count mismatch')
     for stamp,row in zip(stamps,rows):
         if abs(stamp['t']-row['time'])>1e-7:raise ValueError('source/replay timestamps differ')
-    config=json.loads((root/'domains/hololive_dreams/models/jump_rope_config.json').read_text(encoding='utf-8'))
+    config=json.loads((root/'domains/hololive_dreams/models/jump_rope/jump_rope_config.json').read_text(encoding='utf-8'))
     params=json.loads((root/settings).read_text(encoding='utf-8-sig'));config.update(roi=[0,0,1,1],whole_rope=True,phase_rope=True,phase_reverse=True,phase_state=True,phase_gear=True,phase_parameters=params)
     images=output/'frames'
     if image_source is not None:

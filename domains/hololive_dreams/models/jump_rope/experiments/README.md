@@ -34,4 +34,4 @@
 
 每个case约4010帧，耗时不是实时性能。视觉耗时不含采集/预览/输入。此工具不请求游戏窗口、不发送空格。不要因为某张图误差降低就替换默认路线；应同时比较状态、接缝、遮挡及其他阶段。
 
-完整分析见 [长时记录](../../../../docs/jump-rope/reports/c4-long-run-20261004.md)；用户入口见 [C4说明](../../../../docs/jump-rope/routes/trajectory-gears.md)。
+完整分析见 [长时记录](../../../../../docs/jump-rope/reports/c4-long-run-20261004.md)；用户入口见 [C4说明](../../../../../docs/jump-rope/routes/trajectory-gears.md)。

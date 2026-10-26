@@ -33,7 +33,7 @@ metadata=json.loads((target/'runtime/distribution-metadata.json').read_text())
 assert metadata['dxcam']=='0.3.0'
 unchanged={}
 old=ROOT/'release/build/rhythm-1.0.0/app'
-for name in ['gui/release_gui.py','tools/run_multi_live.py','domains/hololive_dreams/models/rhythm_game.py','domains/hololive_dreams/models/rhythm_game_config.json','src/modular_agent/domains/hololive_dreams/multi_live.py','src/modular_agent/domains/hololive_dreams/multi_live_vision.py']:
+for name in ['gui/release_gui.py','tools/run_multi_live.py','domains/hololive_dreams/models/rhythm/rhythm_game.py','domains/hololive_dreams/models/rhythm/rhythm_game_config.json','src/modular_agent/domains/hololive_dreams/multi_live.py','src/modular_agent/domains/hololive_dreams/multi_live_vision.py']:
     unchanged[name]=hashlib.sha256((old/name).read_bytes()).hexdigest()==hashlib.sha256((target/'app'/name).read_bytes()).hexdigest()
 assert all(unchanged[name] for name in unchanged if name not in ('gui/release_gui.py','tools/run_multi_live.py','src/modular_agent/domains/hololive_dreams/multi_live.py')),unchanged
 name='src/modular_agent/realtime/rhythm_capture.py'

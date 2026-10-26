@@ -25,14 +25,14 @@ def run(root,names,video=False):
             return c,module,v
         destination=root/'runtime/jump-rope/landing-branches'/name
         destination.mkdir(parents=True,exist_ok=True)
-        for source in ['src/modular_agent/realtime/landing_trajectory_bank.py','src/modular_agent/realtime/trajectory_bank.py','domains/hololive_dreams/models/jump_rope_phase_gear.py']:
+        for source in ['src/modular_agent/realtime/landing_trajectory_bank.py','src/modular_agent/realtime/trajectory_bank.py','domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear.py']:
             saved=destination/'sources'/source;saved.parent.mkdir(parents=True,exist_ok=True);saved.write_bytes((root/source).read_bytes())
         try:
             jump_rope.load=customized
             result=validate(root,gear=True,annotated=video,output_dir=destination)
         finally:jump_rope.load=original
         result['parameters']=parameters
-        result['sources']={p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in ['src/modular_agent/realtime/landing_trajectory_bank.py','src/modular_agent/realtime/trajectory_bank.py','domains/hololive_dreams/models/jump_rope_phase_gear.py']}
+        result['sources']={p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in ['src/modular_agent/realtime/landing_trajectory_bank.py','src/modular_agent/realtime/trajectory_bank.py','domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear.py']}
         (destination/'report.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
         summary=dict(case=name,frames=result['frames'],valid=result['valid_frames'],modes=result['mode_changes'],states=sum(r['expected']==r['observed'] for r in result['sparse_state_checks']),geometry={str(r['time']):round(r['median_visible_error_px'],2) for r in result['sparse_manual_checks']},cv_mean_ms=result['mean_inference_ms'],cv_p95_ms=result['p95_inference_ms'])
         results.append(summary);print(json.dumps(summary),flush=True)

@@ -8,10 +8,10 @@ from modular_agent.realtime import jump_rope
 from modular_agent.realtime.validate_jump_rope_phase import validate, DEFAULT_RECORDING
 
 def run(root, names=None):
-    root=Path(root).resolve();recipe=json.loads((root/'domains/hololive_dreams/models/experiments/jump_rope_gear_cases.json').read_text(encoding='utf-8'))
+    root=Path(root).resolve();recipe=json.loads((root/'domains/hololive_dreams/models/jump_rope/experiments/jump_rope_gear_cases.json').read_text(encoding='utf-8'))
     settings=json.loads((root/recipe['base_config']).read_text(encoding='utf-8'));cases=recipe['cases'];names=names or list(cases)
     if any(name not in cases for name in names):raise ValueError('unknown experiment')
-    spec=importlib.util.spec_from_file_location('gear_evidence_experiments',root/'domains/hololive_dreams/models/experiments/jump_rope_phase_gear_evidence.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    spec=importlib.util.spec_from_file_location('gear_evidence_experiments',root/'domains/hololive_dreams/models/jump_rope/experiments/jump_rope_phase_gear_evidence.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     folder=root/'runtime/jump-rope/phase-gear';folder.mkdir(parents=True,exist_ok=True);summaries=[]
     original=jump_rope.load
     try:
@@ -29,7 +29,7 @@ def run(root, names=None):
             jump_rope.load=customized
             result=validate(root,annotated=False,gear=True,output_dir=destination)
             result['experiment']=name;result['parameters']=params
-            result['experiment_source_hashes']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [root/recipe['base_config'],root/'domains/hololive_dreams/models/experiments/jump_rope_phase_gear_evidence.py',root/'src/modular_agent/realtime/trajectory_bank.py']}
+            result['experiment_source_hashes']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [root/recipe['base_config'],root/'domains/hololive_dreams/models/jump_rope/experiments/jump_rope_phase_gear_evidence.py',root/'src/modular_agent/realtime/trajectory_bank.py']}
             (destination/'report.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
             state=result.get('sparse_state_checks',[]);errors=result['sparse_manual_checks']
             summary=dict(case=name,state_correct=sum(r['expected']==r['observed'] for r in state),state_checks=len(state),geometry={str(r['time']):r['median_visible_error_px'] for r in errors},mean_geometry_error=sum(r['median_visible_error_px'] for r in errors)/len(errors),mode_changes=result['mode_changes'],cv_mean_ms=result['mean_inference_ms'],cv_p95_ms=result['p95_inference_ms'])

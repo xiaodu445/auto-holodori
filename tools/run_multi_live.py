@@ -118,7 +118,7 @@ def main(argv=None):
     from modular_agent.domains.hololive_dreams.multi_live import MultiLiveSession,run_song
     from modular_agent.domains.hololive_dreams.rhythm_journal import RhythmJournal,cleanup_old_rhythm_logs
     import importlib.util
-    spec=importlib.util.spec_from_file_location('multi_live_engine',ROOT/'domains/hololive_dreams/models/rhythm_game.py')
+    spec=importlib.util.spec_from_file_location('multi_live_engine',ROOT/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
     engine=importlib.util.module_from_spec(spec);sys.modules[spec.name]=engine;spec.loader.exec_module(engine)
     config=engine.load_config(ROOT,args.config)
     config.update(overrides)

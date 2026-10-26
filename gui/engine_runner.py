@@ -18,7 +18,7 @@ def _load_engine():
     source = bundle_root() / "src"
     if str(source) not in sys.path:
         sys.path.insert(0, str(source))
-    from domains.hololive_dreams.models import rhythm_game
+    from domains.hololive_dreams.models.rhythm import rhythm_game
     return rhythm_game
 
 

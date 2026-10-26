@@ -6,7 +6,7 @@
 
 通过Windows显卡注册信息读到NVIDIA GeForce RTX 3060 Laptop GPU，另有GameViewer Virtual Display Adapter。当前OpenCV版本为5.0.0，cv2.cuda.getCudaEnabledDeviceCount()返回0：当前环境没有可用的OpenCV CUDA后端，不能据此说本机没有GPU。OpenCV构建信息显示OpenCL支持（NVD3D11），当前代码使用普通NumPy数组，并没有验证或启用这条GPU路径。环境中未安装dxcam和torch。
 
-当前捕获在src/modular_agent/realtime/runtime.py：mss抓取游戏窗口ROI，转为CPU NumPy BGR数组并复制，保留前台、窗口几何、桌面边界和F12检查。识别在domains/hololive_dreams/models/jump_rope_phase_gear.py及jump_rope_phase_state.py：CPU侧缩放、灰度、边缘与距离变换、模板采样和候选证据比较。不能仅设置一个CUDA开关就迁移整个识别过程。
+当前捕获在src/modular_agent/realtime/runtime.py：mss抓取游戏窗口ROI，转为CPU NumPy BGR数组并复制，保留前台、窗口几何、桌面边界和F12检查。识别在domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear.py及jump_rope_phase_state.py：CPU侧缩放、灰度、边缘与距离变换、模板采样和候选证据比较。不能仅设置一个CUDA开关就迁移整个识别过程。
 
 ## 最近实测证据
 

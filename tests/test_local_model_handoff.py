@@ -20,8 +20,8 @@ def free_report():
 class LocalModelHandoffTests(unittest.TestCase):
     def setup_agent(self,root,model):
         folder=Path(root)/'domains'/'hololive_dreams'
-        (folder/'models').mkdir(parents=True)
-        shutil.copyfile(ROOT/'domains/hololive_dreams/models/greed_cards_entry.py',folder/'models/greed_cards_entry.py')
+        (folder/'models/greed_cards').mkdir(parents=True)
+        shutil.copyfile(ROOT/'domains/hololive_dreams/models/greed_cards/greed_cards_entry.py',folder/'models/greed_cards/greed_cards_entry.py')
         (folder/'launch.json').write_text(json.dumps({**PROFILE,'local_models':{'greed_cards_entry':{'enabled':True}}}))
         return GeneralAgent(root,Computer(),model,domain='hololive_dreams',vision=Vision([[GAME]],free_report()))
 

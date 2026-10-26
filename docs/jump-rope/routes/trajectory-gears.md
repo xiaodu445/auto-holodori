@@ -66,7 +66,7 @@ CV平均9.19ms、P95 12.12ms，不含采集、预览、输入；实机60FPS未�
 
 ## 复现与继续开发
 
-[长时分析](../reports/c4-long-run-20261004.md) 保存原因、对照、下一步；[独立实验说明](../../../domains/hololive_dreams/models/experiments/README.md) 保存配方。失败方案不进入默认。
+[长时分析](../reports/c4-long-run-20261004.md) 保存原因、对照、下一步；[独立实验说明](../../../domains/hololive_dreams/models/jump_rope/experiments/README.md) 保存配方。失败方案不进入默认。
 
 项目根目录设置 `PYTHONPATH=src`、`PYTHONUTF8=1`，使用 `.conda\python.exe`：
 

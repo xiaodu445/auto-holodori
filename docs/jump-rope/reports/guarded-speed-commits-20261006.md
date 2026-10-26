@@ -43,7 +43,7 @@
 
 页面支持原始7529帧逐帧切换、播放、人工标注导出；增加14个重点帧入口、下一速度提交、候选同帧窗口优势、声音与实际提交前证据。原始时间与录像逐项相同，没有30FPS重采样。
 
-现有run_jump_rope_offline_review.cmd默认生成当前开发候选。用--settings domains/hololive_dreams/models/jump_rope_audio_prefix_config.json可以显式选择对照配置；若需保留当前页，同时提供独立--output。没有增加根目录启动器。replay_audio_review.py还支持--no-export进行低占用预测实验，及--export-only从已保存且配置一致的回放重新生成页面。
+现有run_jump_rope_offline_review.cmd默认生成当前开发候选。用--settings domains/hololive_dreams/models/jump_rope/jump_rope_audio_prefix_config.json可以显式选择对照配置；若需保留当前页，同时提供独立--output。没有增加根目录启动器。replay_audio_review.py还支持--no-export进行低占用预测实验，及--export-only从已保存且配置一致的回放重新生成页面。
 
 ## 验证与文件
 

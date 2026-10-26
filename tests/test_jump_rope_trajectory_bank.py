@@ -8,7 +8,7 @@ from modular_agent.realtime.trajectory_bank import TrajectoryBank,AngularWarp
 from modular_agent.realtime import jump_rope
 
 ROOT=Path(__file__).resolve().parents[1]
-def settings():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_phase_gear_config.json').read_text(encoding='utf-8'))
+def settings():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear_config.json').read_text(encoding='utf-8'))
 
 class PlaybackTests(unittest.TestCase):
     def bank(self):return TrajectoryBank(settings(),.7,.4)

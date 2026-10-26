@@ -1,5 +1,20 @@
 # hololive Dreams 本地策略组件
 
+## 按功能分类（2026-10-26）
+
+| 目录 | 内容 |
+| --- | --- |
+| `fishing/` | 钓鱼状态机、识别器、控制器、循环和配置 |
+| `greed_cards/` | 强欲之牌入口桥接、猜高低玩法与结算 |
+| `jump_rope/` | 历史 CV／轨迹跳绳实现、各路线配置和路线索引；离线实验在 `experiments/` |
+| `rhythm/` | 六轨音游引擎与配置 |
+
+各玩法的源码与配置放在同一目录，避免顶层平铺。根目录 `.cmd` 入口、GUI、共享加载器、回放和发布脚本已使用分类后的路径；不在旧位置留重复副本。直接引用旧源码或配置路径的外部脚本需增加分类目录。
+
+日常任务属于游戏层的编排，配置在上一级 `domains/hololive_dreams/daily_tasks_config.json`，与 `launch.json` 并列，可选择调用各小游戏。执行与状态识别仍在 `src/modular_agent/agent/` 及 `src/modular_agent/domains/hololive_dreams/`。
+
+跳绳当前 YOLO 自用主线仍在 `learning/jump_rope_yolo/`，厨房实现仍在 `src/modular_agent/domains/hololive_dreams/`、`learning/kitchen_*`；本次不移动训练资料，不将历史跳绳路线提升为当前主线。下文保留组件历史，未写完整路径的文件名请在上表对应目录查找。
+
 ## greed_cards_entry.py，版本 1.0.1
 
 第一个本地决策树：从自由主界面/地图导航到强欲之牌实际 High&Low 页面，不调用大模型、不下注、不玩卡牌。

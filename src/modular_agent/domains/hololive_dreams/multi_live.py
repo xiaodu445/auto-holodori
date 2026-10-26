@@ -233,7 +233,7 @@ def run_song(root,handle,vision,*,cancelled=lambda:False,progress=print,timeout=
     if any(t.name=='rhythm-input-deadlines' and t.is_alive() for t in threading.enumerate()):
         raise RuntimeError('another_rhythm_scheduler_is_running')
     if engine is None:
-        path=Path(root)/'domains/hololive_dreams/models/rhythm_game.py'
+        path=Path(root)/'domains/hololive_dreams/models/rhythm/rhythm_game.py'
         spec=importlib.util.spec_from_file_location('multi_live_existing_rhythm',path)
         engine=importlib.util.module_from_spec(spec);sys.modules[spec.name]=engine;spec.loader.exec_module(engine)
     from .song_diagnostics import SongDiagnostics

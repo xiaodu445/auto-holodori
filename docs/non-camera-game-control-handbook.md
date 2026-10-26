@@ -172,7 +172,7 @@ GET标题配合青色色带；RANK UP标题配合下部色带；交互选项配�
 - entry_flow.py：强欲之牌具体流程及恢复。
 - map_view.py：地图滑块检测。
 - trace.py：按次归档。
-- 旧models/greed_cards_entry.py保留兼容加载。
+- 旧models/greed_cards/greed_cards_entry.py保留兼容加载。
 
 迁移采用渐进方式。不要为统一名称一次重写所有成熟模块，也不要只加公共枚举却继续在每个模块独立猜页面。真正统一需要共同消费结构证据、共享语义和一致日志。
 

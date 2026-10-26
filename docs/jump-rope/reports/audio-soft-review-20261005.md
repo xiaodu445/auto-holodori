@@ -8,6 +8,6 @@
 
 图像路线为保留基线的独立 half-cycle 配置，空间正反摇图集换为新宽机位；速度库仍有待校准分支，低空空间图集也仍来自旧机位。页面预测不是新录像完整正确模板已建立的声明。用户审阅应区分：声音误识别/触发延迟，候选确认问题，速度曲线与低空空间图集误差。
 
-保存：replay.json 完整逐帧预测、frames.jsonl 原始诊断、audio-events.json 全段尾窗得分/事件、manifest.json 使用配置及录像来源。生成器 tools/jump_rope/replay_audio_review.py，设置 domains/hololive_dreams/models/jump_rope_audio_review_config.json。旧 A/G 和默认声音门槛保持。
+保存：replay.json 完整逐帧预测、frames.jsonl 原始诊断、audio-events.json 全段尾窗得分/事件、manifest.json 使用配置及录像来源。生成器 tools/jump_rope/replay_audio_review.py，设置 domains/hololive_dreams/models/jump_rope/jump_rope_audio_review_config.json。旧 A/G 和默认声音门槛保持。
 
 放宽后共 35 个声音候选（低空15、加速13、掉落5、减速2），显然可能包含重复与背景误识别，不能当作实际技能次数。用户可使用下一声音候选、下一切换/跳变定位，并在当前帧说明应有状态及绳子位置。

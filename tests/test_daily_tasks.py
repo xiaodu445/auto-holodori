@@ -22,7 +22,7 @@ class Computer:
 
 class DailyTests(unittest.TestCase):
     def setUp(self):
-        self.config=json.loads(Path('domains/hololive_dreams/models/daily_tasks_config.json').read_text(encoding='utf-8'))
+        self.config=json.loads(Path('domains/hololive_dreams/daily_tasks_config.json').read_text(encoding='utf-8'))
         self.c=Computer()
     def tree(self,frames):
         sequence=iter(frames)

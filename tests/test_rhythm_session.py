@@ -5,7 +5,7 @@ from modular_agent.computer.controller import ActionComputer
 import modular_agent.computer.controller as executor
 
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('session_test_model',ROOT/'domains/hololive_dreams/models/rhythm_game.py')
+spec=importlib.util.spec_from_file_location('session_test_model',ROOT/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
 m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
 
 class Backend:

@@ -1,5 +1,7 @@
 # 资源与工具目录
 
+2026-10-26 补充：`domains/hololive_dreams/models/` 已按 `fishing/`、`greed_cards/`、`jump_rope/`、`rhythm/` 分类。各玩法源码和配置同目录；跳绳离线实验位于 `jump_rope/experiments/`。日常编排配置移出 models，在游戏第一层 `domains/hololive_dreams/daily_tasks_config.json` 与 `launch.json` 并列。详见[策略索引](../domains/hololive_dreams/models/README.md)。
+
 ## 本体与开发工具
 
 | 目录 | 职责 | 管理方式 |

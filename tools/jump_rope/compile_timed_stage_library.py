@@ -8,14 +8,14 @@ from modular_agent.realtime.motion_states import BoundedTrajectory
 from modular_agent.realtime.trajectory_bank import DirectionWarp,AngularWarp
 from modular_agent.realtime.timed_rope_playback import TimedRopeTemplate
 LIB=ROOT/'domains/hololive_dreams/data/jump_rope_template_library';OUT=LIB/'generated/stages_1_4_timed';OUT.mkdir(parents=True,exist_ok=True)
-params=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_visible_fit_config.json').read_text(encoding='utf-8'));profiles=json.loads((ROOT/'domains/hololive_dreams/data/jump_rope_phase'/params['stage_profiles_asset']).read_text(encoding='utf-8'))
+params=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_visible_fit_config.json').read_text(encoding='utf-8'));profiles=json.loads((ROOT/'domains/hololive_dreams/data/jump_rope_phase'/params['stage_profiles_asset']).read_text(encoding='utf-8'))
 rotation=CyclicTrajectory(json.loads((ROOT/params['atlas']).read_text(encoding='utf-8')));swing=BoundedTrajectory(json.loads((ROOT/params['swing_atlas']).read_text(encoding='utf-8')))
 from modular_agent.realtime.trajectory_bank import TrajectoryBank
 swdata=json.loads((ROOT/params['swing_time_profile_asset']).read_text(encoding='utf-8'));swprofile=swdata.get('data',swdata);print('swing asset keys',list(swdata),flush=True)
 # Config's already loaded time profile is the same form used by the loader.
 if 'clock_nodes' not in swprofile:swprofile=params['swing_time_profile']
 swwarp=AngularWarp(swprofile);revwarp=DirectionWarp(params['reverse_time_profile']);boundary=float(np.argmax(rotation.curves(np.arange(2048)/2048)[:,20,1])/2048)
-timing=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_mainline_input_config.json').read_text(encoding='utf-8-sig'))
+timing=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_mainline_input_config.json').read_text(encoding='utf-8-sig'))
 periods={(1,'normal'):1.38,(2,'normal'):1.32,(2,'accelerate'):1.10,(3,'normal'):1.10,(3,'accelerate'):.91,(4,'normal'):.96,(4,'accelerate'):.78,(4,'decelerate'):1.29}
 entries=[]
 def save(data):

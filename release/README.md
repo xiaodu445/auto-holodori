@@ -2,7 +2,7 @@
 
 首版发布壳只做两件事：
 
-1. 单曲打歌：调用现有 `domains/hololive_dreams/models/rhythm_game.py` 的 `run(...)`，不复制或调整音符算法；GUI 默认观察/干跑，实时按键需显式勾选。
+1. 单曲打歌：调用现有 `domains/hololive_dreams/models/rhythm/rhythm_game.py` 的 `run(...)`，不复制或调整音符算法；GUI 默认观察/干跑，实时按键需显式勾选。
 2. 多人演出：只展示已确认流程与目标局数字段，当前不执行任何菜单输入；没有把多人循环伪装成已实现。
 
 ## 离线构建

@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('rhythm_regression',ROOT/'domains/hololive_dreams/models/rhythm_game.py')
+spec=importlib.util.spec_from_file_location('rhythm_regression',ROOT/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
 m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
 
 class RhythmRegression(unittest.TestCase):

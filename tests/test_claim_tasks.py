@@ -54,8 +54,8 @@ class ClaimTests(unittest.TestCase):
  def test_unverified_scan_not_promoted_by_orchestrator(self):
   from modular_agent.local_models import execute_daily
   with tempfile.TemporaryDirectory() as folder:
-   root=Path(folder);dest=root/'domains/hololive_dreams/models';dest.mkdir(parents=True)
-   shutil.copy2(ROOT/'domains/hololive_dreams/models/daily_tasks_config.json',dest/'daily_tasks_config.json')
+   root=Path(folder);dest=root/'domains/hololive_dreams';dest.mkdir(parents=True)
+   shutil.copy2(ROOT/'domains/hololive_dreams/daily_tasks_config.json',dest/'daily_tasks_config.json')
    adapter=SimpleNamespace(root=root,computer=self.c,profiles=[{'domain':'hololive_dreams'}],_vision_for=lambda _:Mock())
    with patch('modular_agent.perception.template_import.import_game_templates',return_value={'errors':[]}),patch.object(ClaimTasks,'run',return_value={'outcome':'success','verified':False}) as run:
     result=execute_daily(adapter,lambda _:None,startup=False,request={'selected_tasks':['task_pass']})

@@ -50,7 +50,7 @@
 
 ```text
 .conda\python.exe -m modular_agent.realtime.analyze_jump_rope_stages
-.conda\python.exe -m modular_agent.realtime.validate_jump_rope_phase --gear --gear-settings domains/hololive_dreams/models/jump_rope_stage_config.json --output-dir runtime/jump-rope/stage-analysis/recheck
+.conda\python.exe -m modular_agent.realtime.validate_jump_rope_phase --gear --gear-settings domains/hololive_dreams/models/jump_rope/jump_rope_stage_config.json --output-dir runtime/jump-rope/stage-analysis/recheck
 ```
 
 纯数学在 `staged_trajectory_bank.py`；等级提示在 `stage_badge.py`；领域识别工厂通过stage_model开关选择，当前G配置未启用。优先补足每级三种圆周行为的独立速度标签和低空接缝，随后再评估升级提示延迟与实机仅判断效果。

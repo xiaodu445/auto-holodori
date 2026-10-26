@@ -141,7 +141,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_stage_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_stage_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -162,7 +162,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_reverse_timing_gear_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_reverse_timing_gear_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -182,7 +182,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_human_calibration_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_human_calibration_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -203,7 +203,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_clock_exit_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_clock_exit_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -225,7 +225,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_directional_exit_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_directional_exit_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -245,7 +245,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_stage_clock_library_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_stage_clock_library_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -267,7 +267,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_stage_clock_v2_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_stage_clock_v2_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -284,7 +284,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_stage_coexist_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_stage_coexist_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -304,7 +304,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_temporal_recovery_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_temporal_recovery_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"
@@ -324,7 +324,7 @@
         "--phase-rope",
         "--phase-gear",
         "--gear-settings",
-        "domains/hololive_dreams/models/jump_rope_half_cycle_config.json"
+        "domains/hololive_dreams/models/jump_rope/jump_rope_half_cycle_config.json"
       ],
       "files": [
         "jump_rope_phase_gear.py"

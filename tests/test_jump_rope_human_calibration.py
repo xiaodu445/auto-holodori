@@ -4,7 +4,7 @@ import unittest
 from modular_agent.realtime.landing_trajectory_bank import LandingTrajectoryBank
 from modular_agent.realtime.staged_trajectory_bank import StagedTrajectoryBank
 ROOT=Path(__file__).resolve().parents[1]
-def config():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_human_calibration_config.json').read_text())
+def config():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_human_calibration_config.json').read_text())
 def profiles():return json.loads((ROOT/'domains/hololive_dreams/data/jump_rope_phase/stage_profiles_v1.json').read_text())
 
 class HumanCalibrationTests(unittest.TestCase):

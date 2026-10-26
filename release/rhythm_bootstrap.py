@@ -70,7 +70,7 @@ try:
         vision=LiveVision(BASE/'app')
         from modular_agent.domains.hololive_dreams.visual_features import references
         assert references(str(BASE/'app'))
-        path=BASE/'app/domains/hololive_dreams/models/rhythm_game.py'
+        path=BASE/'app/domains/hololive_dreams/models/rhythm/rhythm_game.py'
         spec=importlib.util.spec_from_file_location('rhythm_release_self_test',path)
         module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
         print(json.dumps({'runtime':'ok','ocr_models':'ok','vision_templates':len(vision.templates),'engine_import':'ok','game_input':False}),flush=True)

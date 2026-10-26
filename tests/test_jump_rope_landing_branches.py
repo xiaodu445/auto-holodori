@@ -5,7 +5,7 @@ from modular_agent.realtime.landing_trajectory_bank import LandingTrajectoryBank
 
 ROOT=Path(__file__).resolve().parents[1]
 
-def settings():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_phase_gear_config.json').read_text(encoding='utf-8'))
+def settings():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear_config.json').read_text(encoding='utf-8'))
 
 class LandingBranchTests(unittest.TestCase):
     def bank(self):return LandingTrajectoryBank(settings(),.7,.4)

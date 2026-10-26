@@ -6,6 +6,7 @@ from runtime_metadata import collect_metadata
 ROOT=Path(__file__).resolve().parents[1]
 PY=ROOT/'.conda';SITE=PY/'Lib/site-packages'
 OUT=ROOT/'release/output/HololiveRhythm-1.0.8';OUT.mkdir(parents=True,exist_ok=True)
+(ROOT/'release/build').mkdir(parents=True,exist_ok=True)
 DEST=Path(tempfile.mkdtemp(prefix='rhythm-1.0.8-',dir=ROOT/'release/build'))
 def cp(a,b):
     b.parent.mkdir(parents=True,exist_ok=True)
@@ -14,7 +15,7 @@ def cp(a,b):
 app=DEST/'app';runtime=DEST/'runtime';natives=runtime/'natives'
 for folder in (app,runtime,natives):folder.mkdir(parents=True,exist_ok=True)
 cp(ROOT/'src',app/'src')
-for name in ['gui/release_gui.py','tools/run_multi_live.py','run_rhythm_tuning.cmd','run_rhythm_mechanism_test.cmd','domains/hololive_dreams/models/rhythm_game.py','domains/hololive_dreams/models/rhythm_game_config.json']:
+for name in ['gui/release_gui.py','tools/run_multi_live.py','run_rhythm_tuning.cmd','run_rhythm_mechanism_test.cmd','domains/hololive_dreams/models/rhythm/rhythm_game.py','domains/hololive_dreams/models/rhythm/rhythm_game_config.json']:
     cp(ROOT/name,app/name)
 for name in ['ui_features','multi_live','world_reference/20261021']:
     cp(ROOT/'domains/hololive_dreams/data'/name,app/'domains/hololive_dreams/data'/name)

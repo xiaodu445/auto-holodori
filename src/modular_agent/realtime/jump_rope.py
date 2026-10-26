@@ -16,7 +16,7 @@ from modular_agent.realtime.keyboard import GuardedCapture, run_key_loop
 
 def load(root, config_path=None):
     root = Path(root)
-    folder = root/'domains/hololive_dreams/models'
+    folder = root/'domains/hololive_dreams/models/jump_rope'
     c = json.loads(Path(config_path or folder/'jump_rope_config.json').read_text(encoding='utf-8-sig'))
     for key,value in {'association_max_age':.12,'association_gate':.035,'association_ambiguity':.008,'curve_max_error':.008,'rope_max_center_slope':.70,'rope_max_curvature':5.0,'rope_max_tangent_slope':1.3}.items(): c.setdefault(key,value)
     c.setdefault('acquisition_timeout',20)
@@ -80,7 +80,7 @@ def phase_rope_components(root,c,module, reverse=False,state=False,gear=False,ge
     root=Path(root)
     settings_file='jump_rope_phase_gear_config.json' if gear else 'jump_rope_phase_state_config.json' if state else 'jump_rope_phase_reverse_config.json' if reverse else 'jump_rope_phase_config.json'
     if gear_settings_path is not None and not gear:raise ValueError('gear settings require gear profile')
-    settings_path=root/gear_settings_path if gear_settings_path else root/'domains/hololive_dreams/models'/settings_file
+    settings_path=root/gear_settings_path if gear_settings_path else root/'domains/hololive_dreams/models/jump_rope'/settings_file
     settings=json.loads(settings_path.read_text(encoding='utf-8-sig'))
     if type(settings.get('allow_reverse',False)) is not bool:raise ValueError('invalid phase allow_reverse')
     if (reverse or state) and settings.get('allow_reverse') is not True:raise ValueError('reverse profile requires signed tracking')

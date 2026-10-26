@@ -47,7 +47,7 @@ class ImageCycleTests(unittest.TestCase):
   self.assertEqual(b.selected.key,'low')
  def test_shared_shapes_reuse_image_sampling(self):
   from modular_agent.realtime.jump_rope import load,phase_rope_components
-  root=Path(__file__).resolve().parents[1];config,module,_=load(root);vision,_=phase_rope_components(root,config,module,gear=True,gear_settings_path='domains/hololive_dreams/models/jump_rope_timed_playback_config.json')
+  root=Path(__file__).resolve().parents[1];config,module,_=load(root);vision,_=phase_rope_components(root,config,module,gear=True,gear_settings_path='domains/hololive_dreams/models/jump_rope/jump_rope_timed_playback_config.json')
   vision.prepare_stage(4,np.zeros((400,500),np.uint8))
   self.assertLess(len(vision.features.grid),sum(t.context[0]==4 for t in vision.templates)*len(vision.playback.grid))
   ids=vision.lookup['stage4-normal-forward-legacy-timed'];np.testing.assert_array_equal(ids,vision.lookup['stage4-accelerate-forward-legacy-timed'])

@@ -10,7 +10,7 @@ CLI为--phase-rope --phase-reverse；缺少--phase-rope会拒绝。真实输入/
 
 ## 改动范围
 
-SignedPhaseTracker独立保存在src/modular_agent/realtime/phase_tracking.py；原PhaseTracker保持。领域视觉和曲线库复用，按独立配置allow_reverse=true选择估计器。配置在domains/hololive_dreams/models/jump_rope_phase_reverse_config.json，C/v1配置不改。
+SignedPhaseTracker独立保存在src/modular_agent/realtime/phase_tracking.py；原PhaseTracker保持。领域视觉和曲线库复用，按独立配置allow_reverse=true选择估计器。配置在domains/hololive_dreams/models/jump_rope/jump_rope_phase_reverse_config.json，C/v1配置不改。
 
 - rate允许正、负与零；方向表示路径阶段前进或后退，不直接等于屏幕左右。
 - 最近约0.18秒、最多10个有效阶段样本做加权直线斜率。至少4点、跨度65ms；转向证据要求净位移0.018圈、拟合残差不超过0.018圈、70%以上有效增量方向一致。

@@ -6,7 +6,7 @@ from modular_agent.realtime.rhythm_capture import DXGICapture
 from modular_agent.computer.windows import WindowsBackend
 
 root=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('rhythm_diagnose',root/'domains/hololive_dreams/models/rhythm_game.py')
+spec=importlib.util.spec_from_file_location('rhythm_diagnose',root/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
 m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
 backend=WindowsBackend()
 windows=[w for w in backend.windows() if w['title'].lower()=='hololive-dreams']

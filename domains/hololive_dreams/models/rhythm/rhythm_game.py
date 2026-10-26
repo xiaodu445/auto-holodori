@@ -172,7 +172,7 @@ class RhythmVision:
         self.previous_time = None
         self.hold_paths=[]
         self._field=None;self._rows={}
-        template=Path(__file__).resolve().parents[1]/'data/rhythm_samples/pink_note_face.png'
+        template=Path(__file__).resolve().parents[2]/'data/rhythm_samples/pink_note_face.png'
         self.pink_template=cv2.imdecode(np.fromfile(template,np.uint8),cv2.IMREAD_COLOR) if template.exists() else None
 
     def ribbon(self, mask, x, y, direction=-1, limit=.45):
@@ -1591,7 +1591,7 @@ class RhythmController:
 
 
 def load_config(root, path=None):
-    target=Path(path) if path else Path(root)/"domains/hololive_dreams/models/rhythm_game_config.json"
+    target=Path(path) if path else Path(root)/"domains/hololive_dreams/models/rhythm/rhythm_game_config.json"
     if not target.exists():
         return {"fps":120,"timeout":0,"analysis_width":960,"roi":[.20,.06,.86,.93],
                 "hit_line_y":.86,"visual_window":.035,"min_area":18,"max_area":50000,
@@ -1777,7 +1777,7 @@ def run(root, handle, *, live=False, config_path=None, should_yield=lambda:False
 
 
 if __name__ == "__main__":
-    p=argparse.ArgumentParser(); p.add_argument('--project-root',default=str(Path(__file__).resolve().parents[3])); p.add_argument('--window-handle',type=int); p.add_argument('--config'); p.add_argument('--live',action='store_true')
+    p=argparse.ArgumentParser(); p.add_argument('--project-root',default=str(Path(__file__).resolve().parents[4])); p.add_argument('--window-handle',type=int); p.add_argument('--config'); p.add_argument('--live',action='store_true')
     p.add_argument('--preview',action='store_true',help='non-activating recognition window')
     p.add_argument('--offset-ms',type=float,help='positive sends earlier; negative later')
     p.add_argument('--bpm',type=float,help='known song BPM, optional')

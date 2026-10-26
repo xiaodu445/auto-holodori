@@ -13,7 +13,7 @@
 ## 代码和参数
 
 - 通用数学组件：src/modular_agent/realtime/phase_tracking.py，CyclicTrajectory/PhaseTracker。
-- 领域视觉/只判断控制：domains/hololive_dreams/models/jump_rope_phase.py。
+- 领域视觉/只判断控制：domains/hololive_dreams/models/jump_rope/jump_rope_phase.py。
 - 独立配置：jump_rope_phase_config.json（atlas路径、max_rate、max_acceleration、inference_width、input_enabled=false）。窗口ROI为[.17,.02,.88,.72]，内部宽度640；按客户区归一化。窗口移动/缩放由共用框架处理并重置；改变纵横比/游戏出现黑边仍需重新校准游戏区域。
 - 共用接口：jump_rope.py CLI/回放、keyboard.py实时循环、jump_rope_preview.py预览。无逐帧OCR、UIA、全屏匹配或大模型请求。
 

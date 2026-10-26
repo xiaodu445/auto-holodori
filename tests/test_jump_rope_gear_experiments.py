@@ -7,7 +7,7 @@ from modular_agent.realtime.validate_jump_rope_gear_experiments import run
 
 class ExperimentIsolationTests(unittest.TestCase):
     def fixture(self,root):
-        folder=root/'domains/hololive_dreams/models/experiments';folder.mkdir(parents=True)
+        folder=root/'domains/hololive_dreams/models/jump_rope/experiments';folder.mkdir(parents=True)
         (root/'base.json').write_text('{}')
         source=root/'src/modular_agent/realtime';source.mkdir(parents=True)
         (source/'trajectory_bank.py').write_text('# fixture')

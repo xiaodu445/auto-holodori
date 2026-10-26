@@ -7,7 +7,7 @@ import cv2
 from modular_agent.realtime.trajectory_bank import TrajectoryBank,AngularWarp
 from modular_agent.realtime.export_jump_rope_review import export
 ROOT=Path(__file__).resolve().parents[1]
-def config():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_phase_gear_config.json').read_text())
+def config():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear_config.json').read_text())
 
 class ReviewTests(unittest.TestCase):
     def test_reverse_half_uses_own_entry_boundary(self):
@@ -36,8 +36,8 @@ class ReviewTests(unittest.TestCase):
         self.assertTrue(all(new.evaluate(t)[1]>0 for t in np.linspace(0,1,1000)))
     def test_export_exact_frame_count_and_timestamps(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root=Path(tmp);folder=root/'domains/hololive_dreams/models';folder.mkdir(parents=True)
-            (folder/'jump_rope_config.json').write_bytes((ROOT/'domains/hololive_dreams/models/jump_rope_config.json').read_bytes())
+            root=Path(tmp);folder=root/'domains/hololive_dreams/models/jump_rope';folder.mkdir(parents=True)
+            (folder/'jump_rope_config.json').write_bytes((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_config.json').read_bytes())
             (root/'settings.json').write_text('{}');(root/'video').mkdir()
             writer=cv2.VideoWriter(str(root/'video/screen.avi'),cv2.VideoWriter_fourcc(*'MJPG'),30,(100,100))
             for _ in range(2):writer.write(np.zeros((100,100,3),np.uint8))

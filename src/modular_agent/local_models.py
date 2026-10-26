@@ -9,7 +9,7 @@ from modular_agent.perception import GeneralVision
 
 
 def load_greed_cards(root):
-    path=Path(root)/'domains'/'hololive_dreams'/'models'/'greed_cards_entry.py'
+    path=Path(root)/'domains'/'hololive_dreams'/'models'/'greed_cards'/'greed_cards_entry.py'
     spec=importlib.util.spec_from_file_location('hololive_greed_cards_entry',path)
     module=importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -44,7 +44,7 @@ def run_startup(root, *, live=False, progress=print):
 
 
 def load_greed_cards_play_module(root):
-    path = Path(root)/'domains'/'hololive_dreams'/'models'/'greed_cards_play.py'
+    path = Path(root)/'domains'/'hololive_dreams'/'models'/'greed_cards'/'greed_cards_play.py'
     spec = importlib.util.spec_from_file_location('hololive_greed_cards_play', path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -162,7 +162,7 @@ def execute_daily(adapter,progress=print,should_yield=lambda:False,*,startup=Tru
     from modular_agent.domains.hololive_dreams.daily_journal import DailyJournal
     from modular_agent.perception.template_import import import_game_templates
     root=adapter.root;computer=adapter.computer
-    config=json.loads((root/'domains/hololive_dreams/models/daily_tasks_config.json').read_text(encoding='utf-8-sig'))
+    config=json.loads((root/'domains/hololive_dreams/daily_tasks_config.json').read_text(encoding='utf-8-sig'))
     validate_config(config)
     handlers={} if task_handlers is None else dict(task_handlers)
     if any(not isinstance(k,str) or not callable(v) for k,v in handlers.items()):
@@ -266,7 +266,7 @@ def run_daily_tasks(root,*,live=False,progress=print,request=None,plan_only=Fals
     root=Path(root)
     if plan_only:
         from modular_agent.domains.hololive_dreams.daily_plan import build_plan,catalog
-        config=json.loads((root/'domains/hololive_dreams/models/daily_tasks_config.json').read_text(encoding='utf-8-sig'))
+        config=json.loads((root/'domains/hololive_dreams/daily_tasks_config.json').read_text(encoding='utf-8-sig'))
         return {'outcome':'planned','executed':False,'plan':build_plan(config,request,task_handlers or ()),'catalog':catalog()}
     from datetime import datetime
     folder=root/'runtime/daily-tasks';folder.mkdir(parents=True,exist_ok=True)

@@ -65,7 +65,7 @@ Pickup是自动选歌提交动作，不是给“决定”用的状态开关。�
   `tuning`仅读调参CMD；`config`仅读JSON。显式指定`--config`且未指定profile时默认`config`。
 - `--inspect-image 路径`：只离线识别一张截图，与 `--live` 互斥。
 
-基础几何沿用 `domains/hololive_dreams/models/rhythm_game_config.json`，默认将`run_rhythm_tuning.cmd`和
+基础几何沿用 `domains/hololive_dreams/models/rhythm/rhythm_game_config.json`，默认将`run_rhythm_tuning.cmd`和
 `run_rhythm_mechanism_test.cmd`的现有有效参数传给引擎：当前为all-held、offset75ms、网格20ms、抬键提前5ms、
 global_flow/measure_clock=shadow、mechanism_mode=off。每次启动读取，不复制一套调参值，不执行带pause的CMD。
 启动打印并在events.jsonl的rhythm_settings事件保存完整有效配置及来源。不改原引擎、调参CMD、JSON、游戏AUTO或难度。

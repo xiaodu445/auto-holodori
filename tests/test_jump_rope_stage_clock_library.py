@@ -6,7 +6,7 @@ from modular_agent.realtime.staged_trajectory_bank import StagedTrajectoryBank
 from modular_agent.realtime.build_jump_rope_clock_library import fit,temporal_contrast
 ROOT=Path(__file__).resolve().parents[1]
 def bank():
-    c=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_stage_clock_library_config.json').read_text())
+    c=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_stage_clock_library_config.json').read_text())
     profiles=json.loads((ROOT/'domains/hololive_dreams/data/jump_rope_phase/stage_clock_library_v1_trial.json').read_text())
     return StagedTrajectoryBank(c,.4140625,.4,profiles)
 class StageClockLibraryTests(unittest.TestCase):

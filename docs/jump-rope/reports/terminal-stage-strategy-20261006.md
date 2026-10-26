@@ -33,6 +33,6 @@
 
 全套539项unittest通过，包含10项新增终局策略测试：旧技能过渡、最高阶段锁定、全遮挡禁止切速、跨遮挡共同可见证据、竞争歧义拒绝、三个角色保留、未标定减速不接管、提交保存候选、重置等。日志runtime/jump-rope/terminal-stage-tests.log。
 
-复现使用现有脚本：.conda/python.exe tools/jump_rope/replay_audio_review.py --settings domains/hololive_dreams/models/jump_rope_terminal_stage_config.json --output runtime/jump-rope/frame-review/terminal-stage-review。设置PYTHONPATH=src、PYTHONUTF8=1；可显式使用历史audio-events.json缓存。没有新增根目录cmd，没有实时输入。
+复现使用现有脚本：.conda/python.exe tools/jump_rope/replay_audio_review.py --settings domains/hololive_dreams/models/jump_rope/jump_rope_terminal_stage_config.json --output runtime/jump-rope/frame-review/terminal-stage-review。设置PYTHONPATH=src、PYTHONUTF8=1；可显式使用历史audio-events.json缓存。没有新增根目录cmd，没有实时输入。
 
 下一步按用户认可范围，冻结阶段5之前策略，只针对阶段5标定与策略迭代；接管时的旧技能过渡需要保留，不把计数70当作强制速度切换时刻。

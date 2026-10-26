@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def load_model():
-    spec=importlib.util.spec_from_file_location('rhythm_review_model',ROOT/'domains/hololive_dreams/models/rhythm_game.py')
+    spec=importlib.util.spec_from_file_location('rhythm_review_model',ROOT/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
     module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     return module
 

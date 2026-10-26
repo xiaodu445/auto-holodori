@@ -2,7 +2,7 @@
 
 状态：现有主要自动路线。用户实机确认普通场景能稳定跳跃，不能泛化为全部技能零失误。没有接入新阶段模型。
 
-代码：`domains/hololive_dreams/models/jump_rope.py` 的TrajectoryMotionVision/Controller；基础视觉/控制是jump_rope_vision.py、jump_rope_controller.py；片段补全是jump_rope_fragments.py。jump_rope_local_motion.py中的小ROI Hough方案属于早期试验，当前local入口并非直接使用它。
+代码：`domains/hololive_dreams/models/jump_rope/jump_rope.py` 的TrajectoryMotionVision/Controller；基础视觉/控制是jump_rope_vision.py、jump_rope_controller.py；片段补全是jump_rope_fragments.py。jump_rope_local_motion.py中的小ROI Hough方案属于早期试验，当前local入口并非直接使用它。
 
 参数：jump_rope_config.json。ROI由local_motion_components设为[.475,.03,.655,.68]；颜色为快速路径，灰度运动片段为备用；跟踪中央箭头/角色。普通与低空使用不同触发路径，低空调slow_arrival.lead_seconds（当前0.10）、danger_y（0.57）和rearm_distance（0.015）。低空候选有锁存，不再仅靠瞬时低速度切模式。
 

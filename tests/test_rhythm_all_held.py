@@ -3,7 +3,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('all_held_test_model',ROOT/'domains/hololive_dreams/models/rhythm_game.py')
+spec=importlib.util.spec_from_file_location('all_held_test_model',ROOT/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
 m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
 
 class AllHeldTests(unittest.TestCase):

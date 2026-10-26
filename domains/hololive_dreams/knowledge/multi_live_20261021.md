@@ -32,7 +32,7 @@
 
 ## 已核对的项目接口（本次只读检查）
 
-- `run_rhythm_live.cmd`调用`run_rhythm.cmd --live`，后者执行`domains/hololive_dreams/models/rhythm_game.py`。自动编排应使用Python接口而非调用带pause的批处理文件。
+- `run_rhythm_live.cmd`调用`run_rhythm.cmd --live`，后者执行`domains/hololive_dreams/models/rhythm/rhythm_game.py`。自动编排应使用Python接口而非调用带pause的批处理文件。
 - 引擎入口`run(root, handle, *, live=False, config_path=None, should_yield=..., pause=..., progress=..., preview=False, overrides=None, diagnostics=None)`。当前配置`timeout=0`，主循环默认持续运行；返回结果默认unknown，不提供已验证的“歌曲完成”结果。
 - 引擎现有should_yield可供外部结束条件；finally会停止输入调度并释放按键、关闭采集。接入前需验证该退出协议，不能仅把线程标成结束就交出输入权。
 - 演奏期间只有打歌引擎拥有游戏按键控制权。菜单控制不同时点击/按Esc；确认结算后停引擎并等清理完成，再接管菜单。

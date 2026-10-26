@@ -53,7 +53,7 @@ for c,p in [(0,1),(best[1],best[2]),(0,0),(0,-1)]:
 
 # Exercise the actual controller (association, filtering, locking included).
 import importlib.util,sys
-spec=importlib.util.spec_from_file_location('curve_evaluation_model',ROOT/'domains/hololive_dreams/models/rhythm_game.py')
+spec=importlib.util.spec_from_file_location('curve_evaluation_model',ROOT/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
 m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
 for profile in ({'power':1.,'offset':0.},{'power':-.2,'offset':.15}):
     result=[];missed=[0,0,0]

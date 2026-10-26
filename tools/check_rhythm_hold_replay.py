@@ -5,7 +5,7 @@ from pathlib import Path
 import cv2
 
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('hold_replay_model',ROOT/'domains/hololive_dreams/models/rhythm_game.py')
+spec=importlib.util.spec_from_file_location('hold_replay_model',ROOT/'domains/hololive_dreams/models/rhythm/rhythm_game.py')
 m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
 p=argparse.ArgumentParser();p.add_argument('review',type=Path);p.add_argument('--duration',type=float,default=45);a=p.parse_args()
 d=json.loads((a.review/'analysis.json').read_text(encoding='utf-8'));config=m.load_config(ROOT);v=m.RhythmVision(config);c=m.RhythmController(config)

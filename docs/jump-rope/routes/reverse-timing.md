@@ -29,7 +29,7 @@
 设置PYTHONPATH=src、PYTHONUTF8=1，使用.conda/python.exe运行模块：
 
 - modular_agent.realtime.build_jump_rope_reverse_time：独立匹配和拟合。
-- modular_agent.realtime.validate_jump_rope_phase --gear --no-video --gear-settings domains/hololive_dreams/models/jump_rope_reverse_timing_gear_config.json --output-dir runtime/jump-rope/frame-review/reverse-timing-gear
+- modular_agent.realtime.validate_jump_rope_phase --gear --no-video --gear-settings domains/hololive_dreams/models/jump_rope/jump_rope_reverse_timing_gear_config.json --output-dir runtime/jump-rope/frame-review/reverse-timing-gear
 - modular_agent.realtime.export_jump_rope_review --replay runtime/jump-rope/frame-review/reverse-timing-gear/replay.json --output runtime/jump-rope/frame-review/reverse-timing-gear --settings runtime/jump-rope/frame-review/reverse-timing-gear/settings-used.json
 
 旧图片不覆盖。人工审查应分开标注“位置是否正确”“圈内加速点是否正确”“平均周期是否正确”“何时确认方向/速度”，不要再把这些问题混成一个速度挡位问题。

@@ -81,12 +81,12 @@ class PhaseIntegrationTests(unittest.TestCase):
   small=v.evidence(gray,delta,variation,indices)
   for a,b in zip(small,full):self.assertTrue(np.allclose(a,b[indices]))
  def test_route_catalog_links_and_legacy_launchers_exist(self):
-  catalog=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_routes.json').read_text(encoding='utf-8'))
+  catalog=json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_routes.json').read_text(encoding='utf-8'))
   self.assertEqual(catalog['current_auto'],'local_motion_v6')
   for route in catalog['routes']:
    self.assertTrue((ROOT/route['documentation']).is_file(),route)
    self.assertTrue((ROOT/route['judgment_launcher']).is_file(),route)
-   for file in route['files']:self.assertTrue((ROOT/'domains/hololive_dreams/models'/file).is_file(),route)
+   for file in route['files']:self.assertTrue((ROOT/'domains/hololive_dreams/models/jump_rope'/file).is_file(),route)
  def test_preview_distinguishes_uncertain_persistent_curve(self):
   from modular_agent.realtime.jump_rope_preview import render_frame
   c,m,_=load(ROOT);v,_=phase_rope_components(ROOT,c,m)

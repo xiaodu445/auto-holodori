@@ -24,7 +24,7 @@ def validate(root, recording=DEFAULT_RECORDING, annotated=True, reverse=False,st
     destination=root/'runtime/jump-rope'/folder if output_dir is None else root/Path(output_dir)
     destination.mkdir(parents=True,exist_ok=True)
     if gear:
-        settings_path=root/gear_settings_path if gear_settings_path else root/'domains/hololive_dreams/models/jump_rope_phase_gear_config.json'
+        settings_path=root/gear_settings_path if gear_settings_path else root/'domains/hololive_dreams/models/jump_rope/jump_rope_phase_gear_config.json'
         settings_used=json.loads(settings_path.read_text(encoding='utf-8-sig'))
         (destination/'settings-used.json').write_text(json.dumps(settings_used,indent=2),encoding='utf-8')
         for key in ('stage_profiles_asset','stage_badges_asset'):

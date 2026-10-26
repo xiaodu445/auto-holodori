@@ -6,7 +6,7 @@ from modular_agent.realtime.audio_cues import low_entry_authorized
 class PrefixRetentionTests(unittest.TestCase):
     def test_boundary_candidate_survives_prefix_delay_but_expires(self):
         root=Path(__file__).resolve().parents[1]
-        settings=json.loads((root/'domains/hololive_dreams/models/jump_rope_audio_prefix_config.json').read_text(encoding='utf-8'))
+        settings=json.loads((root/'domains/hololive_dreams/models/jump_rope/jump_rope_audio_prefix_config.json').read_text(encoding='utf-8'))
         bank=LandingTrajectoryBank(settings,.5,.1);bank.acquire(.1,10.)
         active=next(p for p in bank.items if p.key==bank.active)
         candidate=bank.make('low_swing',.1,0,active.direction,.8,active.key)

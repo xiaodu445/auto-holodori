@@ -6,7 +6,7 @@
 
 - 只判断入口：`run_jump_rope_stage_clock_library_judgment.cmd`，不发送空格。
 - 数据：`domains/hololive_dreams/data/jump_rope_phase/stage_clock_library_v1_trial.json`。
-- 配置：`domains/hololive_dreams/models/jump_rope_stage_clock_library_config.json`。
+- 配置：`domains/hololive_dreams/models/jump_rope/jump_rope_stage_clock_library_config.json`。
 - 逐帧页面：`runtime/jump-rope/frame-review/stage-clock-library-review/index.html`。
 - 原 A、G、directional-exit 等路线及入口保留，没有替换默认自动路线。
 

@@ -10,7 +10,7 @@
 
 ## 新独立路线
 
-只判断入口：`run_jump_rope_directional_exit_judgment.cmd`。配置：`domains/hololive_dreams/models/jump_rope_directional_exit_config.json`。原G、A自动、上轮clock-exit入口和页面均保留。
+只判断入口：`run_jump_rope_directional_exit_judgment.cmd`。配置：`domains/hololive_dreams/models/jump_rope/jump_rope_directional_exit_config.json`。原G、A自动、上轮clock-exit入口和页面均保留。
 
 逐帧页面：`runtime/jump-rope/frame-review/directional-exit/index.html`，4010个原始采集帧，支持相同编号和时间戳标注。新增“从前往后/从后往前”“本半摆允许退出”“退出边界/接续图集位置”显示。
 

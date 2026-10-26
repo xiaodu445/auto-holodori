@@ -20,7 +20,7 @@
 
 顶层先完整full观察，再复核前台窗口和当前局部状态。决策树独占操作；每帧实时控制不调用顶层或OCR。一次顶层任务不能重复接管钓鱼组件；返回后由顶层处理具体原因。旧fishing_assist单轮入口保留。
 
-Python入口：src/modular_agent/realtime/fishing_loop.py中的run_fishing_loop(root, computer, handle, live=False, phase='auto', max_rounds=999, timeout=360000, should_yield=..., progress=...)。领域树在domains/hololive_dreams/models/fishing_loop.py，依赖注入observe/realtime/click_continue便于以后增加钓鱼策略。策略范围目前仅继续下一轮。
+Python入口：src/modular_agent/realtime/fishing_loop.py中的run_fishing_loop(root, computer, handle, live=False, phase='auto', max_rounds=999, timeout=360000, should_yield=..., progress=...)。领域树在domains/hololive_dreams/models/fishing/fishing_loop.py，依赖注入observe/realtime/click_continue便于以后增加钓鱼策略。策略范围目前仅继续下一轮。
 
 ## 结算识别与反馈
 

@@ -121,7 +121,7 @@ items按所选任务给success/unknown/failure/skipped；依赖自动加入项�
 
 临时选择：`run_daily_tasks.cmd --daily-tasks achievements,events,task_pass`，仅执行列出的模块，不附加默认玩法。
 
-持久选择：编辑`domains/hololive_dreams/models/daily_tasks_config.json`的`selected_tasks`，设为任务ID数组；`null`沿用旧默认，`[]`不执行。CLI的`--daily-tasks`优先于JSON计划文件，再优先于默认配置。
+持久选择：编辑`domains/hololive_dreams/daily_tasks_config.json`的`selected_tasks`，设为任务ID数组；`null`沿用旧默认，`[]`不执行。CLI的`--daily-tasks`优先于JSON计划文件，再优先于默认配置。
 
 可用ID：`holowork`工作领取/推荐派遣；`holo_home`holo之家礼物；`the_cell`The Cell礼物；`kaogan`颜岩山礼物；`wheel`红心轮盘；`achievements`成就；`events`活动；`task_pass`任务及通行证；`greed_cards_entry`仅进入强欲之牌；`greed_cards_play`玩强欲之牌（自动补入口依赖）。
 

@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-- 默认启动：run_jump_rope.cmd；配置domains/hololive_dreams/models/jump_rope_timed_playback_config.json。
+- 默认启动：run_jump_rope.cmd；配置domains/hololive_dreams/models/jump_rope/jump_rope_timed_playback_config.json。
 - 主实现：src/modular_agent/realtime/timed_cycle_vision.py、timed_rope_playback.py。
 - 35个时间候选覆盖20种状态，阶段1仅正摇正常；阶段2减速暂不做；阶段5旧路线。
 - 以显示预测驱动空格，不增加落地识别门槛。小偏差微调，大偏差独立确认后纠错。

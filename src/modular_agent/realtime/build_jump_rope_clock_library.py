@@ -6,7 +6,7 @@ import numpy as np
 from modular_agent.realtime.jump_rope import load,phase_rope_components
 WINDOWS=[('reverse_s2_early',36.4,38.2,-1,2),('reverse_s2_late',38.2,39.9,-1,2),('reverse_s3_entry',40.2,41.8,-1,3),('reverse_s3_middle',41.8,43.4,-1,3),('reverse_s3_clear',43.4,45.,-1,3),('reverse_s4_control',65.,68.,-1,4),('reverse_s4_fast_start',71.,73.,-1,4),('reverse_s4_fast_end',73.,74.6,-1,4),('forward_s5_start',80.,82.,1,5),('forward_s5_end',84.9,87.9,1,5)]
 def extract(root,output,recording_path=None,windows=None,settings_path=None):
-    c,m,_=load(root);v,_=phase_rope_components(root,c,m,gear=True,gear_settings_path=Path(settings_path or 'domains/hololive_dreams/models/jump_rope_directional_exit_config.json'))
+    c,m,_=load(root);v,_=phase_rope_components(root,c,m,gear=True,gear_settings_path=Path(settings_path or 'domains/hololive_dreams/models/jump_rope/jump_rope_directional_exit_config.json'))
     recording=root/(recording_path or 'runtime/jump-rope/recordings/20261003-135733-386995');stamps=json.loads((recording/'timestamps.json').read_text());capture=cv2.VideoCapture(str(recording/'screen.avi'));previous=None;low=high=None;records=[]
     try:
         for i,stamp in enumerate(stamps):

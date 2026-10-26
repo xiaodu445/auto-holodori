@@ -110,7 +110,7 @@ python -m unittest discover -s tests -v
 
 ## 2026-10-02：High&Low玩法组件0.1.0
 
-已新增domains/hololive_dreams/models/greed_cards_play.py、本地CLI及顶层接管入口；规则来自用户本对话，不替换稳定导航。玩法采用卡牌CV/局部模板/规则/反馈状态机，非联网模型。当前素材未补齐，下注前拒绝运行；结算及同点真实页面尚待补图。说明docs/high-low-play.md，确认规则domains/hololive_dreams/knowledge/minigames/greed_cards_rules.md。不要误称已实机成功或数学最优。
+已新增domains/hololive_dreams/models/greed_cards/greed_cards_play.py、本地CLI及顶层接管入口；规则来自用户本对话，不替换稳定导航。玩法采用卡牌CV/局部模板/规则/反馈状态机，非联网模型。当前素材未补齐，下注前拒绝运行；结算及同点真实页面尚待补图。说明docs/high-low-play.md，确认规则domains/hololive_dreams/knowledge/minigames/greed_cards_rules.md。不要误称已实机成功或数学最优。
 
 ## 2026-10-02：钓鱼辅助0.1.0
 新增共享realtime采集/循环/输入锁存及领域fishing识别器、控制器、状态机；run_fishing.cmd默认只判断，显式--live输入。顶层fishing_assist仅复核实际轨道后独占接管，不运行每帧模型。用户截图静态识别已验证；动态与实机性能未验证。详情docs/fishing-assist.md。轨道丢失返回unknown交给收尾，成功失败判断未实现；既有full与猜高低保持。
@@ -122,7 +122,7 @@ python -m unittest discover -s tests -v
 
 ## 2026-10-04：跳绳当前路线
 
-已按路线整理：[路线索引](jump-rope/README.md)，机器映射domains/hololive_dreams/models/jump_rope_routes.json。
+已按路线整理：[路线索引](jump-rope/README.md)，机器映射domains/hololive_dreams/models/jump_rope/jump_rope_routes.json。
 A/local_motion_v6为现有自动入口，用户确认普通稳定；B/whole_v2和B2/shape_v3只诊断；C/fixed_phase_v1新增固定录像轨迹＋阶段/速度跟踪，仅旋转素材，只判断。新C不替换A、不删除B，预测模型存在与当前视觉支持分开，图像丢失仍保留阶段假设并降低置信度。
 共用采集、输入、预览、单调时钟和窗口保护；新通用阶段组件src/modular_agent/realtime/phase_tracking.py，领域jump_rope_phase.py；记录隔离runtime/jump-rope/phase/。当前都未自动核验计数/生命/成功，校准verified仍false。高低牌、钓鱼、顶层full默认行为保持。
 原跳绳逐次修改说明已完整留存[整理前项目说明](jump-rope/history/before-route-index-PROJECT_CONTEXT.md)，过期参数不再作为当前指令。继续开发先读所选路线文档和证据，再读历史。

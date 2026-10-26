@@ -4,7 +4,7 @@ import unittest
 from modular_agent.realtime.landing_trajectory_bank import LandingTrajectoryBank
 ROOT=Path(__file__).resolve().parents[1]
 def config():
-    return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_clock_exit_config.json').read_text())
+    return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_clock_exit_config.json').read_text())
 def low_bank():
     b=LandingTrajectoryBank(config(),.4140625,.4);b.acquire(.2,0)
     p=b.make('low_swing',1.2,0,-1);b.items=[p];b.active=p.key

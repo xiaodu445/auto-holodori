@@ -647,7 +647,7 @@
       "kind": "human_annotation"
     }
   ],
-  "runtime_settings": "domains/hololive_dreams/models/jump_rope_visible_fit_config.json",
+  "runtime_settings": "domains/hololive_dreams/models/jump_rope/jump_rope_visible_fit_config.json",
   "runtime_compatibility": "Current runtime still loads original assets. Imported library is organized but not auto-promoted.",
   "promotion_policy": "Require explicit source ranges, calibrated geometry/time data and separate-session validation before promotion."
 }

@@ -39,7 +39,7 @@ class HololiveDreamsApp:
         self.root.protocol("WM_DELETE_WINDOW", self._close)
 
     def _config_path(self) -> Path:
-        return bundle_root() / "domains" / "hololive_dreams" / "models" / "rhythm_game_config.json"
+        return bundle_root() / "domains" / "hololive_dreams" / "models" / "rhythm" / "rhythm_game_config.json"
 
     def _default_timeout(self) -> int:
         try:

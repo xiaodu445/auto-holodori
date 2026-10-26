@@ -2,7 +2,7 @@
 
 结构已于1.2.0重组：实现位于src/modular_agent/domains/hololive_dreams，原路径为兼容入口。共享状态与运行记录规范见 [领域结构说明](hololive-domain-structure.md)。OCR触发已由两轮未知更新为持续未知满5秒，仍最多每5秒一次。
 
-入口：domains/hololive_dreams/models/greed_cards_entry.py，load_greed_cards(root)加载；run(observe, computer, progress, timeout=300, transition_timeout=30, should_yield=...)运行。已有local-run和每日调度继续复用，无云模型，不下注。
+入口：domains/hololive_dreams/models/greed_cards/greed_cards_entry.py，load_greed_cards(root)加载；run(observe, computer, progress, timeout=300, transition_timeout=30, should_yield=...)运行。已有local-run和每日调度继续复用，无云模型，不下注。
 
 成功：outcome=success、verified=true、module=greed_cards_entry、next_module=greed_cards_play，证据为实际High & Low页面，不自动调用下个模块。失败或未知保留当前位置并释放输入；调用方根据当前画面决定恢复步骤。
 

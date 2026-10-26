@@ -4,7 +4,7 @@
 
 ## 独立入口
 
-`run_jump_rope_clock_exit_judgment.cmd`，只判断和预览，不发送空格。配置 `domains/hololive_dreams/models/jump_rope_clock_exit_config.json`。新逐帧页 `runtime/jump-rope/frame-review/clock-exit-reverse-cohort/index.html`，建议比较1100～1140、1840～1895、2470～2510帧。所有旧入口、上一页、原G和A自动保持。
+`run_jump_rope_clock_exit_judgment.cmd`，只判断和预览，不发送空格。配置 `domains/hololive_dreams/models/jump_rope/jump_rope_clock_exit_config.json`。新逐帧页 `runtime/jump-rope/frame-review/clock-exit-reverse-cohort/index.html`，建议比较1100～1140、1840～1895、2470～2510帧。所有旧入口、上一页、原G和A自动保持。
 
 ## 三处结论
 

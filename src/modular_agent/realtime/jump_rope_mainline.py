@@ -208,10 +208,10 @@ class MainlineController:
 
 def components(root,config,module,arrow_vision):
     from modular_agent.realtime.jump_rope import phase_rope_components
-    settings='domains/hololive_dreams/models/jump_rope_timed_playback_config.json'
+    settings='domains/hololive_dreams/models/jump_rope/jump_rope_timed_playback_config.json'
     vision,_=phase_rope_components(root,config,module,gear=True,gear_settings_path=settings)
     params=json.loads((Path(root)/settings).read_text(encoding='utf-8'))
-    timing=json.loads((Path(root)/'domains/hololive_dreams/models/jump_rope_mainline_input_config.json').read_text(encoding='utf-8-sig'))
+    timing=json.loads((Path(root)/'domains/hololive_dreams/models/jump_rope/jump_rope_mainline_input_config.json').read_text(encoding='utf-8-sig'))
     for key in ('forward_coordinate','reverse_coordinate','low_forward_coordinate','low_return_coordinate'):
         if type(timing.get(key)) not in (int,float) or not math.isfinite(timing[key]) or not 0<timing[key]<1:raise ValueError('invalid input onset '+key)
     for key in ('dispatch_window_seconds','late_window_seconds'):

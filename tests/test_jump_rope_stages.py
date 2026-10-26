@@ -8,7 +8,7 @@ from modular_agent.realtime import jump_rope
 
 ROOT=Path(__file__).resolve().parents[1]
 
-def config():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_stage_config.json').read_text(encoding='utf-8'))
+def config():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_stage_config.json').read_text(encoding='utf-8'))
 def profiles():return json.loads((ROOT/'domains/hololive_dreams/data/jump_rope_phase/stage_profiles_v1.json').read_text(encoding='utf-8'))
 
 class StageBankTests(unittest.TestCase):
@@ -40,7 +40,7 @@ class StageBankTests(unittest.TestCase):
         for stage,time in [(True,1),(9,1),(1,.5),(1,float('nan'))]:
             with self.assertRaises(ValueError):bank.set_stage(stage,time)
     def test_real_factory_exposes_stage_and_stays_judgment_only_on_blank_frames(self):
-        c,m,_=jump_rope.load(ROOT);v,controller=jump_rope.phase_rope_components(ROOT,c,m,gear=True,gear_settings_path='domains/hololive_dreams/models/jump_rope_stage_config.json')
+        c,m,_=jump_rope.load(ROOT);v,controller=jump_rope.phase_rope_components(ROOT,c,m,gear=True,gear_settings_path='domains/hololive_dreams/models/jump_rope/jump_rope_stage_config.json')
         for i in range(10):o=v.detect(np.zeros((180,320,3),np.uint8),i*.02)
         self.assertEqual(o['difficulty_stage'],1);self.assertFalse(o['rope_valid']);self.assertGreater(o['phase_estimate']['clock_rate'],0)
         self.assertFalse(controller(c).step(o,.2,False)['down'])

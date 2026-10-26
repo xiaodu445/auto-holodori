@@ -41,7 +41,7 @@ def gear_vision_type(base):
             self.stage_badge=None
             if type(self.settings.get("stage_model",False)) is not bool:raise ValueError("invalid stage_model")
             if self.settings.get("stage_model",False):
-                folder=Path(__file__).resolve().parents[1]/'data/jump_rope_phase'
+                folder=Path(__file__).resolve().parents[2]/'data/jump_rope_phase'
                 profiles=json.loads((folder/self.settings['stage_profiles_asset']).read_text(encoding='utf-8'))
                 badge=json.loads((folder/self.settings['stage_badges_asset']).read_text(encoding='utf-8'))
                 self.bank=(TerminalStageBank if self.settings.get("terminal_stage_strategy",False) else AccelerationEvidenceBank if self.settings.get("acceleration_evidence_policy",False) else EvidenceRecoveryBank if self.settings.get("temporal_speed_recovery",False) else CoexistingStageBank if self.settings.get("coexisting_stage_branches",False) else StagedTrajectoryBank)(self.settings,self.boundary,self.entry_angle,profiles)

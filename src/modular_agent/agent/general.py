@@ -199,7 +199,7 @@ class GeneralAgent:
         profile=next((p for p in self.profiles if p['domain']=='hololive_dreams'),None)
         if not profile or not profile.get('local_models',{}).get('greed_cards_entry',{}).get('enabled'):
             return {**conditions,'reason':'本地组件未启用。'}
-        if not (self.root/'domains'/'hololive_dreams'/'models'/'greed_cards_entry.py').is_file():
+        if not (self.root/'domains'/'hololive_dreams'/'models'/'greed_cards'/'greed_cards_entry.py').is_file():
             return {**conditions,'reason':'本地组件文件缺失。'}
         if not self.computer.live or report is None:
             return {**conditions,'reason':'需要真实操作模式并先观察游戏界面。'}

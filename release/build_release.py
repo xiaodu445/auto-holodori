@@ -34,7 +34,7 @@ def copy_source_bundle() -> None:
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "mode": "source-bundle",
         "entry": "gui/hololive_dreams_gui.py",
-        "engine_entry": "domains/hololive_dreams/models/rhythm_game.py:run",
+        "engine_entry": "domains/hololive_dreams/models/rhythm/rhythm_game.py:run",
         "multi_live": "not implemented; GUI is status-only",
         "algorithm_changes": False,
         "real_game_test": False,

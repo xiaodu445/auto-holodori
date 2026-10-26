@@ -26,7 +26,7 @@ def main():
     base = read(base_path)
     out = lib / 'generated/stages_1_5_yolo07_trial'
     out.mkdir(parents=True, exist_ok=True)
-    params = read(ROOT / 'domains/hololive_dreams/models/jump_rope_visible_fit_config.json')
+    params = read(ROOT / 'domains/hololive_dreams/models/jump_rope/jump_rope_visible_fit_config.json')
     profile_path = ROOT / 'domains/hololive_dreams/data/jump_rope_phase' / params['stage_profiles_asset']
     branches = read(profile_path)['stages'][4]['branches']
     rotation = CyclicTrajectory(read(ROOT / params['atlas']))
@@ -38,7 +38,7 @@ def main():
     swwarp = AngularWarp(swprofile)
     reverse_warp = DirectionWarp(params['reverse_time_profile'])
     boundary = float(np.argmax(rotation.curves(np.arange(2048) / 2048)[:, 20, 1]) / 2048)
-    timing = read(ROOT / 'domains/hololive_dreams/models/jump_rope_mainline_input_config.json')
+    timing = read(ROOT / 'domains/hololive_dreams/models/jump_rope/jump_rope_mainline_input_config.json')
     entries = copy.deepcopy(base['templates'])
     for entry in entries:
         assert hashlib.sha256((ROOT / entry['file']).read_bytes()).hexdigest() == entry['sha256']

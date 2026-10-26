@@ -18,7 +18,13 @@ src/modular_agent/
   agent/entry_observer.py           旧导入路径兼容层
 
 domains/hololive_dreams/
-  models/greed_cards_entry.py       旧领域加载路径兼容层
+  models/
+    fishing/                       钓鱼识别、控制、循环与配置
+    greed_cards/                   强欲之牌入口桥接、玩法与结算
+    jump_rope/                     历史跳绳路线与配置，experiments/为独立实验
+    rhythm/                        音游引擎与配置
+  daily_tasks_config.json          游戏层日常编排，可调用各小游戏
+  launch.json                      游戏启动及本地技能启用配置
   knowledge/                       人类确认的世界知识
   data/                            原图、模板源、玩法资产
   vision_library/                   模板注册及匹配资产

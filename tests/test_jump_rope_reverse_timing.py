@@ -5,7 +5,7 @@ import unittest
 import numpy as np
 from modular_agent.realtime.trajectory_bank import TrajectoryBank,AngularWarp,DirectionWarp
 ROOT=Path(__file__).resolve().parents[1]
-def settings():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope_reverse_timing_config.json').read_text())
+def settings():return json.loads((ROOT/'domains/hololive_dreams/models/jump_rope/jump_rope_reverse_timing_config.json').read_text())
 
 class ReverseTimingTests(unittest.TestCase):
     def test_front_half_slow_back_half_fast_with_positive_clock(self):

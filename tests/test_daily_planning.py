@@ -13,7 +13,7 @@ from test_daily_tasks import report,Computer
 
 ROOT=Path(__file__).resolve().parents[1]
 def config():
- return json.loads((ROOT/'domains/hololive_dreams/models/daily_tasks_config.json').read_text(encoding='utf-8'))
+ return json.loads((ROOT/'domains/hololive_dreams/daily_tasks_config.json').read_text(encoding='utf-8'))
 
 class DailyPlanningTests(unittest.TestCase):
  def test_selection_never_inherits_play(self):
@@ -39,8 +39,8 @@ class DailyPlanningTests(unittest.TestCase):
   self.assertFalse(result['executed'])
  def test_registered_extension_and_result_journal(self):
   with tempfile.TemporaryDirectory() as folder:
-   root=Path(folder);dest=root/'domains/hololive_dreams/models';dest.mkdir(parents=True)
-   shutil.copy2(ROOT/'domains/hololive_dreams/models/daily_tasks_config.json',dest/'daily_tasks_config.json')
+   root=Path(folder);dest=root/'domains/hololive_dreams';dest.mkdir(parents=True)
+   shutil.copy2(ROOT/'domains/hololive_dreams/daily_tasks_config.json',dest/'daily_tasks_config.json')
    c=Computer();adapter=SimpleNamespace(root=root,computer=c,profiles=[{'domain':'hololive_dreams'}],
                                        _vision_for=lambda _:Mock())
    handler=Mock(return_value={'outcome':'success','verified':True})

@@ -11,7 +11,7 @@ from modular_agent.realtime.jump_rope_start_gate import GoStartGate
 import cv2
 from modular_agent.realtime.keyboard import run_key_loop
 
-TIMING=json.loads(Path('domains/hololive_dreams/models/jump_rope_mainline_input_config.json').read_text(encoding='utf-8-sig'))
+TIMING=json.loads(Path('domains/hololive_dreams/models/jump_rope/jump_rope_mainline_input_config.json').read_text(encoding='utf-8-sig'))
 
 class MainlineInputTests(unittest.TestCase):
     def setUp(self):

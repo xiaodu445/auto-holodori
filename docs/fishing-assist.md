@@ -13,7 +13,7 @@
 
 ## 调整入口
 
-编辑domains/hololive_dreams/models/fishing_config.json，下一次启动生效；也可用`--config <文件>`指定独立配置。
+编辑domains/hololive_dreams/models/fishing/fishing_config.json，下一次启动生效；也可用`--config <文件>`指定独立配置。
 
 | 参数 | 含义与调整方向 |
 | --- | --- |

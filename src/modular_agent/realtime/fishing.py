@@ -11,7 +11,7 @@ from modular_agent.realtime.runtime import WindowCapture, run_loop
 
 def load(root, config_path=None):
     root=Path(root)
-    path=root/'domains/hololive_dreams/models'
+    path=root/'domains/hololive_dreams/models/fishing'
     config=json.loads(Path(config_path or path/'fishing_config.json').read_text(encoding='utf-8-sig'))
     positive=('fps','timeout','hook_press_seconds','hook_timeout','max_speed','short_loss_seconds','long_loss_seconds')
     nonnegative=('lookahead_seconds','minimum_hold','edge_speed')

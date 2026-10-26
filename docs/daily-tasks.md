@@ -4,7 +4,7 @@
 
 双击根目录 `run_daily_tasks.cmd`：启动/切回游戏、启动树进入主界面、处理已知通知，再进入强欲之牌。没有云模型调用；强欲之牌入口及玩法保持原有必要OCR、账目核验、收益限额。F12停止，焦点丢失时切回游戏并验证，无法恢复或遮挡时停止；未知页面超时返回原因。
 
-双击 `edit_daily_tasks_config.cmd` 修改 `domains/hololive_dreams/models/daily_tasks_config.json`，保存后下次运行生效。template_threshold默认0.6，覆盖每日观察的模板门槛；启动树及强欲之牌门槛不变。holo_home_route依次W、D、W默认各3秒，nearby_walk_step_seconds默认0.3秒，每步重新识别，nearby_walk_max_seconds默认最多6秒。teleport_wait_seconds默认3秒，等待结束还要确认自由场景，才开始走路。play_greed_cards=false可只跑通知任务；max_rounds/max_loss复用原玩法限制，不改变奖励目标。
+双击 `edit_daily_tasks_config.cmd` 修改 `domains/hololive_dreams/daily_tasks_config.json`，保存后下次运行生效。template_threshold默认0.6，覆盖每日观察的模板门槛；启动树及强欲之牌门槛不变。holo_home_route依次W、D、W默认各3秒，nearby_walk_step_seconds默认0.3秒，每步重新识别，nearby_walk_max_seconds默认最多6秒。teleport_wait_seconds默认3秒，等待结束还要确认自由场景，才开始走路。play_greed_cards=false可只跑通知任务；max_rounds/max_loss复用原玩法限制，不改变奖励目标。
 
 Holowork：全部领取→汇总领取→GET关闭→统一设置→推荐设置→可匹配的决定→返回主界面。后继页面出现立即推进，不反复确认上一页面。相同按钮最多重试三次、重试间隔2秒；转换超时25秒。
 
